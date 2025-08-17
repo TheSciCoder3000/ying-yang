@@ -1,0 +1,19 @@
+.approach-cont {
+  margin-top: 10rem;
+}
+.approach-cont .main-content {
+  padding: 0 5rem;
+}
+.approach-cont .main-content h1 {
+  font-size: 4em;
+  font-weight: bold;
+  color: #008080;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.approach-cont .main-content .text-reveal-cont {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+  padding-bottom: 20rem;
+}/*# sourceMappingURL=Approach.css.map */

@@ -94,7 +94,7 @@ const Card: React.FC<CardProps> = ({
         // },
       },
     });
-  }, []);
+  }, [indx]);
   return (
     <div className="card" ref={cardRef} style={{ backgroundColor: color }}>
       <h1>{indx + 1}</h1>
