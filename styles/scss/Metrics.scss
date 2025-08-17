@@ -1,0 +1,46 @@
+.metrics-cont {
+  margin-top: 10rem;
+  padding: 1rem 5rem;
+
+  h1 {
+    font-weight: 400;
+    font-size: 2em;
+    text-align: center;
+    color: #008080;
+    margin-bottom: 5rem;
+  }
+
+  .metrics {
+    display: flex;
+    gap: 2rem;
+
+    .metric {
+      flex: 1;
+      h3 {
+        color: #bc2637;
+        font-weight: 400;
+        font-size: 1em;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .other-metrics {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: space-around;
+
+    .other-metric {
+      border-radius: 50px;
+      width: fit-content;
+      padding: 0.5rem 1rem;
+      background-color: #008080;
+      color: white;
+      font-size: 0.9em;
+    }
+  }
+}

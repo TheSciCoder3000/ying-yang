@@ -1,0 +1,40 @@
+.metrics-cont {
+  margin-top: 10rem;
+  padding: 1rem 5rem;
+}
+.metrics-cont h1 {
+  font-weight: 400;
+  font-size: 2em;
+  text-align: center;
+  color: #008080;
+  margin-bottom: 5rem;
+}
+.metrics-cont .metrics {
+  display: flex;
+  gap: 2rem;
+}
+.metrics-cont .metrics .metric {
+  flex: 1;
+}
+.metrics-cont .metrics .metric h3 {
+  color: #bc2637;
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 1rem;
+}
+.metrics-cont .metrics .metric li {
+  font-size: 0.9em;
+}
+.metrics-cont .other-metrics {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.metrics-cont .other-metrics .other-metric {
+  border-radius: 50px;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #008080;
+  color: white;
+  font-size: 0.9em;
+}/*# sourceMappingURL=Metrics.css.map */
