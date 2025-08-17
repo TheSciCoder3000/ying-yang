@@ -1,21 +1,134 @@
 .about-cont {
-  padding: 2rem 10rem;
+  padding: 2rem 0rem;
   padding-bottom: 10rem;
-  display: flex;
-  gap: 2rem;
 }
-.about-cont .about-content {
-  flex: 1;
-}
-.about-cont .about-content h2 {
+.about-cont h2 {
   font-weight: 400;
   font-size: 3em;
   color: #008080;
   margin-bottom: 2rem;
 }
-.about-cont .about-content p {
+.about-cont .main {
+  padding: 0 10rem;
+  display: flex;
+  gap: 2rem;
+}
+.about-cont .main .about-content {
+  flex: 1;
+}
+.about-cont .main .about-content p {
   margin-bottom: 1rem;
 }
-.about-cont .about-images {
+.about-cont .main .about-images {
   flex: 1;
+  position: relative;
+}
+.about-cont .main .about-images img {
+  position: absolute;
+  top: 25%;
+  transform: scale(0.8);
+  width: 100%;
+  height: fit-content;
+  object-fit: contain;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.about-cont .ratings {
+  margin-top: 10rem;
+}
+.about-cont .ratings h2 {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.about-cont .ratings .ratings-content {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.about-cont .ratings .ratings-content .progress-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+}
+.about-cont .ratings .ratings-content .progress-container h3 {
+  margin-top: 1rem;
+  font-weight: 300;
+}
+.about-cont .ratings .ratings-content .progress-container h2 {
+  position: absolute;
+  top: 25%;
+  color: black;
+}
+.about-cont .ratings .ratings-content .progress-container svg {
+  width: 100%;
+}
+.about-cont .ratings .ratings-content .progress-container svg #motion-path {
+  fill: none;
+  stroke: black;
+  stroke-width: 50px;
+}
+.about-cont .intro-container {
+  margin: 0 3.5rem;
+  margin-top: 15rem;
+  padding: 1.5rem 8rem;
+  position: relative;
+}
+.about-cont .intro-container .profile-bkg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  filter: brightness(0.8);
+  z-index: 5;
+}
+.about-cont .intro-container .intro {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 7rem;
+  margin: 7rem 0;
+}
+.about-cont .intro-container .intro .image-cont {
+  flex: 1;
+}
+.about-cont .intro-container .intro .image-cont img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.about-cont .intro-container .intro .intro-content {
+  flex: 1.5;
+}
+.about-cont .intro-container .intro .intro-content h1 {
+  font-weight: 400;
+  font-size: 3em;
+  margin-bottom: 1rem;
+}
+.about-cont .intro-container .intro .intro-content h4 {
+  font-weight: 100;
+  font-size: 0.8em;
+  word-spacing: 1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.about-cont .intro-container .intro .intro-content p {
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+.about-cont .intro-container .intro .intro-content button {
+  border: 2px solid black;
+  margin-top: 2rem;
+  padding: 0.6rem 1.25rem;
+  letter-spacing: 0.2em;
+  background-color: transparent;
 }/*# sourceMappingURL=About.css.map */

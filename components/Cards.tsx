@@ -88,10 +88,10 @@ const Card: React.FC<CardProps> = ({
         pin: cardRef.current,
         pinSpacing: false,
         invalidateOnRefresh: true,
-        markers: {
-          indent: 100 * indx,
-          fontSize: "20px",
-        },
+        // markers: {
+        //   indent: 100 * indx,
+        //   fontSize: "20px",
+        // },
       },
     });
   }, []);

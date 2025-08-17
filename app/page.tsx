@@ -1,13 +1,13 @@
 import About from "@/components/About";
-import Cards from "@/components/Cards";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <About />
-      <Cards />
+      <Services />
     </div>
   );
 }
