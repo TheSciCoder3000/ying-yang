@@ -1,0 +1,46 @@
+footer {
+  background-color: white;
+}
+footer .main {
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+footer .main .links-cont {
+  display: flex;
+  gap: 5rem;
+}
+footer .main .links-cont .link-group h1 {
+  font-weight: bold;
+}
+footer .main .links-cont .link-group .links {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  gap: 1rem;
+}
+footer .main .links-cont .link-group .links a {
+  text-decoration: none;
+  color: black;
+}
+footer .main .icon-cont {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+footer .main .icon-cont img {
+  height: 100%;
+  width: 100%;
+  max-width: 40rem;
+  object-fit: contain;
+}
+footer .copyright-cont {
+  color: white;
+  padding: 1rem;
+  padding-top: 3rem;
+  background-color: #008080;
+}
+footer .copyright-cont h4 {
+  font-weight: 200;
+  text-align: right;
+}/*# sourceMappingURL=Footer.css.map */

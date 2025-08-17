@@ -1,0 +1,56 @@
+footer {
+  background-color: white;
+
+  .main {
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    .links-cont {
+      display: flex;
+      gap: 5rem;
+
+      .link-group {
+        h1 {
+          font-weight: bold;
+        }
+        .links {
+          display: flex;
+          flex-direction: column;
+          font-weight: 400;
+          gap: 1rem;
+
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
+
+    .icon-cont {
+      flex: 1;
+      display: flex;
+      justify-content: end;
+
+      img {
+        height: 100%;
+        width: 100%;
+        max-width: 40rem;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .copyright-cont {
+    color: white;
+    padding: 1rem;
+    padding-top: 3rem;
+    background-color: #008080;
+
+    h4 {
+      font-weight: 200;
+      text-align: right;
+    }
+  }
+}
