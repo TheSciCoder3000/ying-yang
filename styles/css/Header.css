@@ -1,0 +1,18 @@
+header {
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 25;
+}
+header img {
+  width: fit-content;
+  height: 1.5rem;
+}
+header .menu {
+  font-weight: bolder;
+  color: #bc2637;
+}/*# sourceMappingURL=Header.css.map */
