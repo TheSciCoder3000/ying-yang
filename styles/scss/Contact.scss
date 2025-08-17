@@ -1,0 +1,39 @@
+.contact-cont {
+  margin-top: 10rem;
+  padding: 5rem;
+  background-color: #008080;
+
+  h2 {
+    font-weight: 700;
+    font-size: 2em;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 3rem;
+  }
+
+  .link-cont {
+    display: flex;
+    gap: 5rem;
+
+    .arrow {
+      opacity: 0;
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 4em;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    cursor: pointer;
+  }
+}
+
+.separator-end {
+  height: 5rem;
+  background: linear-gradient(to right bottom, #008080 50%, white 50%);
+}
