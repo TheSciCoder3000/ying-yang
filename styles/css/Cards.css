@@ -1,0 +1,36 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards-container .stacked-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+}
+.cards-container .stacked-cards .card {
+  display: flex;
+  gap: 8rem;
+  background-color: black;
+  color: white;
+  padding: 5rem 5rem;
+  align-items: center;
+  margin-bottom: 75vh;
+  transform-origin: -150% -50%;
+}
+.cards-container .stacked-cards .card h1 {
+  font-size: 4em;
+}
+.cards-container .stacked-cards .card .card-content {
+  flex: 1;
+  display: flex;
+  gap: 10rem;
+}
+.cards-container .stacked-cards .card .card-content img {
+  width: 10rem;
+  height: max-content;
+  opacity: 0.2;
+  transform: scale(0.8);
+}/*# sourceMappingURL=Cards.css.map */

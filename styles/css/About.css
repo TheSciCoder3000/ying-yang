@@ -1,0 +1,21 @@
+.about-cont {
+  padding: 2rem 10rem;
+  padding-bottom: 10rem;
+  display: flex;
+  gap: 2rem;
+}
+.about-cont .about-content {
+  flex: 1;
+}
+.about-cont .about-content h2 {
+  font-weight: 400;
+  font-size: 3em;
+  color: #008080;
+  margin-bottom: 2rem;
+}
+.about-cont .about-content p {
+  margin-bottom: 1rem;
+}
+.about-cont .about-images {
+  flex: 1;
+}/*# sourceMappingURL=About.css.map */
