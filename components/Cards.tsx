@@ -1,12 +1,14 @@
 "use client";
 
+import { OnImageLoad } from "@/lib/gsap/loader";
 import "@/styles/css/Cards.css";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cardData = [
   {
@@ -73,7 +75,8 @@ const Card: React.FC<CardProps> = ({
   color,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+
+  useGSAP(() => {
     gsap.set(cardRef.current, {
       rotate: `-${3 + 1.2 * indx}deg`,
     });
@@ -87,14 +90,37 @@ const Card: React.FC<CardProps> = ({
         scrub: true,
         pin: cardRef.current,
         pinSpacing: false,
-        invalidateOnRefresh: true,
+        // invalidateOnRefresh: true,
         // markers: {
         //   indent: 100 * indx,
         //   fontSize: "20px",
         // },
       },
     });
-  }, [indx]);
+  }, []);
+
+  // useEffect(() => {
+  //   gsap.set(cardRef.current, {
+  //     rotate: `-${3 + 1.2 * indx}deg`,
+  //   });
+  //   gsap.to(cardRef.current, {
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: cardRef.current,
+  //       start: "top " + (100 - 10 * indx),
+  //       end: "bottom bottom",
+  //       endTrigger: ".cards-container",
+  //       scrub: true,
+  //       pin: cardRef.current,
+  //       pinSpacing: false,
+  //       invalidateOnRefresh: true,
+  //       // markers: {
+  //       //   indent: 100 * indx,
+  //       //   fontSize: "20px",
+  //       // },
+  //     },
+  //   });
+  // }, [indx]);
   return (
     <div className="card" ref={cardRef} style={{ backgroundColor: color }}>
       <h1>{indx + 1}</h1>
@@ -104,7 +130,14 @@ const Card: React.FC<CardProps> = ({
           <p>{description}</p>
         </div>
         <div className="card-icon">
-          <Image src={icon} alt="icon" height={0} width={0} sizes="100vw" />
+          <Image
+            src={icon}
+            alt="icon"
+            height={0}
+            width={0}
+            sizes="100vw"
+            onLoad={OnImageLoad}
+          />
         </div>
       </div>
     </div>

@@ -7,6 +7,8 @@ import Hero from "@/components/Hero";
 import MetricsSection from "@/components/MetricsSection";
 import Services from "@/components/Services";
 import VideoCarousel from "@/components/VideoCarousel";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Home() {
   return (

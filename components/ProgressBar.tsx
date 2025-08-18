@@ -30,6 +30,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ title, value }) => {
       scrollTrigger: {
         trigger: container.current,
         start: "top 80%",
+        invalidateOnRefresh: true,
       },
     });
 
@@ -40,6 +41,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ title, value }) => {
       scrollTrigger: {
         trigger: container.current,
         start: "top 80%",
+        invalidateOnRefresh: true,
       },
     });
   }, []);

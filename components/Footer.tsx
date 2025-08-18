@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import "@/styles/css/Footer.css";
 import Image from "next/image";
+import { OnImageLoad } from "@/lib/gsap/loader";
 
 const Footer = () => {
   return (
@@ -31,6 +34,7 @@ const Footer = () => {
             width={0}
             height={0}
             sizes="100vw"
+            onLoad={OnImageLoad}
           />
         </div>
       </div>

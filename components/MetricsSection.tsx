@@ -20,6 +20,7 @@ const MetricsSection = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 70%",
+        invalidateOnRefresh: true,
       },
     });
   }, []);
