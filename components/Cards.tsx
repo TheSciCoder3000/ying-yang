@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
-ScrollTrigger.normalizeScroll(true);
 gsap.registerPlugin(ScrollTrigger);
 
 const cardData = [
