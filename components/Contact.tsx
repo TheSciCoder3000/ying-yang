@@ -9,18 +9,9 @@ const Contact = () => {
   const arrowRef = useRef<HTMLHeadingElement>(null);
   const contactRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    gsap.set(contactRef.current, {
-      x: `-8.5rem`,
-    });
-    // gsap.set(arrowRef, {
-    //   opacity: 0,
-    // });
-  }, []);
-
   const handleEnter = () => {
     gsap.to(contactRef.current, {
-      x: 0,
+      x: "8.5rem",
     });
     gsap.to(arrowRef.current, {
       opacity: 1,
@@ -30,11 +21,11 @@ const Contact = () => {
 
   const handleExit = () => {
     gsap.to(contactRef.current, {
-      x: "-8.5rem",
+      x: 0,
     });
     gsap.to(arrowRef.current, {
       opacity: 0,
-      x: "-1rem",
+      x: 0,
     });
   };
 

@@ -1,6 +1,8 @@
 .about-cont {
   padding: 2rem 0rem;
   padding-bottom: 10rem;
+  max-width: 100vw;
+  overflow: hidden;
 }
 .about-cont h2 {
   font-weight: 400;
@@ -13,6 +15,12 @@
   display: flex;
   gap: 2rem;
 }
+@media screen and (max-width: 800px) {
+  .about-cont .main {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}
 .about-cont .main .about-content {
   flex: 1;
 }
@@ -22,6 +30,7 @@
 .about-cont .main .about-images {
   flex: 1;
   position: relative;
+  min-height: 50vw;
 }
 .about-cont .main .about-images img {
   position: absolute;
@@ -47,6 +56,12 @@
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  margin-bottom: 10rem;
+}
+@media screen and (max-width: 800px) {
+  .about-cont .ratings .ratings-content {
+    flex-direction: column;
+  }
 }
 .about-cont .ratings .ratings-content .progress-container {
   display: flex;
@@ -80,6 +95,12 @@
   padding: 1.5rem 8rem;
   position: relative;
 }
+@media screen and (max-width: 800px) {
+  .about-cont .intro-container {
+    padding: 1.5rem 2rem;
+    margin: 0;
+  }
+}
 .about-cont .intro-container .profile-bkg {
   position: absolute;
   top: 0;
@@ -97,6 +118,11 @@
   display: flex;
   gap: 7rem;
   margin: 7rem 0;
+}
+@media screen and (max-width: 800px) {
+  .about-cont .intro-container .intro {
+    flex-direction: column;
+  }
 }
 .about-cont .intro-container .intro .image-cont {
   flex: 1;

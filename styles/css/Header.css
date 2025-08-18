@@ -8,6 +8,11 @@ header {
   width: 100vw;
   z-index: 25;
 }
+@media screen and (max-width: 800px) {
+  header {
+    padding: 2rem;
+  }
+}
 header img {
   width: fit-content;
   height: 1.5rem;

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import MetricsSection from "@/components/MetricsSection";
 import Services from "@/components/Services";
+import VideoCarousel from "@/components/VideoCarousel";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Approach />
       <DetailSection />
       <MetricsSection />
+      {/* <VideoCarousel /> */}
       <Contact />
       <Footer />
     </div>

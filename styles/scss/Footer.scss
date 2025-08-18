@@ -6,9 +6,18 @@ footer {
     display: flex;
     justify-content: space-between;
 
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      gap: 10rem;
+    }
+
     .links-cont {
       display: flex;
       gap: 5rem;
+
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
 
       .link-group {
         h1 {
@@ -51,6 +60,7 @@ footer {
     h4 {
       font-weight: 200;
       text-align: right;
+      font-size: clamp(0.7em, 2vw, 1em);
     }
   }
 }

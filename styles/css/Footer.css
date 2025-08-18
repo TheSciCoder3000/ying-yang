@@ -6,9 +6,20 @@ footer .main {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 800px) {
+  footer .main {
+    flex-direction: column;
+    gap: 10rem;
+  }
+}
 footer .main .links-cont {
   display: flex;
   gap: 5rem;
+}
+@media screen and (max-width: 800px) {
+  footer .main .links-cont {
+    flex-direction: column;
+  }
 }
 footer .main .links-cont .link-group h1 {
   font-weight: bold;
@@ -43,4 +54,5 @@ footer .copyright-cont {
 footer .copyright-cont h4 {
   font-weight: 200;
   text-align: right;
+  font-size: clamp(0.7em, 2vw, 1em);
 }/*# sourceMappingURL=Footer.css.map */

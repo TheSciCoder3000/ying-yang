@@ -3,6 +3,10 @@
   padding: 5rem;
   background-color: #008080;
 
+  @media screen and (max-width: 800px) {
+    padding: 4rem 1rem;
+  }
+
   h2 {
     font-weight: 700;
     font-size: 2em;
@@ -17,16 +21,18 @@
   .link-cont {
     display: flex;
     gap: 5rem;
+    position: relative;
 
     .arrow {
       opacity: 0;
+      position: absolute;
       text-decoration: none;
     }
   }
 
   h1 {
     font-weight: 700;
-    font-size: 4em;
+    font-size: clamp(2em, 5vw, 4em);
     text-decoration: underline;
     text-underline-offset: 10px;
     cursor: pointer;

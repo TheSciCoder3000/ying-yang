@@ -3,6 +3,11 @@
   padding: 5rem;
   background-color: #008080;
 }
+@media screen and (max-width: 800px) {
+  .contact-cont {
+    padding: 4rem 1rem;
+  }
+}
 .contact-cont h2 {
   font-weight: 700;
   font-size: 2em;
@@ -15,14 +20,16 @@
 .contact-cont .link-cont {
   display: flex;
   gap: 5rem;
+  position: relative;
 }
 .contact-cont .link-cont .arrow {
   opacity: 0;
+  position: absolute;
   text-decoration: none;
 }
 .contact-cont h1 {
   font-weight: 700;
-  font-size: 4em;
+  font-size: clamp(2em, 5vw, 4em);
   text-decoration: underline;
   text-underline-offset: 10px;
   cursor: pointer;

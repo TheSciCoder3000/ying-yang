@@ -75,13 +75,13 @@ const Card: React.FC<CardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     gsap.set(cardRef.current, {
-      rotate: `-${3 + 0.9 * indx}deg`,
+      rotate: `-${3 + 1.2 * indx}deg`,
     });
     gsap.to(cardRef.current, {
       ease: "none",
       scrollTrigger: {
         trigger: cardRef.current,
-        start: "top " + (150 + 10 * indx),
+        start: "top " + (100 - 10 * indx),
         end: "bottom bottom",
         endTrigger: ".cards-container",
         scrub: true,

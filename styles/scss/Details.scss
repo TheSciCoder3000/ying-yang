@@ -1,8 +1,19 @@
 .details-cont {
   padding: 5rem;
+  max-width: 100vw;
+  overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    padding: 5rem 2rem;
+  }
 
   .text-slider {
     padding: 0 7rem;
+
+    @media screen and (max-width: 800px) {
+      padding: 0;
+    }
+
     .header {
       display: flex;
       flex-direction: column;
@@ -20,7 +31,7 @@
         font-weight: 500;
         color: #3a001d;
         text-align: center;
-        width: 40rem;
+        max-width: 40rem;
       }
     }
 
@@ -28,6 +39,10 @@
       margin-top: 5rem;
       display: flex;
       gap: 1rem;
+
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
       .summary-cont {
         flex: 1;
         display: flex;
@@ -68,13 +83,17 @@
         border: 3px solid black;
         border-bottom: 15px solid black;
 
+        @media screen and (max-width: 800px) {
+          flex: 20rem;
+        }
+
         img {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
-          height: fit-content;
-          object-fit: contain;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
