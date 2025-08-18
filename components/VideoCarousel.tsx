@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -46,47 +46,103 @@ const VideoCarousel = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
+  const ScaleUpAnime = (card: Element) => {
+    const vid = card.querySelector("img");
+    const quote = card.querySelector(".quote");
+
+    gsap.to(vid, {
+      width: "20rem",
+      ease: "none",
+    });
+
+    gsap.to(quote, {
+      height: "auto",
+      ease: "none",
+    });
+  };
+
+  const ScaleDownAnime = (card: Element) => {
+    const vid = card.querySelector("img");
+    const quote = card.querySelector(".quote");
+
+    gsap.to(vid, {
+      width: "15rem",
+      ease: "none",
+    });
+
+    gsap.to(quote, {
+      height: 0,
+      ease: "none",
+    });
+  };
+
   useEffect(() => {
+    if (!carouselRef.current) return;
+
+    const style = window.getComputedStyle(carouselRef.current);
+    const gapValue = style.getPropertyValue("gap");
+    const gapPx = parseFloat(gapValue);
+
     gsap.set(carouselRef.current, {
       x: "50%",
     });
+
+    const getWidth = () => {
+      const cards = carouselRef.current?.querySelectorAll(".carousel-item");
+      if (!cards || cards?.length <= 0) return 0;
+      const width = cards[0].getBoundingClientRect().width;
+
+      const finalWidth = (width + gapPx) * cards.length;
+      console.log(`final width: ${finalWidth}`);
+      return finalWidth;
+    };
+
     const horizontalTween = gsap.to(carouselRef.current, {
-      x: "-50%",
+      x: "-=" + getWidth(),
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 0%",
+        end: `0%+=${getWidth()}`,
         toggleActions: "play none none none",
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
+        // markers: {
+        //   indent: 100,
+        //   fontSize: "20px",
+        // },
       },
     });
 
     const cards = carouselRef.current?.querySelectorAll(".carousel-item");
+    gsap.set(".quote", {
+      height: 0,
+    });
     cards?.forEach((card, indx) => {
-      gsap.fromTo(
-        card,
-        {
-          scale: 1,
+      ScrollTrigger.create({
+        trigger: card,
+        containerAnimation: horizontalTween,
+        start: "top 60%",
+        end: `100%+=${gapPx} 60%`,
+        invalidateOnRefresh: true,
+        onEnter: () => {
+          ScaleUpAnime(card);
         },
-        {
-          scale: 1.2,
-          ease: "none",
-          scrollTrigger: {
-            trigger: card,
-            containerAnimation: horizontalTween,
-            start: "top 60%",
-            end: "center 50%",
-            scrub: true,
-            invalidateOnRefresh: true,
-            // markers: {
-            //   indent: 100,
-            //   fontSize: "20px",
-            // },
-          },
-        }
-      );
+        onEnterBack: () => {
+          ScaleUpAnime(card);
+        },
+        onLeaveBack: () => {
+          ScaleDownAnime(card);
+        },
+        onLeave: () => {
+          ScaleDownAnime(card);
+        },
+        // markers: {
+        //   indent: 100,
+        //   fontSize: "20px",
+        // },
+      });
     });
   }, []);
   return (

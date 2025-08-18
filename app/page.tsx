@@ -19,7 +19,7 @@ export default function Home() {
       <Approach />
       <DetailSection />
       <MetricsSection />
-      {/* <VideoCarousel /> */}
+      <VideoCarousel />
       <Contact />
       <Footer />
     </div>
