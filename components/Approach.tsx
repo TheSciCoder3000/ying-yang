@@ -3,11 +3,15 @@
 import "@/styles/css/Approach.css";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 
 const Approach = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
+  });
 
   useEffect(() => {
     const split = new SplitText(textRef.current, {
@@ -26,6 +30,7 @@ const Approach = () => {
         trigger: containerRef.current,
         start: "top 10%",
         toggleActions: "play none none none",
+        invalidateOnRefresh: true,
         scrub: true,
         pin: true,
         // markers: {

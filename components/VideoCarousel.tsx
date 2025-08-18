@@ -5,6 +5,7 @@ import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
+import { OnImageLoad } from "@/lib/gsap/loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,6 +59,7 @@ const VideoCarousel = () => {
         toggleActions: "play none none none",
         scrub: true,
         pin: true,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -77,6 +79,7 @@ const VideoCarousel = () => {
             start: "top 60%",
             end: "center 50%",
             scrub: true,
+            invalidateOnRefresh: true,
             // markers: {
             //   indent: 100,
             //   fontSize: "20px",
@@ -100,6 +103,7 @@ const VideoCarousel = () => {
               width={0}
               height={0}
               sizes="100vw"
+              onLoad={OnImageLoad}
             />
             <div className="content">
               <div className="quote">{item.description}</div>

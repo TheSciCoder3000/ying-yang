@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "@/styles/css/Details.css";
 import Image from "next/image";
 import gsap from "gsap";
+import { OnImageLoad } from "@/lib/gsap/loader";
 
 const detailsData = [
   {
@@ -67,6 +68,7 @@ const DetailSection = () => {
               height={0}
               width={0}
               sizes="100vw"
+              onLoad={OnImageLoad}
             />
           </div>
         </div>

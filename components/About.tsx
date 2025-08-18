@@ -1,7 +1,11 @@
+"use client";
+
 import React from "react";
 import "@/styles/css/About.css";
 import Image from "next/image";
 import ProgressBar from "./ProgressBar";
+import { ScrollTrigger } from "gsap/all";
+import { OnImageLoad } from "@/lib/gsap/loader";
 
 const ratingsData = [
   {
@@ -97,6 +101,7 @@ const About = () => {
           width={0}
           height={0}
           sizes="100vw"
+          onLoad={OnImageLoad}
         />
         <div className="intro">
           <div className="image-cont">
@@ -106,6 +111,7 @@ const About = () => {
               width={0}
               height={0}
               sizes="100vw"
+              onLoad={OnImageLoad}
             />
           </div>
           <div className="intro-content">
@@ -179,6 +185,7 @@ const ReImage: React.FC<ImageProps> = ({ style, src, className }) => {
       height={0}
       className={className}
       sizes="100vw"
+      onLoad={OnImageLoad}
     />
   );
 };
