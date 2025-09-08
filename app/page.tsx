@@ -4,6 +4,7 @@ import Contact from "@/components/Contact";
 import DetailSection from "@/components/DetailSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import ProjectProposal from "@/components/ProjectProposal";
 // import MetricsSection from "@/components/MetricsSection";
 import Services from "@/components/Services";
 import VideoCarousel from "@/components/VideoCarousel";
@@ -18,6 +19,7 @@ export default function Home() {
       <DetailSection />
       {/* <MetricsSection /> */}
       <VideoCarousel />
+      <ProjectProposal />
       <Contact />
       <Footer />
     </div>

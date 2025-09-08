@@ -1,0 +1,74 @@
+.proposal-cont {
+  width: 100%;
+}
+.proposal-cont .proposal-body {
+  max-width: 70rem;
+  margin: auto;
+}
+.proposal-cont .proposal-body .header {
+  display: flex;
+  justify-content: space-between;
+}
+.proposal-cont .proposal-body .header h1 {
+  font-weight: 400;
+  font-size: 3em;
+}
+.proposal-cont .proposal-body .header button {
+  color: white;
+  background-color: #008080;
+  border-radius: 25px;
+  border: none;
+  height: fit-content;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.proposal-cont .proposal-body .proposal-info {
+  margin-top: 5rem;
+  display: flex;
+}
+.proposal-cont .proposal-body .proposal-info h2 {
+  font-weight: 400;
+  font-size: 1.15em;
+  margin-bottom: 1rem;
+}
+.proposal-cont .proposal-body .proposal-info .address-items {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  border-right: 1px solid white;
+}
+.proposal-cont .proposal-body .proposal-info .address-items .address-item-cont {
+  flex: 1;
+}
+.proposal-cont .proposal-body .proposal-info .address-items .address-item-cont .contact-info {
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  font-size: 0.85em;
+}
+.proposal-cont .proposal-body .proposal-info .address-items .address-item-cont .contact-info .number {
+  margin-top: 0.5rem;
+  text-decoration: underline;
+}
+.proposal-cont .proposal-body .proposal-info .address-items .address-item-cont h3 {
+  font-size: 0.9em;
+  font-weight: 200;
+}
+.proposal-cont .proposal-body .proposal-info .proposal-inquiry {
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+.proposal-cont .proposal-body .proposal-info .proposal-inquiry .inquiry-field .inquiry-info .label {
+  font-weight: 200;
+  font-size: 0.8em;
+}
+.proposal-cont .proposal-body .proposal-info .proposal-inquiry .inquiry-field .inquiry-info .value {
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-left: 1rem;
+}/*# sourceMappingURL=ProjectProposal.css.map */
