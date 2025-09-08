@@ -1,44 +1,83 @@
 .contact-cont {
+  max-width: 70rem;
+  margin: auto;
   margin-top: 10rem;
-  padding: 5rem;
+  padding: 1rem;
+  display: flex;
+  gap: 5rem;
 
-  @media screen and (max-width: 800px) {
-    padding: 4rem 1rem;
-  }
+  .left {
+    flex: 1;
 
-  h2 {
-    font-weight: 700;
-    font-size: 2em;
-  }
+    .header {
+      margin-bottom: 2rem;
+      h1 {
+        font-size: 3em;
+        font-weight: 600;
+      }
+    }
 
-  h3 {
-    font-weight: 500;
-    font-size: 1.5em;
-    margin-bottom: 3rem;
-  }
+    .checklist-cont {
+      margin-bottom: 6rem;
+      .checklist-item {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 2px;
+        font-size: 0.9em;
+        font-weight: 300;
+      }
+    }
 
-  .link-cont {
-    display: flex;
-    gap: 5rem;
-    position: relative;
+    .schedule-cont {
+      h3 {
+        font-size: 1em;
+        font-weight: 300;
+        margin-bottom: 1.4rem;
+      }
 
-    .arrow {
-      opacity: 0;
-      position: absolute;
-      text-decoration: none;
+      .profile-cont {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+
+        .profile-img {
+          aspect-ratio: 1/1;
+          width: 4rem;
+          height: 100%;
+        }
+
+        .profile-info {
+          margin-right: 1rem;
+
+          h2 {
+            margin-bottom: 0.3rem;
+            font-weight: 400;
+          }
+
+          p {
+            font-weight: 200;
+          }
+        }
+
+        button {
+          cursor: pointer;
+          background-color: #402fed;
+          border: none;
+          border-radius: 100%;
+          aspect-ratio: 1/1;
+          width: 2.5rem;
+          height: 2.5rem;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
 
-  h1 {
-    font-weight: 700;
-    font-size: clamp(2em, 5vw, 4em);
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    cursor: pointer;
+  .right {
+    flex: 1;
   }
-}
-
-.separator-end {
-  height: 5rem;
-  background: linear-gradient(to right bottom, #008080 50%, white 50%);
 }

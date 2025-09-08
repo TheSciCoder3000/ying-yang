@@ -1,7 +1,10 @@
 footer {
+  margin-top: 5rem;
   background-color: black;
 }
 footer .main {
+  margin: auto;
+  max-width: 86rem;
   padding: 5rem;
   display: flex;
   justify-content: space-between;
@@ -24,6 +27,10 @@ footer .main .links-cont {
 }
 footer .main .links-cont .link-group h1 {
   font-weight: bold;
+}
+footer .main .links-cont .link-group p {
+  font-weight: 300;
+  font-size: 0.9em;
 }
 footer .main .links-cont .link-group .links {
   display: flex;

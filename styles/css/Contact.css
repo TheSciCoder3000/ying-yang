@@ -1,40 +1,70 @@
 .contact-cont {
+  max-width: 70rem;
+  margin: auto;
   margin-top: 10rem;
-  padding: 5rem;
-}
-@media screen and (max-width: 800px) {
-  .contact-cont {
-    padding: 4rem 1rem;
-  }
-}
-.contact-cont h2 {
-  font-weight: 700;
-  font-size: 2em;
-}
-.contact-cont h3 {
-  font-weight: 500;
-  font-size: 1.5em;
-  margin-bottom: 3rem;
-}
-.contact-cont .link-cont {
+  padding: 1rem;
   display: flex;
   gap: 5rem;
-  position: relative;
 }
-.contact-cont .link-cont .arrow {
-  opacity: 0;
-  position: absolute;
-  text-decoration: none;
+.contact-cont .left {
+  flex: 1;
 }
-.contact-cont h1 {
-  font-weight: 700;
-  font-size: clamp(2em, 5vw, 4em);
-  text-decoration: underline;
-  text-underline-offset: 10px;
+.contact-cont .left .header {
+  margin-bottom: 2rem;
+}
+.contact-cont .left .header h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+.contact-cont .left .checklist-cont {
+  margin-bottom: 6rem;
+}
+.contact-cont .left .checklist-cont .checklist-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 2px;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+.contact-cont .left .schedule-cont h3 {
+  font-size: 1em;
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+.contact-cont .left .schedule-cont .profile-cont {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.contact-cont .left .schedule-cont .profile-cont .profile-img {
+  aspect-ratio: 1/1;
+  width: 4rem;
+  height: 100%;
+}
+.contact-cont .left .schedule-cont .profile-cont .profile-info {
+  margin-right: 1rem;
+}
+.contact-cont .left .schedule-cont .profile-cont .profile-info h2 {
+  margin-bottom: 0.3rem;
+  font-weight: 400;
+}
+.contact-cont .left .schedule-cont .profile-cont .profile-info p {
+  font-weight: 200;
+}
+.contact-cont .left .schedule-cont .profile-cont button {
   cursor: pointer;
+  background-color: #402fed;
+  border: none;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.separator-end {
-  height: 5rem;
-  background: linear-gradient(to right bottom, #008080 50%, white 50%);
+.contact-cont .right {
+  flex: 1;
 }/*# sourceMappingURL=Contact.css.map */

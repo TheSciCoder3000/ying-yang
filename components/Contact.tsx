@@ -1,53 +1,68 @@
-"use client";
-
-import React, { useRef } from "react";
+import React from "react";
 import "@/styles/css/Contact.css";
+import { CalendarDays, Check } from "lucide-react";
+import Image from "./Image";
+import ContactForm from "./ContactForm";
 
-import gsap from "gsap";
+const Checklists = [
+  {
+    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+  },
+  {
+    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+  },
+  {
+    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+  },
+];
 
 const Contact = () => {
-  const arrowRef = useRef<HTMLHeadingElement>(null);
-  const contactRef = useRef<HTMLHeadingElement>(null);
-
-  const handleEnter = () => {
-    gsap.to(contactRef.current, {
-      x: "8.5rem",
-    });
-    gsap.to(arrowRef.current, {
-      opacity: 1,
-      x: "1rem",
-    });
-  };
-
-  const handleExit = () => {
-    gsap.to(contactRef.current, {
-      x: 0,
-    });
-    gsap.to(arrowRef.current, {
-      opacity: 0,
-      x: 0,
-    });
-  };
-
   return (
-    <>
-      <div className="contact-cont">
-        <h2>Ready to add some BeMotion to your project?</h2>
-        <h3>Let’s make something amazing together!</h3>
-        <div className="link-cont">
-          <h1 ref={arrowRef} className="arrow">
-            →
-          </h1>
-          <h1
-            ref={contactRef}
-            onMouseLeave={handleExit}
-            onMouseEnter={handleEnter}
-          >
-            CONTACT ME TODAY!
-          </h1>
+    <div className="contact-cont">
+      <div className="left">
+        <div className="header">
+          <h1>Have a Project?</h1>
+          <h1>Let&apos;s talk</h1>
+        </div>
+
+        <div className="checklist-cont">
+          {Checklists.map((item, indx) => (
+            <ChecklistItem key={indx} text={item.label} />
+          ))}
+        </div>
+
+        <div className="schedule-cont">
+          <h3>Schedule a call:</h3>
+
+          <div className="profile-cont">
+            <Image className="profile-img" src="/profile.jpg" alt="profile" />
+            <div className="profile-info">
+              <h2>Tanisha M Jain</h2>
+              <p>Founder & CEO</p>
+            </div>
+            <button>
+              <CalendarDays size={15} />
+            </button>
+          </div>
         </div>
       </div>
-    </>
+
+      <div className="right">
+        <ContactForm />
+      </div>
+    </div>
+  );
+};
+
+interface ChecklistItemProps {
+  text: string;
+}
+const ChecklistItem: React.FC<ChecklistItemProps> = ({ text }) => {
+  return (
+    <div className="checklist-item">
+      <Check size={15} />
+      {text}
+    </div>
   );
 };
 
