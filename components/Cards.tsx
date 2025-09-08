@@ -6,38 +6,47 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cardData = [
   {
-    title: "LOREM",
-    description:
-      "I create strong, memorable brand identities that resonate with your values and connect with your target audience. From logo design to brand guidelines, I ensure your brand stands out and leaves a lasting impression.",
+    title: "BOOK A DEMO",
+    description: `
+      It all starts with a click. Schedule a demo and lett us 
+      prove we're more useful than your friend who still owes you 500 bucks.
+    `,
     icon: "/bulb.png",
-    color: "black",
+    color: "#00E7ED",
   },
   {
-    title: "LOREM IPSUM",
-    description:
-      "Beautiful and user-friendly web design that not only looks great but also delivers an engaging experience. I focus on crafting designs that capture the essence of your brand and turn visitors into loyal customers.",
+    title: "MEET OUR EXECUTIVE",
+    description: `
+      No jargon, no boring PPTs. Our team explains the software 
+      in plain English (and maybe some sarcasm) so you actually get it.
+    `,
     icon: "/stack.png",
-    color: "#008080",
+    color: "#00C9CE",
   },
   {
-    title: "LOREM IPSUM",
-    description:
-      "I bring web designs to life with clean, efficient code, prioritizing the performance and accessibility of the website. This ensures your site is fast, responsive, and usable for everyone.",
+    title: "EXPERIENCE THE BEST SUPPORT",
+    description: `
+      Questions? Issues? Existential crises about accounting? 
+      Our support is faster than your client's "payment in 2 
+      working days" reply.
+    `,
     icon: "/tag.png",
-    color: "#BC2637",
+    color: "#01B1B5",
   },
   {
-    title: "LOREM",
-    description:
-      "Visual content that stands out. Whether it's marketing materials, social media graphics, or print design, I create eye-catching visuals that communicate your message effectively.",
+    title: "BEYOND JUST SOFTWARE",
+    description: `
+      We don't just leave you hanging. We also guide you with accounting 
+      queries, tips, and shortcuts-because real business problems need real solutions.
+    `,
     icon: "/pencil.png",
-    color: "black",
+    color: "#009B9F",
   },
 ];
 
@@ -90,37 +99,10 @@ const Card: React.FC<CardProps> = ({
         scrub: true,
         pin: cardRef.current,
         pinSpacing: false,
-        // invalidateOnRefresh: true,
-        // markers: {
-        //   indent: 100 * indx,
-        //   fontSize: "20px",
-        // },
       },
     });
   }, []);
 
-  // useEffect(() => {
-  //   gsap.set(cardRef.current, {
-  //     rotate: `-${3 + 1.2 * indx}deg`,
-  //   });
-  //   gsap.to(cardRef.current, {
-  //     ease: "none",
-  //     scrollTrigger: {
-  //       trigger: cardRef.current,
-  //       start: "top " + (100 - 10 * indx),
-  //       end: "bottom bottom",
-  //       endTrigger: ".cards-container",
-  //       scrub: true,
-  //       pin: cardRef.current,
-  //       pinSpacing: false,
-  //       invalidateOnRefresh: true,
-  //       // markers: {
-  //       //   indent: 100 * indx,
-  //       //   fontSize: "20px",
-  //       // },
-  //     },
-  //   });
-  // }, [indx]);
   return (
     <div className="card" ref={cardRef} style={{ backgroundColor: color }}>
       <h1>{indx + 1}</h1>

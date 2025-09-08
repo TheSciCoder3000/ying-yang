@@ -4,12 +4,25 @@ import React from "react";
 import "@/styles/css/Footer.css";
 import Image from "next/image";
 import { OnImageLoad } from "@/lib/gsap/loader";
+import { ArrowDown } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer>
       <div className="main">
         <div className="links-cont">
+          <div className="link-group">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy.
+            </p>
+            <button>
+              Company Deck{" "}
+              <div className="arrow-cont">
+                <ArrowDown color="#EAFE57" className="arrow-down" size={20} />
+              </div>
+            </button>
+          </div>
           <div className="link-group">
             <h1>MENU</h1>
             <div className="links">
@@ -37,12 +50,6 @@ const Footer = () => {
             onLoad={OnImageLoad}
           />
         </div>
-      </div>
-      <div className="copyright-cont">
-        <h4>
-          © 2024 CONTRAZT MEDIA • Designed & developed by BeMotion • Privacy
-          Policy
-        </h4>
       </div>
     </footer>
   );

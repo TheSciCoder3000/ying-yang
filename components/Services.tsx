@@ -5,7 +5,7 @@ import "@/styles/css/Services.css";
 const Services = () => {
   return (
     <div className="services-cont">
-      <h1 className="service-header">MY SERVICES</h1>
+      <h1 className="service-header">JOURNEY WITH YINYANG</h1>
       <Cards />
     </div>
   );

@@ -1,5 +1,5 @@
 footer {
-  background-color: white;
+  background-color: black;
 }
 footer .main {
   padding: 5rem;
@@ -13,7 +13,8 @@ footer .main {
   }
 }
 footer .main .links-cont {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 5rem;
 }
 @media screen and (max-width: 800px) {
@@ -32,7 +33,31 @@ footer .main .links-cont .link-group .links {
 }
 footer .main .links-cont .link-group .links a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+footer .main .links-cont .link-group button {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  padding: 5px;
+  padding-left: 1.5rem;
+  gap: 0.5rem;
+  background-color: #008080;
+  font-weight: 500;
+  font-size: 1.05em;
+  cursor: pointer;
+  border: none;
+}
+footer .main .links-cont .link-group button .arrow-cont {
+  background: #000;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer .main .icon-cont {
   flex: 1;
@@ -44,15 +69,4 @@ footer .main .icon-cont img {
   width: 100%;
   max-width: 40rem;
   object-fit: contain;
-}
-footer .copyright-cont {
-  color: white;
-  padding: 1rem;
-  padding-top: 3rem;
-  background-color: #008080;
-}
-footer .copyright-cont h4 {
-  font-weight: 200;
-  text-align: right;
-  font-size: clamp(0.7em, 2vw, 1em);
 }/*# sourceMappingURL=Footer.css.map */

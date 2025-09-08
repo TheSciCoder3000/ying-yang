@@ -10,11 +10,19 @@
     padding: 2rem 1rem;
   }
 
+  h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #009b9f;
+    font-weight: 200;
+  }
+
   h1 {
     font-size: clamp(3em, 10vw, 5.25em);
     text-align: center;
     margin-bottom: 5rem;
     line-height: 1.2em;
+    color: white;
 
     @media screen and (max-width: 500px) {
       margin-bottom: 1rem;
@@ -29,7 +37,8 @@
   }
 
   .infinite-scroll {
-    background-color: #68a7f4;
+    background-color: white;
+    color: black;
     position: absolute;
     left: -1rem;
     top: 70%;

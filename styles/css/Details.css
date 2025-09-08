@@ -29,8 +29,9 @@
   margin-bottom: 1.5rem;
 }
 .details-cont .text-slider .header p {
-  font-weight: 500;
-  color: #3a001d;
+  font-weight: 200;
+  font-size: 0.9em;
+  color: white;
   text-align: center;
   max-width: 40rem;
 }
@@ -54,19 +55,22 @@
   border: 2px solid black;
   border-radius: 30px;
   overflow: hidden;
+  background-color: white;
 }
 .details-cont .text-slider .container .summary-cont .info-cont .summary {
   padding: 1rem 2rem;
-  background-color: #f7efdf;
+  background-color: #008080;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 .details-cont .text-slider .container .summary-cont .info-cont .summary h3 {
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .details-cont .text-slider .container .summary-cont .info-cont p {
+  color: black;
   padding: 1rem 2rem;
 }
 .details-cont .text-slider .container .img-cont {

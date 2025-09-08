@@ -10,7 +10,7 @@ interface ProgressBarProps {
   title: string;
   value: number;
 }
-const ProgressBar: React.FC<ProgressBarProps> = ({ title, value }) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ value }) => {
   const container = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGCircleElement>(null);
   const percent = useRef<HTMLSpanElement>(null);
@@ -44,7 +44,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ title, value }) => {
         invalidateOnRefresh: true,
       },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div ref={container} className="progress-container">
       <h2>
@@ -56,9 +58,10 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ title, value }) => {
         width="1000"
         height="1000"
       >
+        <circle id="circle" ref={svgRef} r="450" cx="500" cy="500" />
         <circle id="motion-path" ref={svgRef} r="450" cx="500" cy="500" />
       </svg>
-      <h3>{title}</h3>
+      {/* <h3>{title}</h3> */}
     </div>
   );
 };

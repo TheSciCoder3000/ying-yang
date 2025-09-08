@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "@/styles/css/Contact.css";
 
 import gsap from "gsap";
@@ -47,7 +47,6 @@ const Contact = () => {
           </h1>
         </div>
       </div>
-      <div className="separator-end"></div>
     </>
   );
 };

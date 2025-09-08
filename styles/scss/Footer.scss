@@ -1,5 +1,5 @@
 footer {
-  background-color: white;
+  background-color: black;
 
   .main {
     padding: 5rem;
@@ -12,7 +12,8 @@ footer {
     }
 
     .links-cont {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 5rem;
 
       @media screen and (max-width: 800px) {
@@ -31,7 +32,33 @@ footer {
 
           a {
             text-decoration: none;
-            color: black;
+            color: white;
+          }
+        }
+
+        button {
+          margin-top: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          padding: 5px;
+          padding-left: 1.5rem;
+          gap: 0.5rem;
+          background-color: #008080;
+          font-weight: 500;
+          font-size: 1.05em;
+          cursor: pointer;
+          border: none;
+
+          .arrow-cont {
+            background: #000;
+            border-radius: 100%;
+            aspect-ratio: 1/1;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -48,19 +75,6 @@ footer {
         max-width: 40rem;
         object-fit: contain;
       }
-    }
-  }
-
-  .copyright-cont {
-    color: white;
-    padding: 1rem;
-    padding-top: 3rem;
-    background-color: #008080;
-
-    h4 {
-      font-weight: 200;
-      text-align: right;
-      font-size: clamp(0.7em, 2vw, 1em);
     }
   }
 }

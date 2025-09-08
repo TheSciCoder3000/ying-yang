@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from "react";
 import "@/styles/css/Hero.css";
 import InfiniteScroll from "./InfiniteScroll";
-import SplitTextAnime from "./SplitTextAnime";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
@@ -22,26 +21,24 @@ const Hero = () => {
     gsap
       .timeline()
       .to(chars, {
-        color: "#008080",
+        color: "#FF0000",
         duration: 0.5,
         stagger: 0.2,
       })
       .to(chars2, {
-        color: "#BC2637",
+        color: "#3C78D8",
         duration: 0.5,
         stagger: 0.2,
       });
   }, []);
   return (
     <div className="hero-cont">
+      <h3>YinYang Leadership began with a powerful question</h3>
       <h1>
-        CO CREATING <span ref={spanRef}>INTENTIONALLY</span> FOR{" "}
-        <span ref={span2Ref}>LONG TERM</span> CHANGE.
+        WHAT IF A COMPANY&apos;S <br /> <span ref={spanRef}>REAL STRENGTH</span>{" "}
+        LIES IN WHAT <br />
+        <span ref={span2Ref}>CANNOT BE MEASURED</span> ON A SPREADSHEET?
       </h1>
-      <h3 className="sub-heading">
-        From insight to action, we help you shift what’s stuck, strengthen what
-        matters, and design systems that last.
-      </h3>
       <InfiniteScroll />
     </div>
   );

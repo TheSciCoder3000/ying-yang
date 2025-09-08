@@ -19,7 +19,7 @@ const Approach = () => {
     });
 
     gsap.from(split.words, {
-      color: "#e8e8e8",
+      color: "#707070",
       duration: 0.5,
       ease: "none",
       stagger: {
@@ -33,17 +33,16 @@ const Approach = () => {
         invalidateOnRefresh: true,
         scrub: true,
         pin: true,
-        // markers: {
-        //   indent: 100,
-        //   fontSize: "20px",
-        // },
       },
     });
   }, []);
+
   return (
     <div className="approach-cont">
       <div ref={containerRef} className="main-content">
-        <h1>OUR APPROACH</h1>
+        <h1>
+          YINGYANG&apos;S PROPRIETARY <br /> CULTURE SOLUTIONS
+        </h1>
         <div ref={textRef} className="text-reveal-cont">
           <p>
             At Lorem Ipsum Leadership, we partner with you to design culturae
