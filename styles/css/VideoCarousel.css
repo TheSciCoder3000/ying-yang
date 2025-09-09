@@ -14,7 +14,7 @@
 .carousel-cont h1 {
   font-weight: 500;
   font-size: clamp(1.5em, 4vw, 2.3em);
-  color: rgb(39, 38, 102);
+  color: rgb(93, 91, 210);
   width: 50%;
   margin-bottom: 5rem;
 }
@@ -27,19 +27,19 @@
   display: flex;
   gap: 5rem;
   align-items: flex-start;
+  flex-wrap: nowrap;
+  width: fit-content;
 }
 .carousel-cont .carousel .carousel-item {
-  width: 50rem;
-  background-color: rgb(244, 245, 246);
+  background-color: rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
-  padding: 0.75rem;
-  flex-wrap: nowrap;
+  padding: 1rem;
   border-radius: 12px;
-  color: black;
+  color: white;
 }
 .carousel-cont .carousel .carousel-item img {
-  aspect-ratio: 5/3;
+  aspect-ratio: 5.5/3;
   width: 15rem;
   height: auto;
   object-fit: cover;
@@ -50,13 +50,21 @@
 }
 .carousel-cont .carousel .carousel-item .content .quote {
   overflow: hidden;
-  margin-bottom: 1rem;
 }
-.carousel-cont .carousel .carousel-item .content h2 {
+.carousel-cont .carousel .carousel-item .content .quote p {
+  padding-top: 1rem;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: rgb(194, 194, 194);
+}
+.carousel-cont .carousel .carousel-item .content .header {
+  padding-top: 1rem;
+}
+.carousel-cont .carousel .carousel-item .content .header h2 {
   font-weight: 600;
   font-size: 1em;
 }
-.carousel-cont .carousel .carousel-item .content h3 {
+.carousel-cont .carousel .carousel-item .content .header h3 {
   font-weight: 200;
   font-size: 0.9em;
 }/*# sourceMappingURL=VideoCarousel.css.map */

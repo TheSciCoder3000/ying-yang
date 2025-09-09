@@ -1,0 +1,70 @@
+.intro-container {
+  max-width: 80rem;
+  margin: auto;
+  margin-bottom: 15rem;
+  padding: 1.5rem 8rem;
+  position: relative;
+  color: black;
+}
+@media screen and (max-width: 800px) {
+  .intro-container {
+    padding: 1.5rem 2rem;
+    margin: 0;
+  }
+}
+.intro-container .profile-bkg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 5;
+}
+.intro-container .intro {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 7rem;
+  margin: 7rem 0;
+}
+@media screen and (max-width: 800px) {
+  .intro-container .intro {
+    flex-direction: column;
+  }
+}
+.intro-container .intro .image-cont {
+  flex: 1;
+}
+.intro-container .intro .image-cont img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.intro-container .intro .intro-content {
+  flex: 1.5;
+}
+.intro-container .intro .intro-content h1 {
+  font-weight: 400;
+  font-size: 3em;
+  margin-bottom: 1rem;
+}
+.intro-container .intro .intro-content h4 {
+  font-weight: 300;
+  font-size: 0.8em;
+  word-spacing: 1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.intro-container .intro .intro-content p {
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+.intro-container .intro .intro-content button {
+  border: 2px solid black;
+  margin-top: 2rem;
+  padding: 0.6rem 1.25rem;
+  letter-spacing: 0.2em;
+  background-color: transparent;
+}/*# sourceMappingURL=Intro.css.map */

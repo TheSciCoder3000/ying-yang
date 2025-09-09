@@ -1,0 +1,65 @@
+.we-do-cont {
+  max-width: 70rem;
+  margin: auto;
+  margin-bottom: 15rem;
+}
+.we-do-cont .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7rem;
+}
+.we-do-cont .header h1 {
+  font-size: 4em;
+  font-weight: 500;
+  flex: 1;
+}
+.we-do-cont .header p {
+  flex: 1;
+  font-size: 0.8em;
+  font-weight: 300;
+  color: rgb(168, 168, 168);
+}
+.we-do-cont .content .content-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 4rem;
+}
+.we-do-cont .content .content-header h1 {
+  grid-column: span 1;
+  font-weight: 500;
+  font-size: 2.5em;
+}
+.we-do-cont .content .content-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+.we-do-cont .content .content-body .item-cont {
+  padding: 2rem;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.we-do-cont .content .content-body .item-cont .item-content h1 {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.we-do-cont .content .content-body .item-cont .item-content p {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: rgb(224, 224, 224);
+  margin-bottom: 2rem;
+}
+.we-do-cont .content .content-body .item-cont img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.we-do-cont .content .content-body .item-cont:nth-child(3n+2) {
+  background-color: #009b9f;
+}/*# sourceMappingURL=WhatWeDo.css.map */

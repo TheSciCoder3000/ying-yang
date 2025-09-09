@@ -44,9 +44,6 @@
   object-fit: contain;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
-.about-cont .ratings {
-  margin-top: 10rem;
-}
 .about-cont .ratings h2 {
   font-size: 2em;
   font-weight: 500;
@@ -54,12 +51,12 @@
   margin-bottom: 3rem;
 }
 .about-cont .ratings .ratings-content {
-  gap: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 5rem;
-  margin-bottom: 10rem;
+  width: 100%;
+  max-width: 60rem;
+  margin: auto;
 }
 @media screen and (max-width: 800px) {
   .about-cont .ratings .ratings-content {
@@ -72,8 +69,8 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: 12rem;
-  height: 12rem;
+  width: 9rem;
+  height: 9rem;
 }
 .about-cont .ratings .ratings-content .progress-container h3 {
   margin-top: 1rem;
@@ -81,9 +78,10 @@
 }
 .about-cont .ratings .ratings-content .progress-container h2 {
   position: absolute;
-  top: 32%;
+  top: 50%;
   color: white;
-  font-size: 3em;
+  font-size: 2em;
+  transform: translateY(-50%);
 }
 .about-cont .ratings .ratings-content .progress-container svg {
   width: 100%;
@@ -96,73 +94,4 @@
 .about-cont .ratings .ratings-content .progress-container svg #circle {
   stroke: #222326;
   stroke-width: 50px;
-}
-.about-cont .intro-container {
-  margin: 0 3.5rem;
-  margin-top: 15rem;
-  padding: 1.5rem 8rem;
-  position: relative;
-  color: black;
-}
-@media screen and (max-width: 800px) {
-  .about-cont .intro-container {
-    padding: 1.5rem 2rem;
-    margin: 0;
-  }
-}
-.about-cont .intro-container .profile-bkg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 5;
-}
-.about-cont .intro-container .intro {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  gap: 7rem;
-  margin: 7rem 0;
-}
-@media screen and (max-width: 800px) {
-  .about-cont .intro-container .intro {
-    flex-direction: column;
-  }
-}
-.about-cont .intro-container .intro .image-cont {
-  flex: 1;
-}
-.about-cont .intro-container .intro .image-cont img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-}
-.about-cont .intro-container .intro .intro-content {
-  flex: 1.5;
-}
-.about-cont .intro-container .intro .intro-content h1 {
-  font-weight: 400;
-  font-size: 3em;
-  margin-bottom: 1rem;
-}
-.about-cont .intro-container .intro .intro-content h4 {
-  font-weight: 300;
-  font-size: 0.8em;
-  word-spacing: 1em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-.about-cont .intro-container .intro .intro-content p {
-  font-size: 0.9em;
-  margin-bottom: 1rem;
-  font-weight: 200;
-}
-.about-cont .intro-container .intro .intro-content button {
-  border: 2px solid black;
-  margin-top: 2rem;
-  padding: 0.6rem 1.25rem;
-  letter-spacing: 0.2em;
-  background-color: transparent;
 }/*# sourceMappingURL=About.css.map */

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -103,7 +103,7 @@ const VideoCarousel = () => {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 0%",
-        end: `0%+=${getWidth()}`,
+        end: `0%+=5000`,
         toggleActions: "play none none none",
         scrub: true,
         pin: true,
@@ -119,7 +119,7 @@ const VideoCarousel = () => {
     gsap.set(".quote", {
       height: 0,
     });
-    cards?.forEach((card, indx) => {
+    cards?.forEach((card) => {
       ScrollTrigger.create({
         trigger: card,
         containerAnimation: horizontalTween,
@@ -162,7 +162,9 @@ const VideoCarousel = () => {
               onLoad={OnImageLoad}
             />
             <div className="content">
-              <div className="quote">{item.description}</div>
+              <div className="quote">
+                <p>{item.description}</p>
+              </div>
               <div className="header">
                 <h2>{item.title}</h2>
                 <h3>{item.subtitle}</h3>
