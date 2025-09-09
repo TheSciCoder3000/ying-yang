@@ -2,32 +2,12 @@
 
 import React, { useEffect, useRef } from "react";
 import "@/styles/css/About.css";
-import ProgressBar from "./ProgressBar";
 import Image from "./Image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getHighestZIndexElement, getIndex } from "@/lib/util";
 
 gsap.registerPlugin(useGSAP);
-
-const ratingsData = [
-  {
-    title: "AAA",
-    value: 82,
-  },
-  {
-    title: "BBB",
-    value: 49,
-  },
-  {
-    title: "CCC",
-    value: 99,
-  },
-  {
-    title: "DDD",
-    value: 95,
-  },
-];
 
 const imagesData = [
   {
@@ -142,15 +122,6 @@ const About = () => {
                 zIndex: indx + 1,
               }}
             />
-          ))}
-        </div>
-      </div>
-
-      <div className="ratings">
-        <h2>lorem ipsum</h2>
-        <div className="ratings-content">
-          {ratingsData.map((data, indx) => (
-            <ProgressBar key={indx} title={data.title} value={data.value} />
           ))}
         </div>
       </div>

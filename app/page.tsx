@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import ProjectProposal from "@/components/ProjectProposal";
+import Ratings from "@/components/Ratings";
 // import MetricsSection from "@/components/MetricsSection";
 import Services from "@/components/Services";
 import VideoCarousel from "@/components/VideoCarousel";
@@ -16,6 +17,7 @@ export default function Home() {
     <div>
       <Hero />
       <About />
+      <Ratings />
       <Intro />
       <WhatWeDo />
       <Services />
