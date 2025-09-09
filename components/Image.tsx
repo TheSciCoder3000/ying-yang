@@ -11,14 +11,22 @@ interface ImageProps {
   alt: string;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: () => void;
 }
-const Image: React.FC<ImageProps> = ({ style, src, alt, className }) => {
+const Image: React.FC<ImageProps> = ({
+  style,
+  src,
+  alt,
+  className,
+  onClick,
+}) => {
   const OnImageLoad = () => {
     ScrollTrigger.refresh();
   };
 
   return (
     <NextImage
+      onClick={onClick}
       style={style}
       src={src}
       alt={alt}

@@ -1,10 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import "@/styles/css/About.css";
-import Image from "next/image";
 import ProgressBar from "./ProgressBar";
-import { OnImageLoad } from "@/lib/gsap/loader";
+import Image from "./Image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { getHighestZIndexElement, getIndex } from "@/lib/util";
+
+gsap.registerPlugin(useGSAP);
 
 const ratingsData = [
   {
@@ -25,9 +29,104 @@ const ratingsData = [
   },
 ];
 
+const imagesData = [
+  {
+    path: "/img/3.png",
+    rotate: "-5deg",
+    counterRotate: "-7deg",
+  },
+  {
+    path: "/img/2.png",
+    rotate: "5deg",
+    counterRotate: "7deg",
+  },
+  {
+    path: "/img/1.png",
+    rotate: "1deg",
+    counterRotate: "3deg",
+  },
+];
+
 const About = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleImageClick = () => {
+    if (!containerRef.current) return;
+    const images = containerRef.current.querySelectorAll(".about-image");
+    const topImage = getHighestZIndexElement(images);
+
+    if (!topImage) return;
+
+    const tl = gsap.timeline();
+
+    tl.to(topImage, { opacity: 0 })
+      .to(
+        images,
+        {
+          zIndex: (index) => {
+            const z = getIndex(images[index]);
+            return 1 + (z % images.length);
+          },
+        },
+        0
+      )
+      .to(
+        images,
+        {
+          scale: (index) => {
+            const z = getIndex(images[index]);
+            return z === images.length ? 0.85 : 0.8;
+          },
+          rotate: (indx) => {
+            const z = getIndex(images[indx]);
+            return z === images.length
+              ? imagesData[indx].counterRotate
+              : imagesData[indx].rotate;
+          },
+        },
+        "+=0.01"
+      )
+      .to(topImage, {
+        opacity: 1,
+        scale: 0.8,
+        rotate: () => imagesData[Array.from(images).indexOf(topImage)].rotate,
+      });
+  };
+
+  const handleMousEnter = () => {
+    if (!containerRef.current) return;
+    const images = containerRef.current.querySelectorAll(".about-image");
+    const topImage = getHighestZIndexElement(images);
+
+    if (!topImage) return;
+    gsap.to(topImage, {
+      scale: 0.85,
+      rotate: () =>
+        imagesData[Array.from(images).indexOf(topImage)].counterRotate,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    if (!containerRef.current) return;
+    const images = containerRef.current.querySelectorAll(".about-image");
+    const topImage = getHighestZIndexElement(images);
+
+    if (!topImage) return;
+    gsap.to(topImage, {
+      scale: 0.8,
+      rotate: () => imagesData[Array.from(images).indexOf(topImage)].rotate,
+    });
+  };
+
+  useGSAP(
+    () => {
+      if (!containerRef.current) return;
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="about-cont">
+    <div className="about-cont" ref={containerRef}>
       <div className="main">
         <div className="about-content">
           <h2>About us:</h2>
@@ -57,25 +156,24 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="about-images">
-          <ReImage
-            src="/img/3.png"
-            style={{
-              rotate: "-5deg",
-            }}
-          />
-          <ReImage
-            src="/img/2.png"
-            style={{
-              rotate: "5deg",
-            }}
-          />
-          <ReImage
-            src="/img/1.png"
-            style={{
-              rotate: "1deg",
-            }}
-          />
+        <div
+          className="about-images"
+          onMouseEnter={handleMousEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {imagesData.map((img, indx) => (
+            <Image
+              key={indx}
+              onClick={handleImageClick}
+              className="about-image"
+              src={img.path}
+              alt={img.path}
+              style={{
+                rotate: img.rotate,
+                zIndex: indx + 1,
+              }}
+            />
+          ))}
         </div>
       </div>
 
@@ -88,26 +186,6 @@ const About = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-interface ImageProps {
-  src: string;
-  className?: string;
-  style?: React.CSSProperties;
-}
-const ReImage: React.FC<ImageProps> = ({ style, src, className }) => {
-  return (
-    <Image
-      style={style}
-      src={src}
-      alt="image-src"
-      width={0}
-      height={0}
-      className={className}
-      sizes="100vw"
-      onLoad={OnImageLoad}
-    />
   );
 };
 

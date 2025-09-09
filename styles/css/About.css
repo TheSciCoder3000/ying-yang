@@ -11,6 +11,7 @@
   margin-bottom: 2rem;
 }
 .about-cont .main {
+  margin-bottom: 7rem;
   padding: 0 10rem;
   display: flex;
   gap: 2rem;
@@ -33,7 +34,6 @@
 .about-cont .main .about-images {
   flex: 1;
   position: relative;
-  min-height: 50vw;
 }
 .about-cont .main .about-images img {
   position: absolute;
@@ -43,6 +43,7 @@
   height: fit-content;
   object-fit: contain;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .about-cont .ratings h2 {
   font-size: 2em;
