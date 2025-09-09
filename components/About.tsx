@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "@/styles/css/About.css";
 import ProgressBar from "./ProgressBar";
 import Image from "./Image";
@@ -93,37 +93,10 @@ const About = () => {
       });
   };
 
-  const handleMousEnter = () => {
-    if (!containerRef.current) return;
-    const images = containerRef.current.querySelectorAll(".about-image");
-    const topImage = getHighestZIndexElement(images);
-
-    if (!topImage) return;
-    gsap.to(topImage, {
-      scale: 0.85,
-      rotate: () =>
-        imagesData[Array.from(images).indexOf(topImage)].counterRotate,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    if (!containerRef.current) return;
-    const images = containerRef.current.querySelectorAll(".about-image");
-    const topImage = getHighestZIndexElement(images);
-
-    if (!topImage) return;
-    gsap.to(topImage, {
-      scale: 0.8,
-      rotate: () => imagesData[Array.from(images).indexOf(topImage)].rotate,
-    });
-  };
-
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
-    },
-    { scope: containerRef }
-  );
+  useEffect(() => {
+    const interval = setInterval(handleImageClick, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="about-cont" ref={containerRef}>
@@ -156,11 +129,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div
-          className="about-images"
-          onMouseEnter={handleMousEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="about-images">
           {imagesData.map((img, indx) => (
             <Image
               key={indx}
