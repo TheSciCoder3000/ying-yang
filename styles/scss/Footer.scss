@@ -111,6 +111,19 @@ footer {
           gap: 1rem;
           margin-bottom: 1.25rem;
         }
+
+        .logo {
+          width: 100%;
+          height: 3rem;
+          object-fit: contain;
+          object-position: left;
+          margin-bottom: 1rem;
+        }
+
+        .company-desc {
+          color: rgb(200, 200, 200);
+          font-size: 0.8em;
+        }
       }
     }
   }

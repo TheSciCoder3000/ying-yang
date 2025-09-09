@@ -2,10 +2,9 @@
 
 import React from "react";
 import "@/styles/css/Footer.css";
-import Image from "next/image";
-import { OnImageLoad } from "@/lib/gsap/loader";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
+import Image from "./Image";
 
 const Footer = () => {
   return (
@@ -13,7 +12,8 @@ const Footer = () => {
       <div className="main">
         <div className="links-cont">
           <div className="link-group">
-            <p>
+            <Image className="logo" src={"/yinyang-logo.png"} alt="logo" />
+            <p className="company-desc">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy.
             </p>

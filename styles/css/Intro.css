@@ -67,4 +67,10 @@
   padding: 0.6rem 1.25rem;
   letter-spacing: 0.2em;
   background-color: transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.intro-container .intro .intro-content button:hover {
+  background-color: black;
+  color: white;
 }/*# sourceMappingURL=Intro.css.map */

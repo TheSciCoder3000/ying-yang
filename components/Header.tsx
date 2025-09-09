@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <Image
-        src={"/logo.png"}
+        src={"/yinyang-logo.png"}
         alt="logo"
         height={0}
         width={0}

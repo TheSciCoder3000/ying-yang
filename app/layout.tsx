@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Ying Yang Ref",
+  title: "YinYang",
   description: "Prototype Landing Page Website",
   viewport: "width=device-width, initial-scale=1.0",
 };
