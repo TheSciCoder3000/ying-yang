@@ -1,11 +1,8 @@
 .carousel-cont {
   padding: 5rem;
-  padding-bottom: 10rem;
   padding-top: 3rem;
   margin-top: 10rem;
   min-width: 100vw;
-  overflow: hidden;
-  height: 100vh;
 }
 @media screen and (max-width: 800px) {
   .carousel-cont {

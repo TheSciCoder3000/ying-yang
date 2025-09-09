@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import "@/styles/css/WhatWeDo.css";
 import Image from "./Image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 
 const Data = [
   {
@@ -39,9 +44,30 @@ const Data = [
   },
 ];
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const WhatWeDo = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      if (!containerRef.current) return;
+
+      gsap.from(".item-cont", {
+        y: 100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 15%",
+          toggleActions: "play none none none",
+        },
+        stagger: 0.22,
+        duration: 0.54,
+      });
+    },
+    { scope: containerRef }
+  );
   return (
-    <div className="we-do-cont">
+    <div ref={containerRef} className="we-do-cont">
       <div className="header">
         <h1>what we do</h1>
         <p>

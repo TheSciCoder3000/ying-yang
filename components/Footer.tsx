@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="cat-cont">
               <div className="cat-content">
                 <h2>Let&apos;s work together</h2>
-                <h3>Call YingYang</h3>
+                <h3>Call YinYang</h3>
               </div>
               <button>
                 <ArrowUpRight size={20} />

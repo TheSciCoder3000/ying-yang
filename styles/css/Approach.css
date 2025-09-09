@@ -1,5 +1,5 @@
 .approach-cont {
-  margin-top: 10rem;
+  margin-top: -5rem;
   width: 100%;
   overflow: hidden;
 }
@@ -27,7 +27,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: clamp(1.1em, 3vw, 1.8em);
-  padding-bottom: 20rem;
+  padding-bottom: 10rem;
 }
 @media screen and (max-width: 800px) {
   .approach-cont .main-content .text-reveal-cont {

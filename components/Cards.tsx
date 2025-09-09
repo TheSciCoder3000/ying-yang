@@ -1,11 +1,11 @@
 "use client";
 
-import { OnImageLoad } from "@/lib/gsap/loader";
+// import { OnImageLoad } from "@/lib/gsap/loader";
 import "@/styles/css/Cards.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -80,7 +80,7 @@ const Card: React.FC<CardProps> = ({
   indx,
   title,
   description,
-  icon,
+  // icon,
   color,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -112,14 +112,14 @@ const Card: React.FC<CardProps> = ({
           <p>{description}</p>
         </div>
         <div className="card-icon">
-          <Image
+          {/* <Image
             src={icon}
             alt="icon"
             height={0}
             width={0}
             sizes="100vw"
             onLoad={OnImageLoad}
-          />
+          /> */}
         </div>
       </div>
     </div>

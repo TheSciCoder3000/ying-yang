@@ -41,7 +41,7 @@ const Approach = () => {
     <div className="approach-cont">
       <div ref={containerRef} className="main-content">
         <h1>
-          YINGYANG&apos;S PROPRIETARY <br /> CULTURE SOLUTIONS
+          YINYANG&apos;S PROPRIETARY <br /> CULTURE SOLUTIONS
         </h1>
         <div ref={textRef} className="text-reveal-cont">
           <p>
