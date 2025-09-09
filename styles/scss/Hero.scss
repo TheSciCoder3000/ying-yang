@@ -41,7 +41,7 @@
     color: black;
     position: absolute;
     left: -1rem;
-    top: 70%;
+    top: 80%;
     padding: 0.5rem 0;
     transform: rotate(-3deg);
     overflow: hidden;
@@ -54,10 +54,18 @@
       font-size: 1.4em;
       display: flex;
       width: fit-content;
+      align-items: center;
 
       span {
         position: relative;
-        display: block;
+      }
+
+      .company-logo {
+        display: inline;
+        height: 2.75rem;
+        width: fit-content;
+        object-fit: contain;
+        margin-right: 5rem;
       }
     }
   }
