@@ -1,33 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "@/styles/css/About.css";
-import ProgressBar from "./ProgressBar";
 import Image from "./Image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getHighestZIndexElement, getIndex } from "@/lib/util";
 
 gsap.registerPlugin(useGSAP);
-
-const ratingsData = [
-  {
-    title: "AAA",
-    value: 82,
-  },
-  {
-    title: "BBB",
-    value: 49,
-  },
-  {
-    title: "CCC",
-    value: 99,
-  },
-  {
-    title: "DDD",
-    value: 95,
-  },
-];
 
 const imagesData = [
   {
@@ -93,37 +73,10 @@ const About = () => {
       });
   };
 
-  const handleMousEnter = () => {
-    if (!containerRef.current) return;
-    const images = containerRef.current.querySelectorAll(".about-image");
-    const topImage = getHighestZIndexElement(images);
-
-    if (!topImage) return;
-    gsap.to(topImage, {
-      scale: 0.85,
-      rotate: () =>
-        imagesData[Array.from(images).indexOf(topImage)].counterRotate,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    if (!containerRef.current) return;
-    const images = containerRef.current.querySelectorAll(".about-image");
-    const topImage = getHighestZIndexElement(images);
-
-    if (!topImage) return;
-    gsap.to(topImage, {
-      scale: 0.8,
-      rotate: () => imagesData[Array.from(images).indexOf(topImage)].rotate,
-    });
-  };
-
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
-    },
-    { scope: containerRef }
-  );
+  useEffect(() => {
+    const interval = setInterval(handleImageClick, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="about-cont" ref={containerRef}>
@@ -156,11 +109,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div
-          className="about-images"
-          onMouseEnter={handleMousEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="about-images">
           {imagesData.map((img, indx) => (
             <Image
               key={indx}
@@ -173,15 +122,6 @@ const About = () => {
                 zIndex: indx + 1,
               }}
             />
-          ))}
-        </div>
-      </div>
-
-      <div className="ratings">
-        <h2>lorem ipsum</h2>
-        <div className="ratings-content">
-          {ratingsData.map((data, indx) => (
-            <ProgressBar key={indx} title={data.title} value={data.value} />
           ))}
         </div>
       </div>

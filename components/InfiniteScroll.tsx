@@ -13,14 +13,14 @@ const InfiniteScroll = () => {
   useGSAP(() => {
     const movingTimeline = () => {
       gsap.set(containerRef.current, {
-        xPercent: 0,
+        xPercent: -50,
       });
       gsap
         .timeline({
           defaults: { ease: "none", repeat: -1 },
         })
         .to(containerRef.current, {
-          xPercent: -50,
+          xPercent: 0,
           duration: 20,
         })
         .set(containerRef.current, { x: 0 });

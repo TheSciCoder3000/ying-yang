@@ -1,6 +1,5 @@
 .about-cont {
   padding: 2rem 0rem;
-  padding-bottom: 10rem;
   max-width: 100vw;
   overflow: hidden;
 }
@@ -11,7 +10,6 @@
   margin-bottom: 2rem;
 }
 .about-cont .main {
-  margin-bottom: 7rem;
   padding: 0 10rem;
   display: flex;
   gap: 2rem;
@@ -43,56 +41,4 @@
   height: fit-content;
   object-fit: contain;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-.about-cont .ratings h2 {
-  font-size: 2em;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.about-cont .ratings .ratings-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 60rem;
-  margin: auto;
-}
-@media screen and (max-width: 800px) {
-  .about-cont .ratings .ratings-content {
-    flex-direction: column;
-  }
-}
-.about-cont .ratings .ratings-content .progress-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 9rem;
-  height: 9rem;
-}
-.about-cont .ratings .ratings-content .progress-container h3 {
-  margin-top: 1rem;
-  font-weight: 300;
-}
-.about-cont .ratings .ratings-content .progress-container h2 {
-  position: absolute;
-  top: 50%;
-  color: white;
-  font-size: 2em;
-  transform: translateY(-50%);
-}
-.about-cont .ratings .ratings-content .progress-container svg {
-  width: 100%;
-}
-.about-cont .ratings .ratings-content .progress-container svg #motion-path {
-  fill: none;
-  stroke: white;
-  stroke-width: 50px;
-}
-.about-cont .ratings .ratings-content .progress-container svg #circle {
-  stroke: #222326;
-  stroke-width: 50px;
 }/*# sourceMappingURL=About.css.map */

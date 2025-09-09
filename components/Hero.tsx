@@ -21,7 +21,7 @@ const Hero = () => {
     gsap
       .timeline()
       .to(chars, {
-        color: "#FF0000",
+        color: "#009B9F",
         duration: 0.5,
         stagger: 0.2,
       })
@@ -37,7 +37,7 @@ const Hero = () => {
       <h1>
         WHAT IF A COMPANY&apos;S <br /> <span ref={spanRef}>REAL STRENGTH</span>{" "}
         LIES IN WHAT <br />
-        <span ref={span2Ref}>CANNOT BE MEASURED</span> ON A SPREADSHEET?
+        CANNOT BE MEASURED ON A SPREADSHEET?
       </h1>
       <InfiniteScroll />
     </div>

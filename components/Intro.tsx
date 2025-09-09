@@ -1,10 +1,34 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Image from "./Image";
 import "@/styles/css/Intro.css";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Intro = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!containerRef.current) return;
+
+      // gsap.from(containerRef.current, {
+      //   yPercent: 100,
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     scrub: true,
+      //     pin: true,
+      //   },
+      // });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="intro-container">
+    <div ref={containerRef} className="intro-container">
       <Image className="profile-bkg" src="/profile-bkg.jpg" alt="profile" />
       <div className="intro">
         <div className="image-cont">

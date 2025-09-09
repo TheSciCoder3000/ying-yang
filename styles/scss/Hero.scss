@@ -14,11 +14,11 @@
     text-align: center;
     margin-bottom: 1.5rem;
     color: #009b9f;
-    font-weight: 200;
+    font-weight: 500;
   }
 
   h1 {
-    font-size: clamp(3em, 10vw, 5.25em);
+    font-size: clamp(3em, 10vw, 4.65em);
     text-align: center;
     margin-bottom: 5rem;
     line-height: 1.2em;
@@ -37,13 +37,11 @@
   }
 
   .infinite-scroll {
-    background-color: white;
     color: black;
     position: absolute;
     left: -1rem;
     top: 80%;
     padding: 0.5rem 0;
-    transform: rotate(-3deg);
     overflow: hidden;
     width: 110%;
 
