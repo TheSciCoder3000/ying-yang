@@ -1,5 +1,5 @@
 footer {
-  margin-top: 5rem;
+  margin-top: 10rem;
   background-color: black;
 }
 footer .main {
@@ -26,7 +26,8 @@ footer .main .links-cont {
   }
 }
 footer .main .links-cont .link-group h1 {
-  font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 footer .main .links-cont .link-group p {
   font-weight: 300;
@@ -66,14 +67,42 @@ footer .main .links-cont .link-group button .arrow-cont {
   align-items: center;
   justify-content: center;
 }
-footer .main .icon-cont {
-  flex: 1;
+footer .main .links-cont .link-group .cat-cont {
   display: flex;
-  justify-content: end;
+  gap: 1rem;
+  align-items: center;
 }
-footer .main .icon-cont img {
-  height: 100%;
-  width: 100%;
-  max-width: 40rem;
-  object-fit: contain;
+footer .main .links-cont .link-group .cat-cont .cat-content h2 {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin: 0;
+}
+footer .main .links-cont .link-group .cat-cont .cat-content h3 {
+  font-weight: 300;
+  font-size: 1.4em;
+  color: #008080;
+  margin: 0;
+}
+footer .main .links-cont .link-group .cat-cont button {
+  --size: 2.7rem;
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin: 0;
+}
+footer .main .links-cont .link-group .social-cont {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+footer .icon-cont h1 {
+  font-size: 13em;
+  color: white;
+  text-align: center;
 }/*# sourceMappingURL=Footer.css.map */

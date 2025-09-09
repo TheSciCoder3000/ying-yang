@@ -1,6 +1,7 @@
 .carousel-cont {
   padding: 5rem;
   padding-bottom: 10rem;
+  padding-top: 3rem;
   margin-top: 10rem;
   min-width: 100vw;
   overflow: hidden;
@@ -15,7 +16,7 @@
     font-size: clamp(1.5em, 4vw, 2.3em);
     color: rgb(93, 91, 210);
     width: 50%;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 
     @media screen and (max-width: 800px) {
       width: auto;

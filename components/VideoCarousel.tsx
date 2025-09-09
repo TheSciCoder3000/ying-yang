@@ -11,34 +11,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const data = [
   {
-    title: "Mustafa Bayramoglu",
-    subtitle: "Founder, dev.tools",
+    title: "Melissa",
+    subtitle: "Head of People & Culture",
     description:
-      "“I’ve had a great experience. They research thoroughly, handle details, and save me a ton of time. Their designs are on point, and pricing is fair. Highly recommended!”",
+      "“The Leadership Model that YinYang codified for us, has become our Bible. I link it in 360 Assessments, share it in leadership training - it’s the reference point for everything we do now. There’s no way I could’ve created something like that without YinYang.”",
   },
   {
-    title: "Mustafa Bayramoglu",
-    subtitle: "Founder, dev.tools",
+    title: "Sean",
+    subtitle: "Chief Operations Officer",
     description:
-      "“I’ve had a great experience. They research thoroughly, handle details, and save me a ton of time. Their designs are on point, and pricing is fair. Highly recommended!”",
+      "“The implementation roadmap YinYang built for us was such a game-changer. It gave us structure but also freedom to adapt. It enabled us to take ownership and continue embedding the work even after YinYang left the system.”",
   },
   {
-    title: "Mustafa Bayramoglu",
-    subtitle: "Founder, dev.tools",
+    title: "Farzeen Patel",
+    subtitle: "Chief People Officer",
     description:
-      "“I’ve had a great experience. They research thoroughly, handle details, and save me a ton of time. Their designs are on point, and pricing is fair. Highly recommended!”",
+      "“Partnering with you has been a truly transformative experience for our recruitment process. Your expertise in developing clear, structured, and effective recruitment standards has not only streamlined our hiring practices but also ensured we attract and select the right talent for our organization. Thanks for your support, we now have a robust framework that aligns with our organizational values and long-term goals. We are grateful for your contribution.”",
   },
   {
-    title: "Mustafa Bayramoglu",
-    subtitle: "Founder, dev.tools",
+    title: "Ankur v",
+    subtitle: "Managing Director, Eminent Group",
     description:
-      "“I’ve had a great experience. They research thoroughly, handle details, and save me a ton of time. Their designs are on point, and pricing is fair. Highly recommended!”",
-  },
-  {
-    title: "Mustafa Bayramoglu",
-    subtitle: "Founder, dev.tools",
-    description:
-      "“I’ve had a great experience. They research thoroughly, handle details, and save me a ton of time. Their designs are on point, and pricing is fair. Highly recommended!”",
+      "“YinYang Leadership helped us move beyond buzzwords to uncover the values that truly define us. The process was honest, challenging, and left our leadership team more aligned than ever.”",
   },
 ];
 
@@ -84,21 +78,11 @@ const VideoCarousel = () => {
     const gapPx = parseFloat(gapValue);
 
     gsap.set(carouselRef.current, {
-      x: "50%",
+      xPercent: 50,
     });
 
-    const getWidth = () => {
-      const cards = carouselRef.current?.querySelectorAll(".carousel-item");
-      if (!cards || cards?.length <= 0) return 0;
-      const width = cards[0].getBoundingClientRect().width;
-
-      const finalWidth = (width + gapPx) * cards.length;
-      console.log(`final width: ${finalWidth}`);
-      return finalWidth;
-    };
-
     const horizontalTween = gsap.to(carouselRef.current, {
-      x: "-=" + getWidth(),
+      xPercent: -50,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -108,10 +92,6 @@ const VideoCarousel = () => {
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
-        // markers: {
-        //   indent: 100,
-        //   fontSize: "20px",
-        // },
       },
     });
 
@@ -138,10 +118,6 @@ const VideoCarousel = () => {
         onLeave: () => {
           ScaleDownAnime(card);
         },
-        // markers: {
-        //   indent: 100,
-        //   fontSize: "20px",
-        // },
       });
     });
   }, []);

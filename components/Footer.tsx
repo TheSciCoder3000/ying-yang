@@ -4,7 +4,8 @@ import React from "react";
 import "@/styles/css/Footer.css";
 import Image from "next/image";
 import { OnImageLoad } from "@/lib/gsap/loader";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -38,18 +39,26 @@ const Footer = () => {
               <a href="">Instagram</a>
             </div>
           </div>
+          <div className="link-group">
+            <div className="social-cont">
+              <SiInstagram className="icon" size={20} />
+              <SiFacebook className="icon" size={20} />
+              <SiLinkedin className="icon" size={20} />
+            </div>
+            <div className="cat-cont">
+              <div className="cat-content">
+                <h2>Let&apos;s work together</h2>
+                <h3>Call YingYang</h3>
+              </div>
+              <button>
+                <ArrowUpRight size={20} />
+              </button>
+            </div>
+          </div>
         </div>
-
-        <div className="icon-cont">
-          <Image
-            src={"/icon.png"}
-            alt="icon"
-            width={0}
-            height={0}
-            sizes="100vw"
-            onLoad={OnImageLoad}
-          />
-        </div>
+      </div>
+      <div className="icon-cont">
+        <h1>YinYang</h1>
       </div>
     </footer>
   );
