@@ -4,8 +4,7 @@ import React, { useEffect, useRef } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Image from "next/image";
-import { OnImageLoad } from "@/lib/gsap/loader";
+import Image from "./Image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,14 +128,7 @@ const VideoCarousel = () => {
       <div className="carousel" ref={carouselRef}>
         {data.map((item, indx) => (
           <div key={indx} className="carousel-item">
-            <Image
-              src="/img/1.png"
-              alt="cover"
-              width={0}
-              height={0}
-              sizes="100vw"
-              onLoad={OnImageLoad}
-            />
+            <Image src="/img/1.png" alt="cover" />
             <div className="content">
               <div className="quote">
                 <p>{item.description}</p>

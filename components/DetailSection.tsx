@@ -2,9 +2,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import "@/styles/css/Details.css";
-import Image from "next/image";
 import gsap from "gsap";
-import { OnImageLoad } from "@/lib/gsap/loader";
+import Image from "./Image";
 
 const detailsData = [
   {
@@ -91,6 +90,7 @@ const DetailSection = () => {
     if (id === openId) setOpenId(null);
     else setOpenId(id);
   };
+
   return (
     <div className="details-cont">
       <div className="text-slider">
@@ -116,14 +116,7 @@ const DetailSection = () => {
           </div>
 
           <div className="img-cont">
-            <Image
-              src={"/details.png"}
-              alt="details"
-              height={0}
-              width={0}
-              sizes="100vw"
-              onLoad={OnImageLoad}
-            />
+            <Image src={"/details.png"} alt="details" />
           </div>
         </div>
       </div>
