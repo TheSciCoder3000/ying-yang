@@ -4,11 +4,13 @@ import Contact from "@/components/Contact";
 import DetailSection from "@/components/DetailSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import InfiniteScroll from "@/components/InfiniteScroll";
 import Intro from "@/components/Intro";
 import ProjectProposal from "@/components/ProjectProposal";
 import Ratings from "@/components/Ratings";
 // import MetricsSection from "@/components/MetricsSection";
 import Services from "@/components/Services";
+import TestimonialV2 from "@/components/TestimonialV2";
 import VideoCarousel from "@/components/VideoCarousel";
 import WhatWeDo from "@/components/WhatWeDo";
 
@@ -16,7 +18,9 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <About />
+      <InfiniteScroll />
+      <TestimonialV2 />
+      {/* <About />
       <Ratings />
       <Intro />
       <WhatWeDo />
@@ -26,7 +30,7 @@ export default function Home() {
       <VideoCarousel />
       <ProjectProposal />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

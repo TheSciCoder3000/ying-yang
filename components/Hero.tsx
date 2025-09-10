@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import "@/styles/css/Hero.css";
-import InfiniteScroll from "./InfiniteScroll";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
@@ -32,14 +30,15 @@ const Hero = () => {
       });
   }, []);
   return (
-    <div className="hero-cont">
-      <h3>YinYang Leadership began with a powerful question</h3>
-      <h1>
+    <div className="px-[4rem] py-[2rem] relative mt-[5rem] max-w-screen overflow-x-hidden">
+      <h3 className="text-center mb-[1.5rem] text-[#009b9f] font-[500]">
+        YinYang Leadership began with a powerful question
+      </h3>
+      <h1 className="text-7xl/[1.2em] font-bold text-center mb-2">
         WHAT IF A COMPANY&apos;S <br /> <span ref={spanRef}>REAL STRENGTH</span>{" "}
         LIES IN WHAT <br />
         CANNOT BE MEASURED ON A SPREADSHEET?
       </h1>
-      <InfiniteScroll />
     </div>
   );
 };
