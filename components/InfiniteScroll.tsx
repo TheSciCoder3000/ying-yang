@@ -11,22 +11,23 @@ const noImgCont = 12;
 
 const InfiniteScroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const movingTimeline = () => {
-        gsap.set(".img-cont", {
-          xPercent: -50 * noImgCont,
+        gsap.set(scrollRef.current, {
+          xPercent: -50,
         });
         gsap
           .timeline({
             defaults: { ease: "none", repeat: -1 },
           })
-          .to(".img-cont", {
+          .to(scrollRef.current, {
             xPercent: 0,
             duration: 20,
           })
-          .set(".img-cont", { x: 0 });
+          .set(scrollRef.current, { x: 0 });
       };
       movingTimeline();
     },
@@ -34,26 +35,30 @@ const InfiniteScroll = () => {
   );
 
   return (
-    <div className="mt-20 relative overflow-hidden h-18" ref={containerRef}>
-      <p className="w-fit min-w-fit text-nowrap whitespace-nowrap">
+    <div className="mt-20 relative overflow-hidden" ref={containerRef}>
+      <div
+        ref={scrollRef}
+        className="w-fit min-w-fit flex items-center text-nowrap whitespace-nowrap"
+      >
         {Array.from(Array(noImgCont).keys()).map((indx) => (
-          <div
-            key={indx}
-            className="img-cont inline-flex gap-5 h-fit min-w-fit items-center pr-4"
-          >
-            <Image
-              className="block h-15 w-15 object-contain"
-              src="/companies/bmw.png"
-              alt="bmw"
-            />
-            <Image
-              className="block h-12 w-fit object-contain"
-              src="/companies/yinyang-logo.png"
-              alt="bmw"
-            />
+          <div key={indx} className="flex items-center w-fit">
+            <div className="flex gap-5 h-20 w-20 items-center">
+              <Image
+                className="block h-full w-full object-contain pr-4"
+                src="/companies/bmw.png"
+                alt="bmw"
+              />
+            </div>
+            <div className="flex gap-5 h-20 w-48 items-center">
+              <Image
+                className="block h-full w-full object-contain pr-4"
+                src="/companies/yinyang-logo.png"
+                alt="bmw"
+              />
+            </div>
           </div>
         ))}
-      </p>
+      </div>
     </div>
   );
 };
