@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import "@/styles/css/About.css";
 import Image from "./Image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -79,12 +78,12 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-cont" ref={containerRef}>
-      <div className="main">
-        <div className="about-content">
-          <h2>About us:</h2>
+    <div className="mt-20 py-8 max-w-screen overflow-hidden" ref={containerRef}>
+      <div className="px-40 flex gap-8">
+        <div className="flex-1">
+          <h2 className="text-5xl font-bold text-[#008080] mb-8">About us:</h2>
           <div>
-            <p>
+            <p className="font-light text-sm/[1.65em] mb-4">
               Our founder Tanisha, together with her partners at YinYang, are
               business psychologists who have spent over a decade working with
               fast-growing businesses, fortune 500 companies, ambitious leaders,
@@ -92,13 +91,13 @@ const About = () => {
               struggle, they discovered the same truth: culture is intangible,
               but its impact is impossible to ignore.
             </p>
-            <p>
+            <p className="font-light text-sm/[1.65em] mb-4">
               That insight became the seed of YinYang Leadership. Rooted in the
               philosophy that opposites must come together to form a whole, we
               help organizations design the leadership and cultural foundations
               that unlock faster business performance and long-term success.
             </p>
-            <p>
+            <p className="font-light text-sm/[1.65em] mb-4">
               Through our proprietary Culture Compass, we bring evidence based
               tools, powerful facilitation, and an immersive learning
               experience. Whether we’re co-creating leadership journeys,
@@ -109,12 +108,12 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="about-images">
+        <div className="flex-1 relative">
           {imagesData.map((img, indx) => (
             <Image
               key={indx}
               onClick={handleImageClick}
-              className="about-image"
+              className="about-image absolute top-[10%] scale-80 w-full h-fit object-contain"
               src={img.path}
               alt={img.path}
               style={{
