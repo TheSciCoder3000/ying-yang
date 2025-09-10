@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import ProgressBar from "./ProgressBar";
-import "@/styles/css/Ratings.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -45,9 +44,9 @@ const Ratings = () => {
     { scope: containerRef }
   );
   return (
-    <div className="ratings" ref={containerRef}>
-      <h2>lorem ipsum</h2>
-      <div className="ratings-content">
+    <div className="pt-32 min-w-screen pb-36" ref={containerRef}>
+      <h2 className="text-xl font-semibold text-center mb-12">lorem ipsum</h2>
+      <div className="flex justify-between items-center w-full max-w-[60rem] mx-auto">
         {ratingsData.map((data, indx) => (
           <ProgressBar key={indx} title={data.title} value={data.value} />
         ))}
