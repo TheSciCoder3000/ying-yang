@@ -1,44 +1,32 @@
-"use client";
-import React, { useRef } from "react";
+import React from "react";
 import Image from "./Image";
-import "@/styles/css/Intro.css";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Intro = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
-
-      // gsap.from(containerRef.current, {
-      //   yPercent: 100,
-      //   scrollTrigger: {
-      //     trigger: containerRef.current,
-      //     scrub: true,
-      //     pin: true,
-      //   },
-      // });
-    },
-    { scope: containerRef }
-  );
-
   return (
-    <div ref={containerRef} className="intro-container">
-      <Image className="profile-bkg" src="/profile-bkg.jpg" alt="profile" />
-      <div className="intro">
-        <div className="image-cont">
-          <Image src="/profile.jpg" alt="profile" />
+    <div className="w-screen mb-36 py-6 px-32 relative text-black">
+      <Image
+        className="absolute top-0 left-0 w-full h-full object-cover z-5"
+        src="/profile-bkg.jpg"
+        alt="profile"
+      />
+      <div className="relative z-10 flex gap-28 my-28">
+        <div className="flex-1">
+          <Image
+            className="object-cover w-full h-full"
+            src="/profile.jpg"
+            alt="profile"
+          />
         </div>
-        <div className="intro-content">
-          <h1>Meet Tanisha M Jain</h1>
-          <h4>Founder | Leadership Coach | Culture Facilitator</h4>
+        <div className="flex-[1.5]">
+          <h1 className="text-5xl mb-4">Meet Tanisha M Jain</h1>
+          <h4
+            style={{ wordSpacing: "1em" }}
+            className="font-light text-sm uppercase mb-8"
+          >
+            Founder | Leadership Coach | Culture Facilitator
+          </h4>
           <div className="introduction">
-            <p>
+            <p className="text-sm mb-4 font-light">
               Our founder Tanisha, together with her partners at YinYang, are
               business psychologists who have spent over a decade working with
               fast-growing businesses, fortune 500 companies, ambitious leaders,
@@ -46,13 +34,13 @@ const Intro = () => {
               struggle, they discovered the same truth: culture is intangible,
               but its impact is impossible to ignore.
             </p>
-            <p>
+            <p className="text-sm mb-4 font-light">
               That insight became the seed of YinYang Leadership. Rooted in the
               philosophy that opposites must come together to form a whole, we
               help organizations design the leadership and cultural foundations
               that unlock faster business performance and long-term success.
             </p>
-            <p>
+            <p className="text-sm mb-4 font-light">
               Through our proprietary Culture Compass, we bring evidence based
               tools, powerful facilitation, and an immersive learning
               experience. Whether we’re co-creating leadership journeys,
@@ -62,7 +50,9 @@ const Intro = () => {
               together!
             </p>
           </div>
-          <button>LET’S CONNECT WITH TANISHA</button>
+          <button className="text-sm border-2 border-black mt-8 py-3 px-5 tracking-[0.2em] bg-transparent cursor-pointer transition-all hover:bg-black hover:text-white">
+            LET’S CONNECT WITH TANISHA
+          </button>
         </div>
       </div>
     </div>
