@@ -9,6 +9,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   font-family: "Poppins", sans-serif;

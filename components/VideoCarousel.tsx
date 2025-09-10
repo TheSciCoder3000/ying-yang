@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import "@/styles/css/VideoCarousel.css";
+// import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "./Image";
@@ -44,12 +44,13 @@ const VideoCarousel = () => {
     const quote = card.querySelector(".quote");
 
     gsap.to(vid, {
-      width: "20rem",
+      width: "30rem",
       ease: "none",
     });
 
     gsap.to(quote, {
       height: "auto",
+      width: "28rem",
       ease: "none",
     });
   };
@@ -65,6 +66,7 @@ const VideoCarousel = () => {
 
     gsap.to(quote, {
       height: 0,
+      width: "12rem",
       ease: "none",
     });
   };
@@ -77,7 +79,7 @@ const VideoCarousel = () => {
     const gapPx = parseFloat(gapValue);
 
     gsap.set(carouselRef.current, {
-      xPercent: 50,
+      xPercent: 60,
     });
 
     const horizontalTween = gsap.to(carouselRef.current, {
@@ -121,21 +123,33 @@ const VideoCarousel = () => {
     });
   }, []);
   return (
-    <div className="carousel-cont" ref={containerRef}>
-      <h1>
+    <div
+      className="pt-20 px-6 text-md lg:text-lg relative overflow-hidden min-h-[100vh]"
+      ref={containerRef}
+    >
+      <h1 className="text-4xl text-[#008080] ml-5 md:ml-20 mb-5 font-semibold max-w-[50rem]">
         We empower our clients to scale today while building for the future.
       </h1>
-      <div className="carousel" ref={carouselRef}>
+      <div className="carousel w-fit flex gap-5 flex-nowrap" ref={carouselRef}>
         {data.map((item, indx) => (
-          <div key={indx} className="carousel-item">
-            <Image src="/img/1.png" alt="cover" />
-            <div className="content">
-              <div className="quote">
-                <p>{item.description}</p>
+          <div
+            key={indx}
+            className="carousel-item flex flex-col gap-5 bg-[#ffffff12] h-fit w-fit p-2 rounded-lg"
+          >
+            <Image
+              className="w-[15rem] aspect-video overflow-hidden rounded-lg object-cover"
+              src="/img/1.png"
+              alt="cover"
+            />
+            <div className="content px-1 pb-4 w-full">
+              <div className="quote overflow-hidden text-sm font-light text-gray-400 w-[10rem] h-0 box-border">
+                <p className="pb-4">{item.description}</p>
               </div>
               <div className="header">
-                <h2>{item.title}</h2>
-                <h3>{item.subtitle}</h3>
+                <h2 className="mb-1">{item.title}</h2>
+                <h3 className="text-sm font-extralight text-gray-300">
+                  {item.subtitle}
+                </h3>
               </div>
             </div>
           </div>
