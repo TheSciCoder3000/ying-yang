@@ -38,20 +38,20 @@ const Approach = () => {
   }, []);
 
   return (
-    <div className="approach-cont">
-      <div ref={containerRef} className="main-content">
-        <h1>
+    <div className="-mt-20 w-full overflow-hidden">
+      <div ref={containerRef} className="px-20">
+        <h1 className="text-6xl font-bold text-[#008080] text-center mb-20">
           YINYANG&apos;S PROPRIETARY <br /> CULTURE SOLUTIONS
         </h1>
-        <div ref={textRef} className="text-reveal-cont">
-          <p>
+        <div ref={textRef} className="uppercase font-bold text-4xl pb-20">
+          <p className="mb-12">
             At Lorem Ipsum Leadership, we partner with you to design culturae
             intentionally. At the heart of our work is the Cultura Compass — our
             signature framework that helps organisations explorare where they
             are, imaginare where they want to go, and chart a grounded path to
             get there
           </p>
-          <p>
+          <p className="mb-12">
             It’s not a uno-tempus interventio; it’s a dynamica systema for
             long-term mutatio.
           </p>
