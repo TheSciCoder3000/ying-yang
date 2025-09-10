@@ -1,7 +1,5 @@
 "use client";
 
-// import { OnImageLoad } from "@/lib/gsap/loader";
-import "@/styles/css/Cards.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -51,8 +49,8 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <div className="cards-container">
-      <div className="stacked-cards">
+    <div className="cards-container flex flex-col items-center">
+      <div className="flex flex-col items-center justify-center w-[85%]">
         {cardData.map((card, indx) => (
           <Card
             color={card.color}
@@ -103,22 +101,16 @@ const Card: React.FC<CardProps> = ({
   }, []);
 
   return (
-    <div className="card" ref={cardRef} style={{ backgroundColor: color }}>
-      <h1>{indx + 1}</h1>
-      <div className="card-content">
+    <div
+      className="card rounded-xl w-[90vw] flex gap-32 bg-black text-white p-20 items-center mb-[75vh] relative overflow-hidden"
+      style={{ transformOrigin: "-50% center", backgroundColor: color }}
+      ref={cardRef}
+    >
+      <h1 className="text-5xl font-extrabold mb-4">{indx + 1}</h1>
+      <div className="z-10 flex-1">
         <div className="card-text">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        <div className="card-icon">
-          {/* <Image
-            src={icon}
-            alt="icon"
-            height={0}
-            width={0}
-            sizes="100vw"
-            onLoad={OnImageLoad}
-          /> */}
+          <h1 className="font-extrabold text-6xl mb-4">{title}</h1>
+          <p className="w-[80%]">{description}</p>
         </div>
       </div>
     </div>
