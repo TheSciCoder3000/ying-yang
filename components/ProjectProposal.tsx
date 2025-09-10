@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import React from "react";
-import "@/styles/css/ProjectProposal.css";
 
 const AddressData = [
   {
@@ -25,39 +24,39 @@ const AddressData = [
 
 const ProjectProposal = () => {
   return (
-    <div className="proposal-cont">
-      <div className="proposal-body">
-        <div className="header">
-          <h1>
+    <div className="w-full -mt-40">
+      <div className="max-w-[70rem] mx-auto">
+        <div className="flex justify-between">
+          <h1 className="text-5xl/[1.5em]">
             Got a project in mind? <br />
             Let&apos;s talk
           </h1>
 
-          <button>
+          <button className="text-white bg-[#008080] rounded-4xl h-fit px-5 py-2 flex items-center justify-center gap-1">
             Book a call <ArrowUpRight className="arrow" size={15} />
           </button>
         </div>
 
-        <div className="proposal-info">
-          <div className="address-items">
+        <div className="mt-20 flex">
+          <div className="flex-1 flex gap-4 border-r-1 border-white">
             {AddressData.map((item, indx) => (
               <AddressItem key={indx} {...item} />
             ))}
           </div>
 
-          <div className="proposal-inquiry">
+          <div className="ml-20 flex flex-col justify-between gap-10">
             <div className="inquiry-field">
-              <h2>Business Inquiry</h2>
+              <h2 className="text-lg mb-3">Business Inquiry</h2>
               <div className="inquiry-info">
-                <p className="label">Email</p>
-                <p className="value">abc@gmail.com</p>
+                <p className="font-light text-[0.8em] mb-1">Email</p>
+                <p className="font-light text-[0.8em] ml-6">abc@gmail.com</p>
               </div>
             </div>
             <div className="inquiry-field">
-              <h2>Career</h2>
+              <h2 className="text-lg mb-3">Career</h2>
               <div className="inquiry-info">
-                <p className="label">Join Us</p>
-                <p className="value">abc@gmail.com</p>
+                <p className="font-light text-[0.8em] mb-1">Join Us</p>
+                <p className="font-light text-[0.8em] ml-6">abc@gmail.com</p>
               </div>
             </div>
           </div>
@@ -80,13 +79,13 @@ const AddressItem: React.FC<AddressItemProps> = ({
   address,
 }) => {
   return (
-    <div className="address-item-cont">
-      <h2>{title}</h2>
-      <div className="contact-info">
+    <div className="flex-1">
+      <h2 className="text-lg mb-4">{title}</h2>
+      <div className="mb-6 ml-4 text-sm">
         <p className="email">{email}</p>
-        <p className="number">{number}</p>
+        <p className="mt-2 underline">{number}</p>
       </div>
-      <h3>{address}</h3>
+      <h3 className="text-[0.9em] font-extralight">{address}</h3>
     </div>
   );
 };

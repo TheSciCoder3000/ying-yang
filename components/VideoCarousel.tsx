@@ -143,7 +143,7 @@ const VideoCarousel = () => {
             />
             <div className="content px-1 pb-4 w-full">
               <div className="quote overflow-hidden text-sm font-light text-gray-400 w-[10rem] h-0 box-border">
-                <p className="pb-4">{item.description}</p>
+                <p className="pb-4 text-xs/[1.75em]">{item.description}</p>
               </div>
               <div className="header">
                 <h2 className="mb-1">{item.title}</h2>
