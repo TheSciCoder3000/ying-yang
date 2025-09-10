@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import "@/styles/css/Details.css";
 import gsap from "gsap";
 import Image from "./Image";
 
@@ -92,17 +91,19 @@ const DetailSection = () => {
   };
 
   return (
-    <div className="details-cont">
-      <div className="text-slider">
-        <div className="header">
-          <h1>FAQ</h1>
-          <p>
+    <div className="max-w-[75rem] mx-auto mt-20">
+      <div className="pb-28">
+        <div className="flex flex-col items-center">
+          <h1 className="text-6xl font-bold text-[#008080] text-center mb-8">
+            FAQ
+          </h1>
+          <p className="font-light text-sm text-white text-center max-w-[40rem]">
             Five strata of leniter integrata sapiens sanitas that curat de te
             omni tempore, non solum cum iam scis te aegrotum esse.
           </p>
         </div>
-        <div className="container">
-          <div className="summary-cont">
+        <div className="mt-20 flex gap-4">
+          <div className="flex flex-1 flex-col gap-4">
             {detailsData.map((data, indx) => (
               <Info
                 key={indx}
@@ -115,8 +116,12 @@ const DetailSection = () => {
             ))}
           </div>
 
-          <div className="img-cont">
-            <Image src={"/details.png"} alt="details" />
+          <div className="sticky top-28 flex-1 w-full h-fit">
+            <Image
+              src={"/details.png"}
+              alt="details"
+              className="rounded-4xl w-full h-80 object-cover"
+            />
           </div>
         </div>
       </div>
@@ -158,13 +163,16 @@ const Info: React.FC<InfoProps> = ({ id, onToggle, open, title, content }) => {
     if (onToggle) onToggle(id);
   };
   return (
-    <div className="info-cont">
-      <div className="summary" onClick={handleDetails}>
+    <div className="rounded-4xl overflow-hidden bg-white">
+      <div
+        className="py-4 px-8 bg-[#008080] flex justify-between items-center cursor-pointer"
+        onClick={handleDetails}
+      >
         <h3>{title}</h3>
         <div>{open ? "-" : "+"}</div>
       </div>
       <div ref={contentRef}>
-        <p>{content}</p>
+        <p className="text-black py-4 px-8">{content}</p>
       </div>
     </div>
   );
