@@ -7,46 +7,53 @@ import Image from "./Image";
 
 gsap.registerPlugin(useGSAP);
 
+const noImgCont = 12;
+
 const InfiniteScroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    const movingTimeline = () => {
-      gsap.set(containerRef.current, {
-        xPercent: -50,
-      });
-      gsap
-        .timeline({
-          defaults: { ease: "none", repeat: -1 },
-        })
-        .to(containerRef.current, {
-          xPercent: 0,
-          duration: 20,
-        })
-        .set(containerRef.current, { x: 0 });
-    };
-    movingTimeline();
-  });
+  useGSAP(
+    () => {
+      const movingTimeline = () => {
+        gsap.set(".img-cont", {
+          xPercent: -50 * noImgCont,
+        });
+        gsap
+          .timeline({
+            defaults: { ease: "none", repeat: -1 },
+          })
+          .to(".img-cont", {
+            xPercent: 0,
+            duration: 20,
+          })
+          .set(".img-cont", { x: 0 });
+      };
+      movingTimeline();
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div className="infinite-scroll">
-      <div className="scroll-text" ref={containerRef}>
-        {Array.from(Array(8).keys()).map((indx) => (
-          <p className="text-span" key={indx}>
-            {/* Because life&apos;s too short for boring designs ~ */}
+    <div className="mt-20 relative overflow-hidden h-18" ref={containerRef}>
+      <p className="w-fit min-w-fit text-nowrap whitespace-nowrap">
+        {Array.from(Array(noImgCont).keys()).map((indx) => (
+          <div
+            key={indx}
+            className="img-cont inline-flex gap-5 h-fit min-w-fit items-center pr-4"
+          >
             <Image
-              className="company-logo"
+              className="block h-15 w-15 object-contain"
               src="/companies/bmw.png"
               alt="bmw"
             />
             <Image
-              className="company-logo"
+              className="block h-12 w-fit object-contain"
               src="/companies/yinyang-logo.png"
               alt="bmw"
             />
-          </p>
+          </div>
         ))}
-      </div>
+      </p>
     </div>
   );
 };
