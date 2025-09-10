@@ -45,7 +45,7 @@ const Ratings = () => {
   );
   return (
     <div className="pt-32 min-w-screen pb-36" ref={containerRef}>
-      <h2 className="text-xl font-semibold text-center mb-12">lorem ipsum</h2>
+      <h2 className="text-4xl text-[#008080] text-center mb-12">lorem ipsum</h2>
       <div className="flex justify-between items-center w-full max-w-[60rem] mx-auto">
         {ratingsData.map((data, indx) => (
           <ProgressBar key={indx} title={data.title} value={data.value} />
