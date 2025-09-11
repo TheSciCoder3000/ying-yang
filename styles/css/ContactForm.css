@@ -26,6 +26,7 @@ form input {
 }
 form textarea {
   grid-column: span 2;
+  grid-row: span 3;
 }
 form .button-cont {
   margin-top: 1rem;
