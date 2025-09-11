@@ -33,7 +33,7 @@
   }
 }
 .cards-container .stacked-cards .card h1 {
-  font-size: clamp(2em, 10vw, 4em);
+  font-size: clamp(2em, 10vw, 3em);
   margin-bottom: 1rem;
 }
 .cards-container .stacked-cards .card .card-content {

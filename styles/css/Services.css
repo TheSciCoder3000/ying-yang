@@ -5,5 +5,5 @@
 .services-cont h1.main-header {
   margin-bottom: clamp(10rem, 10vw, 20rem);
   text-align: right;
-  margin-right: 5rem;
+  padding-right: 5rem;
 }/*# sourceMappingURL=Services.css.map */

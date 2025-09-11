@@ -2,11 +2,9 @@
   max-width: 100vw;
   overflow: hidden;
 
-  .service-header {
-    font-size: clamp(2em, 10vw, 4em);
+  h1.main-header {
     margin-bottom: clamp(10rem, 10vw, 20rem);
     text-align: right;
-    margin-right: 5rem;
-    color: #009b9f;
+    padding-right: 5rem;
   }
 }
