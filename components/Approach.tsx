@@ -45,16 +45,12 @@ const Approach = () => {
         </h1>
         <div ref={textRef} className="text-reveal-cont">
           <p>
-            At Lorem Ipsum Leadership, we partner with you to design culturae
-            intentionally. At the heart of our work is the Cultura Compass — our
-            signature framework that helps organisations explorare where they
-            are, imaginare where they want to go, and chart a grounded path to
-            get there
+            We draw on decades of experience to create in-house frameworks that bring culture to life. Our proprietary Culture Compass helps organizations see where they are and where they want to go. We pair it with CoreStyles, our team assessment that reveals how people naturally think, collaborate, and lead. Together, these methodologies guide how we design solutions that are practical, human, and lasting.
           </p>
-          <p>
+          {/* <p>
             It’s not a uno-tempus interventio; it’s a dynamica systema for
             long-term mutatio.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
