@@ -16,7 +16,9 @@ const imagesData = [
     rotate: "8deg", // "-5deg",
     counterRotate: "10deg",
     customStyles: {
-      width: "19rem",
+      width: "22rem",
+      height: "30rem",
+      objectFit: "cover",
     } as React.CSSProperties,
   },
   {
@@ -27,18 +29,18 @@ const imagesData = [
       width: "22rem",
     } as React.CSSProperties,
   },
-  {
-    path: "/img/3.JPG",
-    rotate: "5deg", // "5deg",
-    counterRotate: "7deg",
-    customStyles: {
-      width: "32rem",
-    } as React.CSSProperties,
-  },
+  // {
+  //   path: "/img/3.JPG",
+  //   rotate: "5deg", // "5deg",
+  //   counterRotate: "7deg",
+  //   customStyles: {
+  //     width: "32rem",
+  //   } as React.CSSProperties,
+  // },
   {
     path: "/img/2.JPG",
-    rotate: "-5deg", // "-5deg",
-    counterRotate: "-7deg",
+    rotate: "5deg", // "-5deg",
+    counterRotate: "7deg",
     customStyles: {
       width: "22rem",
     } as React.CSSProperties,
