@@ -92,7 +92,7 @@ const Card: React.FC<CardProps> = ({
       ease: "none",
       scrollTrigger: {
         trigger: cardRef.current,
-        start: "top " + (100 - 10 * indx),
+        start: "top 25%-=" + 10 * indx,
         end: "bottom bottom",
         endTrigger: ".cards-container",
         scrub: true,
