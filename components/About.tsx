@@ -6,35 +6,62 @@ import Image from "./Image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getHighestZIndexElement, getIndex } from "@/lib/util";
+import usePinHook from "@/lib/hooks/usePinHook";
 
 gsap.registerPlugin(useGSAP);
 
 const imagesData = [
   {
-    path: "/img/3.png",
-    rotate: "-5deg",
-    counterRotate: "-7deg",
+    path: "/img/1.JPG",
+    rotate: "8deg", // "-5deg",
+    counterRotate: "10deg",
+    customStyles: {
+      width: "19rem",
+    } as React.CSSProperties,
   },
   {
-    path: "/img/2.png",
-    rotate: "5deg",
+    path: "/img/4.JPG",
+    rotate: "-8deg", // "-5deg",
+    counterRotate: "-10deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
+  },
+  {
+    path: "/img/3.JPG",
+    rotate: "5deg", // "5deg",
     counterRotate: "7deg",
+    customStyles: {
+      width: "32rem",
+    } as React.CSSProperties,
   },
   {
-    path: "/img/1.png",
-    rotate: "1deg",
-    counterRotate: "3deg",
+    path: "/img/2.JPG",
+    rotate: "-5deg", // "-5deg",
+    counterRotate: "-7deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
   },
 ];
 
+const vars: gsap.TweenVars = {
+  top: "50%",
+  left: "50%",
+  transformOrigin: "center center",
+  xPercent: -50,
+  yPercent: -50,
+};
+
 const About = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = usePinHook();
 
   const handleImageClick = () => {
     if (!containerRef.current) return;
     const images = containerRef.current.querySelectorAll(".about-image");
     const topImage = getHighestZIndexElement(images);
 
+    console.log(topImage);
     if (!topImage) return;
 
     const tl = gsap.timeline();
@@ -43,6 +70,7 @@ const About = () => {
       .to(
         images,
         {
+          ...vars,
           zIndex: (index) => {
             const z = getIndex(images[index]);
             return 1 + (z % images.length);
@@ -53,6 +81,7 @@ const About = () => {
       .to(
         images,
         {
+          ...vars,
           scale: (index) => {
             const z = getIndex(images[index]);
             return z === images.length ? 0.85 : 0.8;
@@ -67,6 +96,7 @@ const About = () => {
         "+=0.01"
       )
       .to(topImage, {
+        ...vars,
         opacity: 1,
         scale: 0.8,
         rotate: () => imagesData[Array.from(images).indexOf(topImage)].rotate,
@@ -74,6 +104,10 @@ const About = () => {
   };
 
   useEffect(() => {
+    gsap.set(".about-image", {
+      ...vars,
+      display: "block",
+    });
     const interval = setInterval(handleImageClick, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -82,7 +116,7 @@ const About = () => {
     <div className="about-cont" ref={containerRef}>
       <div className="main">
         <div className="about-content">
-          <h2>About us:</h2>
+          <h1 className="main-header">About us:</h1>
           <div>
             <p>
               Our founder Tanisha, together with her partners at YinYang, are
@@ -120,6 +154,7 @@ const About = () => {
               style={{
                 rotate: img.rotate,
                 zIndex: indx + 1,
+                ...img.customStyles,
               }}
             />
           ))}

@@ -78,7 +78,7 @@
 }
 .details-cont .text-slider .container .img-cont {
   position: sticky;
-  top: 7rem;
+  top: 16rem;
   flex: 1;
   width: 100%;
   height: fit-content;
