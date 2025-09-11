@@ -23,6 +23,9 @@
   }
 
   .content {
+    max-height: 100vh;
+    overflow: visible;
+
     .content-header {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -40,41 +43,40 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 2rem;
-      row-gap: 3rem;
+      row-gap: 1rem;
 
       .item-cont {
-        padding: 2rem;
-        border-radius: 25px;
-        background-color: rgba(255, 255, 255, 0.1);
         display: flex;
+        align-items: center;
         flex-direction: column;
-        justify-content: space-between;
+
+        img {
+          margin-bottom: 1rem;
+          aspect-ratio: 1/1;
+          height: 3.7rem;
+          width: 3.7rem;
+          object-fit: cover;
+          border-radius: 20px;
+        }
 
         .item-content {
+          max-width: 15rem;
+
           h1 {
-            font-size: 0.9em;
+            text-align: center;
+            font-size: 1em;
             font-weight: 400;
             margin-bottom: 0.5rem;
           }
 
           p {
-            font-size: 0.8em;
+            text-align: center;
+            font-size: 0.75em;
             font-weight: 300;
             color: rgb(224, 224, 224);
             margin-bottom: 2rem;
           }
         }
-
-        img {
-          width: 100%;
-          height: 12rem;
-          object-fit: cover;
-          border-radius: 20px;
-        }
-      }
-
-      .item-cont:nth-child(3n + 2) {
-        background-color: #009b9f; // your highlight color
       }
     }
   }

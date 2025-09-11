@@ -7,40 +7,63 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-const Data = [
+const DataIndiv = [
   {
-    title: "Growth Engine",
+    title: "Executive & Leadership Coaching",
+    description: "Unlock clarity and influence to scale faster accelerate",
+    image: "/icons/bar.svg",
+  },
+  {
+    title: "Manager Development",
     description:
-      "Build best-in-class capabilities to get your growth engine ready for 10x scale",
-    image: "/we-do/1.png",
+      "Turn first-time or seasoned people leaders into capable multipliers of high performance.",
+    image: "/icons/leader.svg",
   },
   {
-    title: "Organisation Design and Leadership Assessment",
-    description: "Set up your org to fit your growth business plan",
-    image: "/we-do/2.png",
-  },
-  {
-    title: "Farm-to-Table Solutions",
+    title: "High-Potential Development",
     description:
-      "Growing chemical-free crops with methods for healthier, sustainable farming.",
-    image: "/we-do/3.png",
+      "Fast-track future leaders for bigger roles and responsibilities.",
+    image: "/icons/growth.svg",
   },
+];
+const DataTeams = [
   {
-    title: "Growth Engine",
+    title: "CoreStyles™ Team Diagnostic",
     description:
-      "Build best-in-class capabilities to get your growth engine ready for 10x scale",
-    image: "/we-do/1.png",
+      "Transform collaboration, resolve conflict, and build high-performing teams using psychometric tools.",
+    image: "/icons/managers.svg",
   },
   {
-    title: "Organisation Design and Leadership Assessment",
-    description: "Set up your org to fit your growth business plan",
-    image: "/we-do/2.png",
-  },
-  {
-    title: "Farm-to-Table Solutions",
+    title: "Leadership Team Visioning",
     description:
-      "Growing chemical-free crops with methods for healthier, sustainable farming.",
-    image: "/we-do/3.png",
+      "Align your top team on a unified future vision, values and ways of working.",
+    image: "/icons/managers.svg",
+  },
+  {
+    title: "Strategic Team Offsite",
+    description:
+      "Design immersive experiences that build alignment, clarity, and momentum.",
+    image: "/icons/growth.svg",
+  },
+];
+const DataOrg = [
+  {
+    title: "Growth Barriers Diagnostic",
+    description:
+      "Uncover what’s holding your team back — from retention and engagement to capability and communication gaps — and unlock targeted solutions to scale faster.",
+    image: "/icons/founder.svg",
+  },
+  {
+    title: "Build Your Culture Architecture",
+    description:
+      "Codify “how we lead here” into a structured model that drives clarity, consistency, and performance across the company.",
+    image: "/icons/bar.svg",
+  },
+  {
+    title: "Embed Culture Into People Systems",
+    description:
+      "Hardwire that model into hiring, onboarding, performance management, succession and rewards so culture lives in daily operations",
+    image: "/icons/leader.svg",
   },
 ];
 
@@ -52,16 +75,14 @@ const WhatWeDo = () => {
     () => {
       if (!containerRef.current) return;
 
-      gsap.from(".item-cont", {
-        y: 100,
-        opacity: 0,
+      gsap.from(".content-body", {
+        xPercent: (indx) => (indx % 2 === 0 ? 110 : -110),
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 15%",
-          toggleActions: "play none none none",
+          trigger: ".content",
+          start: "top 50",
+          pin: true,
+          scrub: true,
         },
-        stagger: 0.22,
-        duration: 0.54,
       });
     },
     { scope: containerRef }
@@ -79,13 +100,18 @@ const WhatWeDo = () => {
       </div>
 
       <div className="content">
-        <div className="content-header">
-          <h1>Product</h1>
-          <h1>Services</h1>
-          <h1>Learning</h1>
+        <div className="content-body">
+          {DataIndiv.map((item, indx) => (
+            <Item key={indx} {...item} />
+          ))}
         </div>
         <div className="content-body">
-          {Data.map((item, indx) => (
+          {DataTeams.map((item, indx) => (
+            <Item key={indx} {...item} />
+          ))}
+        </div>
+        <div className="content-body">
+          {DataOrg.map((item, indx) => (
             <Item key={indx} {...item} />
           ))}
         </div>
@@ -102,11 +128,11 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({ title, description, image }) => {
   return (
     <div className="item-cont">
+      <Image src={image} alt={image} />
       <div className="item-content">
         <h1>{title}</h1>
         <p>{description}</p>
       </div>
-      <Image src={image} alt={image} />
     </div>
   );
 };
