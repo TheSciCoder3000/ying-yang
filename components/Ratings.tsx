@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import ProgressBar from "./ProgressBar";
 import "@/styles/css/Ratings.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import usePinHook from "@/lib/hooks/usePinHook";
 
 const ratingsData = [
   {
@@ -29,21 +30,8 @@ const ratingsData = [
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Ratings = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = usePinHook();
 
-  useGSAP(
-    () => {
-      if (!containerRef.current) return;
-
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        pin: true,
-        pinSpacing: false,
-      });
-    },
-    { scope: containerRef }
-  );
   return (
     <div className="ratings" ref={containerRef}>
       <h1 className="main-header">lorem ipsum</h1>
