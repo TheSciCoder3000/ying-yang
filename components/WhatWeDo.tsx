@@ -78,8 +78,8 @@ const WhatWeDo = () => {
       gsap.from(".content-body", {
         xPercent: (indx) => (indx % 2 === 0 ? 110 : -110),
         scrollTrigger: {
-          trigger: ".content",
-          start: "top 50",
+          trigger: ".content-cont",
+          start: "top 20",
           pin: true,
           scrub: true,
         },
@@ -99,21 +99,30 @@ const WhatWeDo = () => {
         </p>
       </div>
 
-      <div className="content">
+      <div className="content-cont">
         <div className="content-body">
-          {DataIndiv.map((item, indx) => (
-            <Item key={indx} {...item} />
-          ))}
+          <h3 className="content-header">For Individuals</h3>
+          <div className="content-items">
+            {DataIndiv.map((item, indx) => (
+              <Item key={indx} {...item} />
+            ))}
+          </div>
         </div>
         <div className="content-body">
-          {DataTeams.map((item, indx) => (
-            <Item key={indx} {...item} />
-          ))}
+          <h3 className="content-header">For Teams</h3>
+          <div className="content-items">
+            {DataTeams.map((item, indx) => (
+              <Item key={indx} {...item} />
+            ))}
+          </div>
         </div>
         <div className="content-body">
-          {DataOrg.map((item, indx) => (
-            <Item key={indx} {...item} />
-          ))}
+          <h3 className="content-header">For Organizations</h3>
+          <div className="content-items">
+            {DataOrg.map((item, indx) => (
+              <Item key={indx} {...item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

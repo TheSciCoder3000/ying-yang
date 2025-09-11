@@ -22,24 +22,17 @@
     }
   }
 
-  .content {
+  .content-cont {
     max-height: 100vh;
     overflow: visible;
 
     .content-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-bottom: 4rem;
-
-      h1 {
-        grid-column: span 1;
-        font-weight: 500;
-        font-size: 2.5em;
-        text-align: center;
-      }
+      font-weight: 400;
+      font-size: 1.25em;
+      margin-bottom: 1rem;
     }
 
-    .content-body {
+    .content-items {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 2rem;
@@ -60,7 +53,7 @@
         }
 
         .item-content {
-          max-width: 15rem;
+          max-width: 18rem;
 
           h1 {
             text-align: center;

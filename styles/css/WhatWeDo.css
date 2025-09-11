@@ -19,33 +19,27 @@
   font-weight: 300;
   color: rgb(168, 168, 168);
 }
-.we-do-cont .content {
+.we-do-cont .content-cont {
   max-height: 100vh;
   overflow: visible;
 }
-.we-do-cont .content .content-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 4rem;
+.we-do-cont .content-cont .content-header {
+  font-weight: 400;
+  font-size: 1.25em;
+  margin-bottom: 1rem;
 }
-.we-do-cont .content .content-header h1 {
-  grid-column: span 1;
-  font-weight: 500;
-  font-size: 2.5em;
-  text-align: center;
-}
-.we-do-cont .content .content-body {
+.we-do-cont .content-cont .content-items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2rem;
   row-gap: 1rem;
 }
-.we-do-cont .content .content-body .item-cont {
+.we-do-cont .content-cont .content-items .item-cont {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.we-do-cont .content .content-body .item-cont img {
+.we-do-cont .content-cont .content-items .item-cont img {
   margin-bottom: 1rem;
   aspect-ratio: 1/1;
   height: 3.7rem;
@@ -53,16 +47,16 @@
   object-fit: cover;
   border-radius: 20px;
 }
-.we-do-cont .content .content-body .item-cont .item-content {
-  max-width: 15rem;
+.we-do-cont .content-cont .content-items .item-cont .item-content {
+  max-width: 18rem;
 }
-.we-do-cont .content .content-body .item-cont .item-content h1 {
+.we-do-cont .content-cont .content-items .item-cont .item-content h1 {
   text-align: center;
   font-size: 1em;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
-.we-do-cont .content .content-body .item-cont .item-content p {
+.we-do-cont .content-cont .content-items .item-cont .item-content p {
   text-align: center;
   font-size: 0.75em;
   font-weight: 300;
