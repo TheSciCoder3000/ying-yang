@@ -20,4 +20,80 @@ header img {
 header .menu {
   font-weight: bolder;
   color: #bc2637;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.nav-menu {
+  opacity: 0;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2f303d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.nav-menu .close-btn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 1.5em;
+  background-color: transparent;
+  border: none;
+  font-weight: 700;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.nav-menu .nav-container {
+  background: #bc2637;
+  width: 100%;
+  height: 100%;
+  max-height: 30rem;
+  max-width: 35rem;
+  position: relative;
+  rotate: -6deg;
+}
+.nav-menu .nav-container .nav-header {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  padding: 0.3rem 3rem;
+  transform: translateY(-50%);
+  font-size: 1.75em;
+  color: black;
+  background: #68a7f4;
+  width: fit-content;
+  height: fit-content;
+}
+.nav-menu .nav-container .menu-items {
+  padding-top: 4rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.nav-menu .nav-container .menu-items h1 {
+  font-size: 4em;
+  text-transform: uppercase;
+}
+.nav-menu .nav-container .menu-items .nav-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+.nav-menu .nav-container .menu-items .nav-item .sub-text {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  left: 0;
+  bottom: -100%;
+  color: #2f303d;
 }/*# sourceMappingURL=Header.css.map */
