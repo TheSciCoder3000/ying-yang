@@ -21,9 +21,6 @@
   align-items: center;
 }
 .details-cont .text-slider .header h1 {
-  font-size: clamp(2em, 10vw, 3.5em);
-  font-weight: bold;
-  color: #008080;
   text-align: center;
   margin-bottom: 2rem;
 }

@@ -40,12 +40,18 @@ const Approach = () => {
   return (
     <div className="approach-cont">
       <div ref={containerRef} className="main-content">
-        <h1>
+        <h1 className="main-header">
           YINYANG&apos;S PROPRIETARY <br /> CULTURE SOLUTIONS
         </h1>
         <div ref={textRef} className="text-reveal-cont">
           <p>
-            We draw on decades of experience to create in-house frameworks that bring culture to life. Our proprietary Culture Compass helps organizations see where they are and where they want to go. We pair it with CoreStyles, our team assessment that reveals how people naturally think, collaborate, and lead. Together, these methodologies guide how we design solutions that are practical, human, and lasting.
+            We draw on decades of experience to create in-house frameworks that
+            bring culture to life. Our proprietary Culture Compass helps
+            organizations see where they are and where they want to go. We pair
+            it with CoreStyles, our team assessment that reveals how people
+            naturally think, collaborate, and lead. Together, these
+            methodologies guide how we design solutions that are practical,
+            human, and lasting.
           </p>
           {/* <p>
             It’s not a uno-tempus interventio; it’s a dynamica systema for

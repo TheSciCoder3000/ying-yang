@@ -95,7 +95,7 @@ const DetailSection = () => {
     <div className="details-cont">
       <div className="text-slider">
         <div className="header">
-          <h1>FAQ</h1>
+          <h1 className="main-header">FAQ</h1>
           <p>
             Five strata of leniter integrata sapiens sanitas that curat de te
             omni tempore, non solum cum iam scis te aegrotum esse.

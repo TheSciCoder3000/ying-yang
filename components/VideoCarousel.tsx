@@ -122,7 +122,7 @@ const VideoCarousel = () => {
   }, []);
   return (
     <div className="carousel-cont" ref={containerRef}>
-      <h1>
+      <h1 className="main-header">
         We empower our clients to scale today while building for the future.
       </h1>
       <div className="carousel" ref={carouselRef}>

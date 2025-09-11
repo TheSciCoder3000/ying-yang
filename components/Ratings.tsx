@@ -46,7 +46,7 @@ const Ratings = () => {
   );
   return (
     <div className="ratings" ref={containerRef}>
-      <h2>lorem ipsum</h2>
+      <h1 className="main-header">lorem ipsum</h1>
       <div className="ratings-content">
         {ratingsData.map((data, indx) => (
           <ProgressBar key={indx} title={data.title} value={data.value} />
