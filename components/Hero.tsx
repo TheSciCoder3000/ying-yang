@@ -40,7 +40,14 @@ const Hero = () => {
       })
       .from(subtitleRef.current, { y: -100, opacity: 0 }, 0);
 
-    masterTl.add(headerTl).add(secondTl);
+    const thirdTl = gsap
+      .timeline()
+      .from("header img, header button", { opacity: 0, y: -100, stagger: 0.3 });
+
+    const scrollTl = gsap
+      .timeline()
+      .from(".infinite-scroll", { left: "50%", right: "50%" });
+    masterTl.add(headerTl).add(scrollTl, 2).add(secondTl).add(thirdTl, "<");
   });
   return (
     <div className="hero-cont">
