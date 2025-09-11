@@ -18,12 +18,12 @@ export default function Home() {
       <Hero />
       <About />
       {/* <Ratings /> */}
-      <Intro />
       <WhatWeDo />
+      <VideoCarousel />
+      <Intro />
       <Services />
       <Approach />
       <DetailSection />
-      <VideoCarousel />
       {/* <ProjectProposal /> */}
       <Contact />
       <Footer />

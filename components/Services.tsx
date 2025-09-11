@@ -11,25 +11,29 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Services = () => {
   const headerRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLHeadingElement>(null);
 
-  useGSAP(() => {
-    gsap.to(headerRef.current, {
-      ease: "none",
-      scrollTrigger: {
-        trigger: headerRef.current,
-        start: "top 7%",
-        end: "bottom bottom",
-        endTrigger: ".cards-container",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-        // markers: true,
-      },
-    });
-  });
+  useGSAP(
+    () => {
+      gsap.to(headerRef.current, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 7%",
+          end: "bottom bottom",
+          endTrigger: ".cards-container",
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+          // markers: true,
+        },
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div className="services-cont">
+    <div ref={containerRef} className="services-cont">
       <h1 ref={headerRef} className="main-header">
         JOURNEY WITH YINYANG
       </h1>

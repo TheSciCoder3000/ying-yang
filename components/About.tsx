@@ -54,7 +54,7 @@ const vars: gsap.TweenVars = {
 };
 
 const About = () => {
-  const containerRef = usePinHook();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleImageClick = () => {
     if (!containerRef.current) return;

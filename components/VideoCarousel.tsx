@@ -5,8 +5,9 @@ import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "./Image";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const data = [
   {
@@ -69,57 +70,60 @@ const VideoCarousel = () => {
     });
   };
 
-  useEffect(() => {
-    if (!carouselRef.current) return;
+  useGSAP(
+    () => {
+      if (!carouselRef.current) return;
 
-    const style = window.getComputedStyle(carouselRef.current);
-    const gapValue = style.getPropertyValue("gap");
-    const gapPx = parseFloat(gapValue);
+      const style = window.getComputedStyle(carouselRef.current);
+      const gapValue = style.getPropertyValue("gap");
+      const gapPx = parseFloat(gapValue);
 
-    gsap.set(carouselRef.current, {
-      xPercent: 50,
-    });
+      gsap.set(carouselRef.current, {
+        xPercent: 50,
+      });
 
-    const horizontalTween = gsap.to(carouselRef.current, {
-      xPercent: -50,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 0%",
-        end: `0%+=5000`,
-        toggleActions: "play none none none",
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    const cards = carouselRef.current?.querySelectorAll(".carousel-item");
-    gsap.set(".quote", {
-      height: 0,
-    });
-    cards?.forEach((card) => {
-      ScrollTrigger.create({
-        trigger: card,
-        containerAnimation: horizontalTween,
-        start: "top 60%",
-        end: `100%+=${gapPx} 60%`,
-        invalidateOnRefresh: true,
-        onEnter: () => {
-          ScaleUpAnime(card);
-        },
-        onEnterBack: () => {
-          ScaleUpAnime(card);
-        },
-        onLeaveBack: () => {
-          ScaleDownAnime(card);
-        },
-        onLeave: () => {
-          ScaleDownAnime(card);
+      const horizontalTween = gsap.to(carouselRef.current, {
+        xPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 0%",
+          end: `0%+=5000`,
+          toggleActions: "play none none none",
+          scrub: true,
+          pin: true,
+          invalidateOnRefresh: true,
         },
       });
-    });
-  }, []);
+
+      const cards = carouselRef.current?.querySelectorAll(".carousel-item");
+      gsap.set(".quote", {
+        height: 0,
+      });
+      cards?.forEach((card) => {
+        ScrollTrigger.create({
+          trigger: card,
+          containerAnimation: horizontalTween,
+          start: "top 60%",
+          end: `100%+=${gapPx} 60%`,
+          invalidateOnRefresh: true,
+          onEnter: () => {
+            ScaleUpAnime(card);
+          },
+          onEnterBack: () => {
+            ScaleUpAnime(card);
+          },
+          onLeaveBack: () => {
+            ScaleDownAnime(card);
+          },
+          onLeave: () => {
+            ScaleDownAnime(card);
+          },
+        });
+      });
+    },
+    { scope: containerRef }
+  );
   return (
     <div className="carousel-cont" ref={containerRef}>
       <h1 className="main-header">
