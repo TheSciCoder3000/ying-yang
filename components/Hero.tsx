@@ -1,40 +1,53 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "@/styles/css/Hero.css";
 import InfiniteScroll from "./InfiniteScroll";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, useGSAP);
 
 const Hero = () => {
+  const headerRef = useRef<HTMLHeadingElement>(null);
   const spanRef = useRef<HTMLSpanElement>(null);
-  const span2Ref = useRef<HTMLSpanElement>(null);
+  const subtitleRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
+    const headerSplit = new SplitText(headerRef.current, { type: "words" });
+    const words = headerSplit.words;
     const splitText = new SplitText(spanRef.current, { type: "chars" });
-    const splitText2 = new SplitText(span2Ref.current, { type: "chars" });
     const chars = splitText.chars;
-    const chars2 = splitText2.chars;
 
-    gsap
-      .timeline()
+    const masterTl = gsap.timeline();
+
+    const headerTl = gsap.timeline();
+
+    headerTl.from(words, {
+      stagger: 0.2,
+      opacity: 0,
+      scaleX: 0.5,
+    });
+
+    const secondTl = gsap.timeline();
+
+    secondTl
       .to(chars, {
         color: "#009B9F",
         duration: 0.5,
         stagger: 0.2,
       })
-      .to(chars2, {
-        color: "#3C78D8",
-        duration: 0.5,
-        stagger: 0.2,
-      });
-  }, []);
+      .from(subtitleRef.current, { y: -100, opacity: 0 }, 0);
+
+    masterTl.add(headerTl).add(secondTl);
+  });
   return (
     <div className="hero-cont">
-      <h3>YinYang Leadership began with a powerful question</h3>
-      <h1>
+      <h3 ref={subtitleRef}>
+        YinYang Leadership began with a powerful question
+      </h3>
+      <h1 ref={headerRef}>
         WHAT IF A COMPANY&apos;S <br /> <span ref={spanRef}>REAL STRENGTH</span>{" "}
         LIES IN WHAT <br />
         CANNOT BE MEASURED ON A SPREADSHEET?
