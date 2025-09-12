@@ -24,6 +24,11 @@ form textarea::placeholder {
 form input {
   grid-column: span 1;
 }
+@media screen and (max-width: 480px) {
+  form input {
+    grid-column: span 2;
+  }
+}
 form textarea {
   grid-column: span 2;
   grid-row: span 3;

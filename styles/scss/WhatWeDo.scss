@@ -1,12 +1,19 @@
+@import "./breakpoints.scss";
+
 .we-do-cont {
   max-width: 70rem;
   margin: auto;
   margin-bottom: 15rem;
+  padding: 0 1rem;
 
   .header {
     display: flex;
     align-items: center;
     margin-bottom: 7rem;
+
+    @include md {
+      flex-direction: column;
+    }
 
     h1 {
       font-size: 4em;

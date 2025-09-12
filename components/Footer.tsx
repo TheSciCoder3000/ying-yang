@@ -25,6 +25,7 @@ const Footer = () => {
               </div>
             </button>
           </div>
+
           <div className="link-group">
             <h1>MENU</h1>
             <div className="links">
@@ -33,6 +34,7 @@ const Footer = () => {
               <a href="">Contact</a>
             </div>
           </div>
+
           <div className="link-group">
             <h1>GET INSPIRED</h1>
             <div className="links">
@@ -40,6 +42,7 @@ const Footer = () => {
               <a href="">Instagram</a>
             </div>
           </div>
+
           <div className="link-group">
             <div className="social-cont">
               {/* <Link target="_blank" rel="noopener noreferrer" className="social-link" href={"https://www.linkedin.com/company/yinyang-leadership/"}>

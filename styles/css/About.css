@@ -20,6 +20,7 @@
 }
 .about-cont .main .about-content {
   flex: 1;
+  height: fit-content;
 }
 .about-cont .main .about-content p {
   font-weight: 100;
@@ -30,6 +31,11 @@
 .about-cont .main .about-images {
   flex: 1;
   position: relative;
+}
+@media screen and (max-width: 800px) {
+  .about-cont .main .about-images {
+    flex: 500px;
+  }
 }
 .about-cont .main .about-images img {
   position: absolute;

@@ -1,3 +1,5 @@
+@import "./breakpoints.scss";
+
 .about-cont {
   padding: 2rem 0rem;
   max-width: 100vw;
@@ -13,13 +15,14 @@
     display: flex;
     gap: 2rem;
 
-    @media screen and (max-width: 800px) {
+    @include breakpoint(800px) {
       flex-direction: column;
       padding: 0 1rem;
     }
 
     .about-content {
       flex: 1;
+      height: fit-content;
 
       p {
         font-weight: 100;
@@ -32,6 +35,10 @@
     .about-images {
       flex: 1;
       position: relative;
+
+      @include breakpoint(800px) {
+        flex: 500px;
+      }
 
       img {
         position: absolute;

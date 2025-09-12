@@ -1,3 +1,5 @@
+@import "./breakpoints.scss";
+
 footer {
   margin-top: 10rem;
   background-color: black;
@@ -9,9 +11,10 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    @media screen and (max-width: 800px) {
+    @include md {
       flex-direction: column;
       gap: 10rem;
+      padding: 5rem 1rem;
     }
 
     .links-cont {
@@ -19,11 +22,21 @@ footer {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 5rem;
 
-      @media screen and (max-width: 800px) {
-        flex-direction: column;
+      @include md {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1.5rem;
       }
 
       .link-group {
+        @include md {
+          &:first-child {
+            grid-column: span 3;
+          }
+        }
+
+        @include sm {
+          grid-column: span 3;
+        }
         h1 {
           font-weight: 600;
           margin-bottom: 1rem;

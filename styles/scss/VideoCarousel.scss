@@ -1,3 +1,5 @@
+@import "./breakpoints.scss";
+
 .carousel-cont {
   padding: 5rem;
   padding-top: 5rem;
@@ -6,15 +8,19 @@
   position: relative;
   margin-bottom: 80vh;
 
-  @media screen and (max-width: 800px) {
+  @include md {
     padding: 2rem;
   }
 
   h1 {
-    font-size: clamp(2em, 10vw, 3.5em);
+    font-size: clamp(1.75em, 10vw, 3.5em);
     margin-bottom: 1rem;
     margin-left: 6rem;
     line-height: 1.2em;
+
+    @include md {
+      margin-left: 0;
+    }
   }
 
   .carousel {

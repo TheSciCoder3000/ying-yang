@@ -13,6 +13,7 @@ footer .main {
   footer .main {
     flex-direction: column;
     gap: 10rem;
+    padding: 5rem 1rem;
   }
 }
 footer .main .links-cont {
@@ -22,7 +23,18 @@ footer .main .links-cont {
 }
 @media screen and (max-width: 800px) {
   footer .main .links-cont {
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  footer .main .links-cont .link-group:first-child {
+    grid-column: span 3;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .main .links-cont .link-group {
+    grid-column: span 3;
   }
 }
 footer .main .links-cont .link-group h1 {
