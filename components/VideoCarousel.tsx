@@ -16,24 +16,28 @@ const data = [
     subtitle: "Head of People & Culture",
     description:
       "“The Leadership Model that YinYang codified for us, has become our Bible. I link it in 360 Assessments, share it in leadership training - it’s the reference point for everything we do now. There’s no way I could’ve created something like that without YinYang.”",
+    image: "/testimonials/melissa-hauser.jpg",
   },
   {
     title: "Sean",
     subtitle: "Chief Operations Officer",
     description:
       "“The implementation roadmap YinYang built for us was such a game-changer. It gave us structure but also freedom to adapt. It enabled us to take ownership and continue embedding the work even after YinYang left the system.”",
+    image: "/testimonials/sean-young.jpg",
   },
   {
     title: "Farzeen Patel",
     subtitle: "Chief People Officer",
     description:
       "“Partnering with you has been a truly transformative experience for our recruitment process. Your expertise in developing clear, structured, and effective recruitment standards has not only streamlined our hiring practices but also ensured we attract and select the right talent for our organization. Thanks for your support, we now have a robust framework that aligns with our organizational values and long-term goals. We are grateful for your contribution.”",
+    image: "/testimonials/stock.png",
   },
   {
     title: "Ankur v",
     subtitle: "Managing Director, Eminent Group",
     description:
       "“YinYang Leadership helped us move beyond buzzwords to uncover the values that truly define us. The process was honest, challenging, and left our leadership team more aligned than ever.”",
+    image: "/testimonials/ankur-jain.jpg",
   },
 ];
 
@@ -135,7 +139,7 @@ const VideoCarousel = () => {
       <div className="carousel" ref={carouselRef}>
         {data.map((item, indx) => (
           <div key={indx} className="carousel-item">
-            <Image src="/img/1.png" alt="cover" />
+            <Image src={item.image} alt="cover" />
             <div className="content">
               <div className="quote">
                 <p>{item.description}</p>
