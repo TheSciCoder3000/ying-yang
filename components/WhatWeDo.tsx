@@ -92,10 +92,11 @@ const WhatWeDo = () => {
       <div className="header">
         <h1>what we do</h1>
         <p>
-          Lorem ipsum farming services promote eco-friendly practices, enhance
-          soil health, conserve water, et ensure chemical-free produce. We focus
-          on sustainability, biodiversity, atque innovative agricultural
-          solutions.
+          We help businesses unlock growth by aligning strategy with culture.
+          From refining your brand voice to building systems that scale, we
+          bridge the gap between vision and execution. Our approach blends data,
+          design, and human insight—turning business challenges into
+          opportunities for sustainable success.
         </p>
       </div>
 
