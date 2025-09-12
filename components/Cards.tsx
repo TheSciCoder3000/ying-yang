@@ -11,38 +11,42 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cardData = [
   {
-    title: "BOOK A DEMO",
+    title: "Book a Chat · Unlock the Unseen",
     description: `
-      It all starts with a click. Schedule a demo and lett us 
-      prove we're more useful than your friend who still owes you 500 bucks.
+      Start with a conversation, not a spreadsheet. 
+      Let’s explore what’s beneath the surface—what 
+      spreadsheets can’t capture, but culture can.
     `,
     icon: "/bulb.png",
     color: "#00E7ED",
   },
   {
-    title: "MEET OUR EXECUTIVE",
+    title: "Connect with a Culture Coach · Real Talk, Real Insight",
     description: `
-      No jargon, no boring PPTs. Our team explains the software 
-      in plain English (and maybe some sarcasm) so you actually get it.
+      No jargon, no fluff. Our experts speak 
+      business and humanity fluently—helping 
+      you uncover the invisible forces shaping 
+      your organization.
     `,
     icon: "/stack.png",
     color: "#00C9CE",
   },
   {
-    title: "EXPERIENCE THE BEST SUPPORT",
+    title: "Experience the Culture Compass · Evidence Meets Experience",
     description: `
-      Questions? Issues? Existential crises about accounting? 
-      Our support is faster than your client's "payment in 2 
-      working days" reply.
+      Dive into our proprietary tool. Be immersed in data-driven 
+      workshops and powerful facilitation. See insights come alive 
+      in ways you can feel—and act on.
     `,
     icon: "/tag.png",
     color: "#01B1B5",
   },
   {
-    title: "BEYOND JUST SOFTWARE",
+    title: "Thrive in Harmony · Built for Long-Term Impact",
     description: `
-      We don't just leave you hanging. We also guide you with accounting 
-      queries, tips, and shortcuts-because real business problems need real solutions.
+      Your culture becomes your growth engine. Collaboration, 
+      clarity, and conscious leadership become the bedrock of 
+      your business—not just now, but for what’s next."
     `,
     icon: "/pencil.png",
     color: "#009B9F",
