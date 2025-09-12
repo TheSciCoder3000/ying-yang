@@ -11,44 +11,45 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cardData = [
   {
-    title: "Book a Chat · Unlock the Unseen",
+    title: "Diagnose What’s Real · See Beneath the Surface",
     description: `
-      Start with a conversation, not a spreadsheet. 
-      Let’s explore what’s beneath the surface—what 
-      spreadsheets can’t capture, but culture can.
-    `,
-    icon: "/bulb.png",
+    We begin by listening deeply. Through conversations, 
+    culture diagnostics, and immersive inquiry, we uncover 
+    what’s really happening in your organization—beyond 
+    the polished reports and numbers. This is about surfacing 
+    truths that are often felt but rarely spoken.
+  `,
     color: "#00E7ED",
   },
   {
-    title: "Connect with a Culture Coach · Real Talk, Real Insight",
+    title: "Define What Matters · Clarity Through Alignment",
     description: `
-      No jargon, no fluff. Our experts speak 
-      business and humanity fluently—helping 
-      you uncover the invisible forces shaping 
-      your organization.
-    `,
-    icon: "/stack.png",
+    From what we learn, we work with you to name the core themes—your 
+    culture’s strengths, struggles, and aspirations. Together, we define 
+    what really matters: the values, behaviors, and patterns that will 
+    unlock growth and wellbeing. This becomes your cultural “north star.”
+  `,
     color: "#00C9CE",
   },
   {
-    title: "Experience the Culture Compass · Evidence Meets Experience",
+    title: "Design Through Co-Creation · Solutions That Stick",
     description: `
-      Dive into our proprietary tool. Be immersed in data-driven 
-      workshops and powerful facilitation. See insights come alive 
-      in ways you can feel—and act on.
-    `,
-    icon: "/tag.png",
+    We don’t hand you a playbook and walk away. Instead, we co-create with 
+    your leaders and teams—designing workshops, rituals, practices, and 
+    structures that are born from your reality. Because solutions designed 
+    with people—not for them—are the ones that last.
+  `,
     color: "#01B1B5",
   },
   {
-    title: "Thrive in Harmony · Built for Long-Term Impact",
+    title: "Activate With Integrity · From Insight to Everyday Practice",
     description: `
-      Your culture becomes your growth engine. Collaboration, 
-      clarity, and conscious leadership become the bedrock of 
-      your business—not just now, but for what’s next."
-    `,
-    icon: "/pencil.png",
+    Activation is where culture shifts from concept to lived experience. 
+    We guide you through facilitated sessions, leadership coaching, and 
+    on-the-ground practices that bring alignment into action. Every step 
+    is built with integrity—anchored in both evidence and empathy—so change 
+    feels authentic, not forced.
+  `,
     color: "#009B9F",
   },
 ];
@@ -64,7 +65,6 @@ const Cards = () => {
             key={indx}
             title={card.title}
             description={card.description}
-            icon={card.icon}
           />
         ))}
       </div>
@@ -76,16 +76,9 @@ interface CardProps {
   indx: number;
   title: string;
   description: string;
-  icon: string;
   color: string;
 }
-const Card: React.FC<CardProps> = ({
-  indx,
-  title,
-  description,
-  // icon,
-  color,
-}) => {
+const Card: React.FC<CardProps> = ({ indx, title, description, color }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -96,7 +89,7 @@ const Card: React.FC<CardProps> = ({
       ease: "none",
       scrollTrigger: {
         trigger: cardRef.current,
-        start: "top 25%-=" + 10 * indx,
+        start: "top 34%-=" + 10 * indx,
         end: "bottom bottom",
         endTrigger: ".cards-container",
         scrub: true,

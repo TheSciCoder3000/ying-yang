@@ -34,9 +34,14 @@ const Services = () => {
 
   return (
     <div ref={containerRef} className="services-cont">
-      <h1 ref={headerRef} className="main-header">
-        JOURNEY WITH YINYANG
-      </h1>
+      <div ref={headerRef} className="header">
+        <h1 className="main-header">JOURNEY WITH YINYANG</h1>
+        <p>
+          At YinYang, we believe culture isn’t “fixed” with off-the-shelf
+          solutions. It’s revealed, understood, and shaped—together. Here’s how
+          we walk the journey with you:
+        </p>
+      </div>
       <Cards />
     </div>
   );
