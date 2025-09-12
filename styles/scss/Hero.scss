@@ -37,34 +37,43 @@
     font-size: clamp(0.9em, 2vw, 1.45em);
   }
 
-  .infinite-scroll {
-    color: black;
+  .marquee-cont {
     position: absolute;
     left: -1rem;
     right: -1rem;
-    top: 80%;
-    padding: 0.5rem 0;
-    overflow: hidden;
+    top: 75%;
 
-    .scroll-text {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-      font-size: 1.4em;
-      display: flex;
-      width: fit-content;
-      align-items: center;
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: rgb(92, 92, 92);
+    }
+    .infinite-scroll {
+      color: black;
+      padding: 0.5rem 0;
+      overflow: hidden;
 
-      span {
+      .scroll-text {
         position: relative;
-      }
-
-      .company-logo {
-        display: inline;
-        height: 2.75rem;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 1.4em;
+        display: flex;
         width: fit-content;
-        object-fit: contain;
-        margin-right: 5rem;
+        align-items: center;
+
+        .text-span {
+          display: flex;
+          align-items: center;
+        }
+
+        .company-logo {
+          display: block;
+          height: 2.75rem;
+          width: fit-content;
+          object-fit: contain;
+          margin-right: 5rem;
+        }
       }
     }
   }

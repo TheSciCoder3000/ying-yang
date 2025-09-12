@@ -36,16 +36,23 @@
   text-align: center;
   font-size: clamp(0.9em, 2vw, 1.45em);
 }
-.hero-cont .infinite-scroll {
-  color: black;
+.hero-cont .marquee-cont {
   position: absolute;
   left: -1rem;
   right: -1rem;
-  top: 80%;
+  top: 75%;
+}
+.hero-cont .marquee-cont h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: rgb(92, 92, 92);
+}
+.hero-cont .marquee-cont .infinite-scroll {
+  color: black;
   padding: 0.5rem 0;
   overflow: hidden;
 }
-.hero-cont .infinite-scroll .scroll-text {
+.hero-cont .marquee-cont .infinite-scroll .scroll-text {
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -54,11 +61,12 @@
   width: fit-content;
   align-items: center;
 }
-.hero-cont .infinite-scroll .scroll-text span {
-  position: relative;
+.hero-cont .marquee-cont .infinite-scroll .scroll-text .text-span {
+  display: flex;
+  align-items: center;
 }
-.hero-cont .infinite-scroll .scroll-text .company-logo {
-  display: inline;
+.hero-cont .marquee-cont .infinite-scroll .scroll-text .company-logo {
+  display: block;
   height: 2.75rem;
   width: fit-content;
   object-fit: contain;

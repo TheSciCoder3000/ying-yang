@@ -29,23 +29,34 @@ const InfiniteScroll = () => {
   });
 
   return (
-    <div className="infinite-scroll">
-      <div className="scroll-text" ref={containerRef}>
-        {Array.from(Array(8).keys()).map((indx) => (
-          <p className="text-span" key={indx}>
-            {/* Because life&apos;s too short for boring designs ~ */}
-            <Image
-              className="company-logo"
-              src="/companies/bmw.png"
-              alt="bmw"
-            />
-            <Image
-              className="company-logo"
-              src="/companies/yinyang-logo.png"
-              alt="bmw"
-            />
-          </p>
-        ))}
+    <div className="marquee-cont">
+      <h2>TRUSTED BY</h2>
+      <div className="infinite-scroll">
+        <div className="scroll-text" ref={containerRef}>
+          {Array.from(Array(8).keys()).map((indx) => (
+            <div className="text-span" key={indx}>
+              {/* Because life&apos;s too short for boring designs ~ */}
+              <Image
+                className="company-logo"
+                src="/companies/bmw.png"
+                style={{ height: "4rem" }}
+                alt="bmw"
+              />
+              <Image
+                className="company-logo"
+                src="/companies/ivm-podcast.png"
+                style={{ height: "5rem", opacity: 0.6 }}
+                alt="bmw"
+              />
+              <Image
+                className="company-logo"
+                src="/companies/pratilipi.png"
+                style={{ height: "4rem", opacity: 0.6 }}
+                alt="bmw"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
