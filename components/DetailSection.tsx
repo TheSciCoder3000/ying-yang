@@ -12,6 +12,7 @@ const detailsData = [
     content: `If you’re growing fast, struggling with retention, 
           feeling the strain of change, or sensing that “something’s off,” 
           you’re ready. You don’t need a crisis to start.`,
+    image: "/questions/1.png",
   },
   {
     id: 1,
@@ -20,6 +21,7 @@ const detailsData = [
           leaders make decisions, how teams collaborate, and how people 
           feel about showing up every day. A strong culture drives performance, 
           retention, and innovation. A weak one slows everything down.`,
+    image: "/questions/1.png",
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ const detailsData = [
     content: `Not at all. HR supports it, but culture is shaped daily by 
           leaders and teams. Every decision, meeting, and conversation either 
           strengthens or weakens it. We help you take charge of that.`,
+    image: "/questions/1.png",
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ const detailsData = [
     content: `Yes, you can measure it. We use surveys, behavioural data, 
           and live observations to track shifts in trust, collaboration, 
           and leadership behaviour. `,
+    image: "/questions/1.png",
   },
   {
     id: 4,
@@ -42,6 +46,7 @@ const detailsData = [
           firms, and established organisations. What matters most is that 
           you care about your people and are ready to invest in culture 
           as a real advantage.`,
+    image: "/questions/1.png",
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ const detailsData = [
           journey where we embed systems, redesign processes, or coach 
           leaders over time. Whatever the format, we stay with you to make 
           sure the change sticks.`,
+    image: "/questions/details.png",
   },
   {
     id: 6,
@@ -58,6 +64,7 @@ const detailsData = [
     content: `No. The goal is to integrate culture work into your existing 
           rhythms. That means better one on ones, sharper meetings, and 
           clearer systems, not adding another layer of work.`,
+    image: "/questions/1.png",
   },
   {
     id: 7,
@@ -65,6 +72,7 @@ const detailsData = [
     content: `Yes. In fact, that’s where we do some of our best work. 
           Whether it’s team tension, leadership misalignment, or burnout, 
           we create a safe space to untangle it and rebuild trust.`,
+    image: "/questions/details.png",
   },
   {
     id: 8,
@@ -73,6 +81,7 @@ const detailsData = [
           We bring evidence based tools, real conversations, and a coaching 
           style that’s practical and human. You won’t just get a deck of 
           recommendations. You’ll see change play out in the day to day.`,
+    image: "/questions/1.png",
   },
   {
     id: 9,
@@ -80,14 +89,15 @@ const detailsData = [
     content: `Simple. Let’s talk about your goals and challenges. 
           From there, we’ll create a plan that fits your context, 
           your people, and your vision.`,
+    image: "/questions/details.png",
   },
 ];
 
 const DetailSection = () => {
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<number>(detailsData[0].id);
 
   const handleToggle = (id: number) => {
-    if (id === openId) setOpenId(null);
+    if (id === openId) return;
     else setOpenId(id);
   };
 
@@ -116,7 +126,13 @@ const DetailSection = () => {
           </div>
 
           <div className="img-cont">
-            <Image src={"/details.png"} alt="details" />
+            {detailsData.map((item, indx) => (
+              <QuestionImage
+                key={indx}
+                src={item.image}
+                open={item.id === openId}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -166,6 +182,53 @@ const Info: React.FC<InfoProps> = ({ id, onToggle, open, title, content }) => {
       <div ref={contentRef}>
         <p>{content}</p>
       </div>
+    </div>
+  );
+};
+
+const QuestionImage: React.FC<{ src: string; open: boolean }> = ({
+  src,
+  open,
+}) => {
+  const imageContainerRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    if (!imageContainerRef.current) return;
+    const imageEl = imageContainerRef.current.querySelector("img");
+
+    if (open)
+      gsap.fromTo(
+        imageEl,
+        {
+          x: 100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+        }
+      );
+    else
+      gsap.fromTo(
+        imageEl,
+        {
+          x: 0,
+          opacity: 1,
+        },
+        {
+          x: 100,
+          opacity: 0,
+        }
+      );
+  }, [open]);
+
+  return (
+    <div className="absolute-img-cont" ref={imageContainerRef}>
+      <Image
+        src={src}
+        alt={src}
+        className="absolute w-full h-full top-0 left-0 opacity-0"
+      />
     </div>
   );
 };
