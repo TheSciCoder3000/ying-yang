@@ -4,7 +4,7 @@
   margin-top: 10rem;
   min-width: 100vw;
   position: relative;
-  margin-bottom: 70vh;
+  margin-bottom: 80vh;
 }
 @media screen and (max-width: 800px) {
   .carousel-cont {

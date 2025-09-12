@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { Flip, ScrollTrigger } from "gsap/all";
@@ -114,6 +114,19 @@ const VideoCarousel = () => {
     },
     { scope: containerRef }
   );
+
+  useEffect(() => {
+    function updateMargin() {
+      const abs = containerRef.current!;
+      const other = document.querySelector(".absolute-cont") as HTMLDivElement;
+      const height = other.offsetHeight;
+      abs.style.marginBottom = height + "px";
+    }
+
+    addEventListener("load", updateMargin);
+
+    return () => removeEventListener("load", updateMargin);
+  });
   return (
     <div className="carousel-cont" ref={containerRef}>
       <h1 className="main-header">
