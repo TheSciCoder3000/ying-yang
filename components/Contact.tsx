@@ -6,13 +6,13 @@ import ContactForm from "./ContactForm";
 
 const Checklists = [
   {
-    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+    label: "100% System integration",
   },
   {
-    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+    label: "92% Uptake in Leadership Language",
   },
   {
-    label: "Lorem NDA? Ipsum vero, simpliciter pete.",
+    label: "Culture shifts within 90 days",
   },
 ];
 
