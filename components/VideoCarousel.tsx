@@ -62,7 +62,7 @@ const VideoCarousel = () => {
       const gapPx = parseFloat(gapValue);
 
       gsap.set(carouselRef.current, {
-        xPercent: 50,
+        xPercent: 100,
       });
 
       const masterTl = gsap.timeline();
