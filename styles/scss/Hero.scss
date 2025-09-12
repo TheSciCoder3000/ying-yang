@@ -42,6 +42,7 @@
     left: -1rem;
     right: -1rem;
     top: 75%;
+    overflow: hidden;
 
     h2 {
       text-align: center;
@@ -51,7 +52,6 @@
     .infinite-scroll {
       color: black;
       padding: 0.5rem 0;
-      overflow: hidden;
 
       .scroll-text {
         position: relative;

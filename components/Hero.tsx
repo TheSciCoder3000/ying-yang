@@ -46,7 +46,7 @@ const Hero = () => {
 
     const scrollTl = gsap
       .timeline()
-      .from(".infinite-scroll", { left: "50%", right: "50%" });
+      .from(".marquee-cont", { left: "50%", right: "50%" });
     masterTl.add(headerTl).add(scrollTl, 2).add(secondTl).add(thirdTl, "<");
   });
   return (
