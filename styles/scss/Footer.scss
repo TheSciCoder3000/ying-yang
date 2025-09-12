@@ -110,6 +110,11 @@ footer {
           display: flex;
           gap: 1rem;
           margin-bottom: 1.25rem;
+
+          .social-link {
+            text-decoration: none;
+            color: white;
+          }
         }
 
         .logo {

@@ -3,8 +3,9 @@
 import React from "react";
 import "@/styles/css/Footer.css";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
+import { SiLinkedin } from "react-icons/si";
 import Image from "./Image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -41,9 +42,22 @@ const Footer = () => {
           </div>
           <div className="link-group">
             <div className="social-cont">
-              <SiInstagram className="icon" size={20} />
-              <SiFacebook className="icon" size={20} />
-              <SiLinkedin className="icon" size={20} />
+              {/* <Link target="_blank" rel="noopener noreferrer" className="social-link" href={"https://www.linkedin.com/company/yinyang-leadership/"}>
+                <SiInstagram className="icon" size={20} />
+              </Link>
+
+              <Link target="_blank" rel="noopener noreferrer" className="social-link" href={"https://www.linkedin.com/company/yinyang-leadership/"}>
+                <SiFacebook className="icon" size={20} />
+              </Link> */}
+
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+                href={"https://www.linkedin.com/company/yinyang-leadership/"}
+              >
+                <SiLinkedin className="icon" size={20} />
+              </Link>
             </div>
             <div className="cat-cont">
               <div className="cat-content">
