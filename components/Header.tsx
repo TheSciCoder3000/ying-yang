@@ -43,9 +43,21 @@ const Header = () => {
         <div className="nav-container">
           <h1 className="nav-header">Menu</h1>
           <div className="menu-items">
-            <NavItem text="Home" />
-            <NavItem text="About" />
-            <NavItem text="Contact" />
+            <NavItem
+              onClick={() => setShowMenu(false)}
+              href="/#home"
+              text="Home"
+            />
+            <NavItem
+              onClick={() => setShowMenu(false)}
+              href="/#about"
+              text="About"
+            />
+            <NavItem
+              onClick={() => setShowMenu(false)}
+              href="/#contact"
+              text="Contact"
+            />
           </div>
         </div>
       </div>

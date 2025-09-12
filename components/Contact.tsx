@@ -18,7 +18,7 @@ const Checklists = [
 
 const Contact = () => {
   return (
-    <div className="contact-cont">
+    <div id="contact" className="contact-cont">
       <div className="left">
         <div className="header">
           <h1>Have a Project?</h1>

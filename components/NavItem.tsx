@@ -1,10 +1,13 @@
 import gsap from "gsap";
+import Link from "next/link";
 import React, { useRef } from "react";
 
 interface NavItemProps {
   text: string;
+  href: string;
+  onClick?: () => void;
 }
-const NavItem: React.FC<NavItemProps> = ({ text }) => {
+const NavItem: React.FC<NavItemProps> = ({ text, href, onClick }) => {
   const mainHeaderRef = useRef<HTMLHeadingElement>(null);
   const subHeaderRef = useRef<HTMLHeadingElement>(null);
 
@@ -31,7 +34,9 @@ const NavItem: React.FC<NavItemProps> = ({ text }) => {
   };
 
   return (
-    <div
+    <Link
+      onClick={onClick}
+      href={href}
       className="nav-item"
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
@@ -40,7 +45,7 @@ const NavItem: React.FC<NavItemProps> = ({ text }) => {
       <h1 ref={subHeaderRef} className="sub-text">
         {text}
       </h1>
-    </div>
+    </Link>
   );
 };
 

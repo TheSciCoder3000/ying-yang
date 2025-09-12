@@ -50,7 +50,7 @@ const Hero = () => {
     masterTl.add(headerTl).add(scrollTl, 2).add(secondTl).add(thirdTl, "<");
   });
   return (
-    <div className="hero-cont">
+    <div id="home" className="hero-cont">
       <h3 ref={subtitleRef}>
         YinYang Leadership began with a powerful question
       </h3>

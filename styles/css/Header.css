@@ -88,6 +88,8 @@ header .menu {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  color: white;
 }
 .nav-menu .nav-container .menu-items .nav-item .sub-text {
   position: absolute;

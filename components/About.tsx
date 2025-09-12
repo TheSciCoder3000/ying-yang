@@ -115,7 +115,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-cont" ref={containerRef}>
+    <div id="about" className="about-cont" ref={containerRef}>
       <div className="main">
         <div className="about-content">
           <h1 className="main-header">About us:</h1>
