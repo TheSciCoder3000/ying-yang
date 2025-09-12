@@ -4,7 +4,6 @@ import Contact from "@/components/Contact";
 import DetailSection from "@/components/DetailSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Intro from "@/components/Intro";
 // import ProjectProposal from "@/components/ProjectProposal";
 // import Ratings from "@/components/Ratings";
 // import MetricsSection from "@/components/MetricsSection";
@@ -20,7 +19,6 @@ export default function Home() {
       {/* <Ratings /> */}
       <WhatWeDo />
       <VideoCarousel />
-      <Intro />
       <Services />
       <Approach />
       <DetailSection />

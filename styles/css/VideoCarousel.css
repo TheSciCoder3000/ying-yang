@@ -3,6 +3,8 @@
   padding-top: 5rem;
   margin-top: 10rem;
   min-width: 100vw;
+  position: relative;
+  margin-bottom: 70vh;
 }
 @media screen and (max-width: 800px) {
   .carousel-cont {
@@ -17,22 +19,24 @@
 }
 .carousel-cont .carousel {
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
   align-items: flex-start;
   flex-wrap: nowrap;
   width: fit-content;
 }
 .carousel-cont .carousel .carousel-item {
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.07);
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-radius: 12px;
   color: white;
+  width: 15rem;
 }
 .carousel-cont .carousel .carousel-item img {
   aspect-ratio: 5.5/3;
-  width: 15rem;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 13px;
@@ -41,6 +45,7 @@
   flex: 1;
 }
 .carousel-cont .carousel .carousel-item .content .quote {
+  height: 0;
   overflow: hidden;
 }
 .carousel-cont .carousel .carousel-item .content .quote p {
@@ -58,5 +63,11 @@
 }
 .carousel-cont .carousel .carousel-item .content .header h3 {
   font-weight: 200;
-  font-size: 0.9em;
+  font-size: 0.7em;
+}
+.carousel-cont .carousel .carousel-item.card-expanded {
+  width: 25rem;
+}
+.carousel-cont .carousel .carousel-item.card-expanded .quote {
+  height: auto;
 }/*# sourceMappingURL=VideoCarousel.css.map */

@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { Flip, ScrollTrigger } from "gsap/all";
 import Image from "./Image";
 import { useGSAP } from "@gsap/react";
+import Intro from "./Intro";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP, Flip);
 
 const data = [
   {
@@ -41,33 +42,15 @@ const VideoCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const ScaleUpAnime = (card: Element) => {
-    const vid = card.querySelector("img");
-    const quote = card.querySelector(".quote");
-
-    gsap.to(vid, {
-      width: "20rem",
-      ease: "none",
-    });
-
-    gsap.to(quote, {
-      height: "auto",
-      ease: "none",
-    });
+    const state = Flip.getState(card);
+    card.classList.add("card-expanded");
+    Flip.from(state, { duration: 0.5, ease: "power1.inOut" });
   };
 
   const ScaleDownAnime = (card: Element) => {
-    const vid = card.querySelector("img");
-    const quote = card.querySelector(".quote");
-
-    gsap.to(vid, {
-      width: "15rem",
-      ease: "none",
-    });
-
-    gsap.to(quote, {
-      height: 0,
-      ease: "none",
-    });
+    const state = Flip.getState(card);
+    card.classList.remove("card-expanded");
+    Flip.from(state, { duration: 0.5, ease: "power1.inOut" });
   };
 
   useGSAP(
@@ -82,28 +65,35 @@ const VideoCarousel = () => {
         xPercent: 50,
       });
 
-      const horizontalTween = gsap.to(carouselRef.current, {
+      const masterTl = gsap.timeline();
+
+      const horizontalTl = gsap.timeline().to(carouselRef.current, {
         xPercent: -50,
         ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 0%",
-          end: `0%+=5000`,
-          toggleActions: "play none none none",
-          scrub: true,
-          pin: true,
-          invalidateOnRefresh: true,
-        },
+      });
+
+      const panningTl = gsap
+        .timeline()
+        .from(".absolute-cont", { yPercent: 100 });
+
+      masterTl.add(horizontalTl).add(panningTl);
+
+      ScrollTrigger.create({
+        animation: masterTl,
+        trigger: containerRef.current,
+        start: "top 0%",
+        end: `0%+=5000`,
+        toggleActions: "play none none none",
+        scrub: true,
+        pin: true,
+        invalidateOnRefresh: true,
       });
 
       const cards = carouselRef.current?.querySelectorAll(".carousel-item");
-      gsap.set(".quote", {
-        height: 0,
-      });
       cards?.forEach((card) => {
         ScrollTrigger.create({
           trigger: card,
-          containerAnimation: horizontalTween,
+          containerAnimation: horizontalTl,
           start: "top 60%",
           end: `100%+=${gapPx} 60%`,
           invalidateOnRefresh: true,
@@ -145,6 +135,7 @@ const VideoCarousel = () => {
           </div>
         ))}
       </div>
+      <Intro />
     </div>
   );
 };
