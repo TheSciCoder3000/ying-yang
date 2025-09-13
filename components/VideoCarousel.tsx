@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
 import { Flip, ScrollTrigger } from "gsap/all";
@@ -59,98 +59,108 @@ const VideoCarousel = () => {
 
   useGSAP(
     () => {
-      if (!carouselRef.current) return;
+      const mm = gsap.matchMedia();
 
-      const style = window.getComputedStyle(carouselRef.current);
-      const gapValue = style.getPropertyValue("gap");
-      const gapPx = parseFloat(gapValue);
+      mm.add("(min-width: 480px)", () => {
+        if (!carouselRef.current) return;
 
-      gsap.set(carouselRef.current, {
-        xPercent: 100,
-      });
+        const style = window.getComputedStyle(carouselRef.current);
+        const gapValue = style.getPropertyValue("gap");
+        const gapPx = parseFloat(gapValue);
 
-      const masterTl = gsap.timeline();
+        gsap.set(carouselRef.current, {
+          xPercent: 100,
+        });
 
-      const horizontalTl = gsap.timeline().to(carouselRef.current, {
-        xPercent: -50,
-        ease: "none",
-      });
+        const masterTl = gsap.timeline();
 
-      const panningTl = gsap
-        .timeline()
-        .from(".absolute-cont", { yPercent: 100 });
+        const horizontalTl = gsap.timeline().to(carouselRef.current, {
+          xPercent: -50,
+          ease: "none",
+        });
 
-      masterTl.add(horizontalTl).add(panningTl);
+        const panningTl = gsap
+          .timeline()
+          .from(".absolute-cont", { yPercent: 100 });
 
-      ScrollTrigger.create({
-        animation: masterTl,
-        trigger: containerRef.current,
-        start: "top 0%",
-        end: `0%+=5000`,
-        toggleActions: "play none none none",
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-      });
+        masterTl.add(horizontalTl).add(panningTl);
 
-      const cards = carouselRef.current?.querySelectorAll(".carousel-item");
-      cards?.forEach((card) => {
         ScrollTrigger.create({
-          trigger: card,
-          containerAnimation: horizontalTl,
-          start: "top 60%",
-          end: `100%+=${gapPx} 60%`,
+          animation: masterTl,
+          trigger: containerRef.current,
+          start: "top 0%",
+          end: `0%+=5000`,
+          toggleActions: "play none none none",
+          scrub: true,
+          pin: true,
           invalidateOnRefresh: true,
-          onEnter: () => {
-            ScaleUpAnime(card);
-          },
-          onEnterBack: () => {
-            ScaleUpAnime(card);
-          },
-          onLeaveBack: () => {
-            ScaleDownAnime(card);
-          },
-          onLeave: () => {
-            ScaleDownAnime(card);
-          },
+        });
+
+        const cards = carouselRef.current?.querySelectorAll(".carousel-item");
+        cards?.forEach((card) => {
+          ScrollTrigger.create({
+            trigger: card,
+            containerAnimation: horizontalTl,
+            start: "top 60%",
+            end: `100%+=${gapPx} 60%`,
+            invalidateOnRefresh: true,
+            onEnter: () => {
+              ScaleUpAnime(card);
+            },
+            onEnterBack: () => {
+              ScaleUpAnime(card);
+            },
+            onLeaveBack: () => {
+              ScaleDownAnime(card);
+            },
+            onLeave: () => {
+              ScaleDownAnime(card);
+            },
+          });
+        });
+      });
+
+      mm.add("(max-width: 479px)", () => {
+        const itemEls =
+          containerRef.current!.querySelectorAll(".carousel-item");
+
+        itemEls.forEach((item) => {
+          gsap.from(item, {
+            x: 100,
+            opacity: 0,
+            scrollTrigger: {
+              trigger: item,
+              start: "top center",
+            },
+          });
         });
       });
     },
     { scope: containerRef }
   );
 
-  useEffect(() => {
-    function updateMargin() {
-      const abs = containerRef.current!;
-      const other = document.querySelector(".absolute-cont") as HTMLDivElement;
-      const height = other.offsetHeight;
-      abs.style.marginBottom = height + "px";
-    }
-
-    addEventListener("load", updateMargin);
-
-    return () => removeEventListener("load", updateMargin);
-  });
   return (
     <div className="carousel-cont" ref={containerRef}>
-      <h1 className="main-header">
-        We empower our clients to scale today while building for the future.
-      </h1>
-      <div className="carousel" ref={carouselRef}>
-        {data.map((item, indx) => (
-          <div key={indx} className="carousel-item">
-            <Image src={item.image} alt="cover" />
-            <div className="content">
-              <div className="quote">
-                <p>{item.description}</p>
-              </div>
-              <div className="header">
-                <h2>{item.title}</h2>
-                <h3>{item.subtitle}</h3>
+      <div className="carousel-main-cont">
+        <h1 className="main-header">
+          We empower our clients to scale today while building for the future.
+        </h1>
+        <div className="carousel" ref={carouselRef}>
+          {data.map((item, indx) => (
+            <div key={indx} className="carousel-item">
+              <Image src={item.image} alt="cover" />
+              <div className="content">
+                <div className="quote">
+                  <p>{item.description}</p>
+                </div>
+                <div className="header">
+                  <h2>{item.title}</h2>
+                  <h3>{item.subtitle}</h3>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <Intro />
     </div>

@@ -1,88 +1,109 @@
 @import "./breakpoints.scss";
 
 .carousel-cont {
-  padding: 5rem;
-  padding-top: 5rem;
   margin-top: 10rem;
   min-width: 100vw;
   position: relative;
-  margin-bottom: 80vh;
 
-  @include md {
-    padding: 2rem;
-  }
-
-  h1 {
-    font-size: clamp(1.75em, 10vw, 3.5em);
-    margin-bottom: 1rem;
-    margin-left: 6rem;
-    line-height: 1.2em;
+  .carousel-main-cont {
+    top: 5rem;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    padding: 0 5rem;
 
     @include md {
-      margin-left: 0;
+      padding: 2rem;
     }
-  }
 
-  .carousel {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    width: fit-content;
+    @include sm {
+      position: static;
+    }
 
-    .carousel-item {
-      overflow: hidden;
-      background-color: rgba(255, 255, 255, 0.07);
+    h1 {
+      font-size: clamp(1.75em, 10vw, 3.5em);
+      margin-bottom: 1rem;
+      margin-left: 6rem;
+      line-height: 1.2em;
+
+      @include md {
+        margin-left: 0;
+      }
+    }
+
+    .carousel {
       display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      border-radius: 12px;
-      color: white;
-      width: 15rem;
+      gap: 1rem;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      width: fit-content;
 
-      img {
-        aspect-ratio: 5.5 / 3;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 13px;
+      @include sm {
+        flex-direction: column;
       }
 
-      .content {
-        flex: 1;
+      .carousel-item {
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.07);
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 12px;
+        color: white;
+        width: 15rem;
 
-        .quote {
-          height: 0;
-          overflow: hidden;
-
-          p {
-            padding-top: 1rem;
-            font-size: 0.8em;
-            font-weight: 300;
-            color: rgb(194, 194, 194);
-          }
+        @include sm {
+          width: 100%;
         }
 
-        .header {
-          padding-top: 1rem;
-
-          h2 {
-            font-weight: 600;
-            font-size: 1em;
-          }
-
-          h3 {
-            font-weight: 200;
-            font-size: 0.7em;
-          }
-        }
-      }
-
-      &.card-expanded {
-        width: 25rem;
-
-        .quote {
+        img {
+          aspect-ratio: 5.5 / 3;
+          width: 100%;
           height: auto;
+          object-fit: cover;
+          border-radius: 13px;
+        }
+
+        .content {
+          flex: 1;
+
+          .quote {
+            height: 0;
+            overflow: hidden;
+
+            @include sm {
+              height: auto;
+            }
+
+            p {
+              padding-top: 1rem;
+              font-size: 0.8em;
+              font-weight: 300;
+              color: rgb(194, 194, 194);
+            }
+          }
+
+          .header {
+            padding-top: 1rem;
+
+            h2 {
+              font-weight: 600;
+              font-size: 1em;
+            }
+
+            h3 {
+              font-weight: 200;
+              font-size: 0.7em;
+            }
+          }
+        }
+
+        &.card-expanded {
+          width: 25rem;
+
+          .quote {
+            height: auto;
+          }
         }
       }
     }

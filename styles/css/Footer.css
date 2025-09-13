@@ -129,7 +129,7 @@ footer .main .links-cont .link-group .company-desc {
   font-size: 0.8em;
 }
 footer .icon-cont h1 {
-  font-size: 13em;
+  font-size: clamp(3em, 20vw, 13em);
   color: white;
   text-align: center;
 }/*# sourceMappingURL=Footer.css.map */

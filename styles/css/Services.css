@@ -1,4 +1,5 @@
 .services-cont {
+  margin-top: 5rem;
   max-width: 100vw;
   overflow: hidden;
 }
@@ -9,7 +10,7 @@
 }
 @media screen and (max-width: 480px) {
   .services-cont {
-    padding-top: 45rem;
+    padding-top: 0;
   }
 }
 .services-cont .header {

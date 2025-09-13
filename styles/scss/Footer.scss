@@ -148,7 +148,7 @@ footer {
 
   .icon-cont {
     h1 {
-      font-size: 13em;
+      font-size: clamp(3em, 20vw, 13em);
       color: white;
       text-align: center;
     }
