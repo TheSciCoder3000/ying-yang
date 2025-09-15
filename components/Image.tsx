@@ -35,6 +35,8 @@ const Image: React.FC<ImageProps> = ({
       className={className}
       sizes="100vw"
       onLoad={OnImageLoad}
+      placeholder="blur"
+      blurDataURL={src}
     />
   );
 };
