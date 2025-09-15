@@ -68,10 +68,17 @@
           h2 {
             margin-bottom: 0.3rem;
             font-weight: 400;
+
+            @include sm {
+              font-size: 1em;
+            }
           }
 
           p {
             font-weight: 200;
+            @include sm {
+              font-size: 0.85em;
+            }
           }
         }
 

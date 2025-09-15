@@ -19,6 +19,12 @@
     text-align: left;
   }
 }
+@media screen and (max-width: 480px) {
+  .approach-cont .main-content h1 {
+    margin-bottom: 2rem;
+    font-size: 2em;
+  }
+}
 .approach-cont .main-content .text-reveal-cont {
   text-transform: uppercase;
   font-weight: bold;
@@ -28,5 +34,10 @@
 @media screen and (max-width: 800px) {
   .approach-cont .main-content .text-reveal-cont {
     padding-bottom: 7rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .approach-cont .main-content .text-reveal-cont {
+    font-size: 1em;
   }
 }/*# sourceMappingURL=Approach.css.map */

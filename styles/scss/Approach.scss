@@ -1,3 +1,5 @@
+@import "./breakpoints.scss";
+
 .approach-cont {
   width: 100%;
   overflow: hidden;
@@ -5,7 +7,7 @@
   .main-content {
     padding: 0 5rem;
 
-    @media screen and (max-width: 800px) {
+    @include md {
       padding: 0 2rem;
     }
 
@@ -13,8 +15,13 @@
       text-align: center;
       margin-bottom: 5rem;
 
-      @media screen and (max-width: 800px) {
+      @include md {
         text-align: left;
+      }
+
+      @include sm {
+        margin-bottom: 2rem;
+        font-size: 2em;
       }
     }
 
@@ -24,8 +31,12 @@
       font-size: clamp(1.1em, 3vw, 1.8em);
       padding-bottom: 10rem;
 
-      @media screen and (max-width: 800px) {
+      @include md {
         padding-bottom: 7rem;
+      }
+
+      @include sm {
+        font-size: 1em;
       }
     }
   }
