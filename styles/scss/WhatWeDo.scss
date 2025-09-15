@@ -3,7 +3,7 @@
 .we-do-cont {
   max-width: 70rem;
   margin: auto;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
   padding: 0 1rem;
 
   .header {
@@ -30,7 +30,8 @@
   }
 
   .content-cont {
-    max-height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     overflow: visible;
 
     .content-header {

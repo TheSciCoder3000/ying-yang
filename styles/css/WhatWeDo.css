@@ -1,7 +1,7 @@
 .we-do-cont {
   max-width: 70rem;
   margin: auto;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
   padding: 0 1rem;
 }
 .we-do-cont .header {
@@ -26,7 +26,8 @@
   color: rgb(168, 168, 168);
 }
 .we-do-cont .content-cont {
-  max-height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   overflow: visible;
 }
 .we-do-cont .content-cont .content-header {
