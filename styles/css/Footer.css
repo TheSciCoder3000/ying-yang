@@ -69,6 +69,7 @@ footer .main .links-cont .link-group button {
   font-size: 1.05em;
   cursor: pointer;
   border: none;
+  color: black;
 }
 footer .main .links-cont .link-group button .arrow-cont {
   background: #000;

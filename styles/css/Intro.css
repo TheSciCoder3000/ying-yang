@@ -78,6 +78,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.25s;
+  color: black;
 }
 .absolute-cont .intro-container .intro .intro-content button:hover {
   background-color: black;
