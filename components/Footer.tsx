@@ -15,8 +15,9 @@ const Footer = () => {
           <div className="link-group">
             <Image className="logo" src={"/yinyang-logo.png"} alt="logo" />
             <p className="company-desc">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy.
+              We’re not just about business growth—we’re about people, culture,
+              and ideas working in harmony. At YinYang, strategy meets soul to
+              create lasting impact.
             </p>
             <button>
               Company Deck{" "}
