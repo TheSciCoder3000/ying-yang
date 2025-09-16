@@ -14,6 +14,7 @@ import WhatWeDo from "@/components/WhatWeDo";
 export default function Home() {
   return (
     <div>
+      <div className="radial-gradient" />
       <Hero />
       <About />
       {/* <Ratings /> */}

@@ -33,7 +33,7 @@ const Header = () => {
       <header ref={containerRef}>
         <Image src={"/yinyang-logo.png"} alt="logo" />
         <button className="menu" onClick={() => setShowMenu(true)}>
-          • menu
+          <Image src="/menu-icon.png" alt="menu-icon" />
         </button>
       </header>
       <div ref={menuRef} className="nav-menu">

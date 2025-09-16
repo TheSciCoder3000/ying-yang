@@ -6,7 +6,6 @@ import Image from "./Image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getHighestZIndexElement, getIndex } from "@/lib/util";
-import usePinHook from "@/lib/hooks/usePinHook";
 
 gsap.registerPlugin(useGSAP);
 
@@ -63,7 +62,6 @@ const About = () => {
     const images = containerRef.current.querySelectorAll(".about-image");
     const topImage = getHighestZIndexElement(images);
 
-    console.log(topImage);
     if (!topImage) return;
 
     const tl = gsap.timeline();
@@ -118,15 +116,17 @@ const About = () => {
     <div id="about" className="about-cont" ref={containerRef}>
       <div className="main">
         <div className="about-content">
-          <h1 className="main-header">About us:</h1>
+          <h1 className="main-header">About us</h1>
           <div>
             <p>
               Our founder Tanisha, together with her partners at YinYang, are
               business psychologists who have spent over a decade working with
               fast-growing businesses, fortune 500 companies, ambitious leaders,
               and high-performing teams. Across every success and every
-              struggle, they discovered the same truth: culture is intangible,
-              but its impact is impossible to ignore.
+              struggle, they discovered the same truth:{" "}
+              <span>
+                culture is intangible, but its impact is impossible to ignore.
+              </span>
             </p>
             <p>
               That insight became the seed of YinYang Leadership. Rooted in the
@@ -135,13 +135,15 @@ const About = () => {
               that unlock faster business performance and long-term success.
             </p>
             <p>
-              Through our proprietary Culture Compass, we bring evidence based
-              tools, powerful facilitation, and an immersive learning
-              experience. Whether we’re co-creating leadership journeys,
-              redesigning ways of working, or guiding you through complex
-              change, our purpose is clear: to make workplaces more conscious,
-              connected, and alive; so your people and your business thrive
-              together!
+              Through our proprietary <span>Culture Compass</span>, we bring
+              evidence based tools, powerful facilitation, and an immersive
+              learning experience. Whether we’re co-creating leadership
+              journeys, redesigning ways of working, or guiding you through
+              complex change, our purpose is clear:{" "}
+              <span>
+                to make workplaces more conscious, connected, and alive; so your
+                people and your business thrive together!
+              </span>
             </p>
           </div>
         </div>

@@ -15,6 +15,6 @@ body {
 }
 
 h1.main-header {
-  font-size: clamp(2em, 10vw, 4em);
+  font-size: clamp(2em, 10vw, 3em);
   color: #009b9f;
 }

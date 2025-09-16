@@ -22,10 +22,13 @@
   flex: 1;
   height: fit-content;
 }
+.about-cont .main .about-content span {
+  color: #009b9f;
+}
 .about-cont .main .about-content p {
-  font-weight: 100;
-  font-size: 0.9em;
-  line-height: 1.65em;
+  font-weight: 600;
+  font-size: 0.8em;
+  line-height: 2em;
   margin-bottom: 1rem;
 }
 .about-cont .main .about-images {

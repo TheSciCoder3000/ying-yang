@@ -21,7 +21,7 @@
   }
 }
 .carousel-cont .carousel-main-cont h1 {
-  font-size: clamp(1.75em, 10vw, 3.5em);
+  font-size: clamp(1.75em, 10vw, 3em);
   margin-bottom: 1rem;
   margin-left: 6rem;
   line-height: 1.2em;
@@ -51,19 +51,13 @@
   padding: 1rem;
   border-radius: 12px;
   color: white;
-  width: 15rem;
+  width: 20rem;
+  opacity: 0.4;
 }
 @media screen and (max-width: 480px) {
   .carousel-cont .carousel-main-cont .carousel .carousel-item {
     width: 100%;
   }
-}
-.carousel-cont .carousel-main-cont .carousel .carousel-item img {
-  aspect-ratio: 5.5/3;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 13px;
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item .content {
   flex: 1;
@@ -78,24 +72,34 @@
   }
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item .content .quote p {
-  padding-top: 1rem;
+  padding-top: 2rem;
   font-size: 0.8em;
   font-weight: 300;
   color: rgb(194, 194, 194);
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item .content .header {
-  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.carousel-cont .carousel-main-cont .carousel .carousel-item .content .header h2 {
+.carousel-cont .carousel-main-cont .carousel .carousel-item .content .header .user-info h2 {
   font-weight: 600;
   font-size: 1em;
 }
-.carousel-cont .carousel-main-cont .carousel .carousel-item .content .header h3 {
+.carousel-cont .carousel-main-cont .carousel .carousel-item .content .header .user-info h3 {
   font-weight: 200;
   font-size: 0.7em;
 }
+.carousel-cont .carousel-main-cont .carousel .carousel-item .content .header img {
+  width: 4rem;
+  height: 4rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  object-fit: cover;
+}
 .carousel-cont .carousel-main-cont .carousel .carousel-item.card-expanded {
-  width: 25rem;
+  opacity: 1;
+  width: 30rem;
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item.card-expanded .quote {
   height: auto;

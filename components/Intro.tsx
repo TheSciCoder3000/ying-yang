@@ -12,9 +12,11 @@ const Intro = () => {
     <div className="absolute-cont">
       <div className="intro-container">
         <Image className="profile-bkg" src="/profile-bkg.jpg" alt="profile" />
+        <div className="profile-filter" />
         <div className="intro">
           <div className="image-cont">
-            <Image src="/profile.jpg" alt="profile" />
+            <div className="radial-bkg" />
+            <Image src="/portrait.png" alt="profile" />
           </div>
           <div className="intro-content">
             <h1>Meet Tanisha Jain</h1>

@@ -148,14 +148,16 @@ const VideoCarousel = () => {
         <div className="carousel" ref={carouselRef}>
           {data.map((item, indx) => (
             <div key={indx} className="carousel-item">
-              <Image src={item.image} alt="cover" />
               <div className="content">
+                <div className="header">
+                  <div className="user-info">
+                    <h2>{item.title}</h2>
+                    <h3>{item.subtitle}</h3>
+                  </div>
+                  <Image src={item.image} alt="cover" />
+                </div>
                 <div className="quote">
                   <p>{item.description}</p>
-                </div>
-                <div className="header">
-                  <h2>{item.title}</h2>
-                  <h3>{item.subtitle}</h3>
                 </div>
               </div>
             </div>

@@ -74,9 +74,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="icon-cont">
-        <h1>YinYang</h1>
-      </div>
     </footer>
   );
 };
