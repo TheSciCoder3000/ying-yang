@@ -1,13 +1,13 @@
 .we-do-cont {
   max-width: 70rem;
   margin: auto;
-  margin-bottom: 10rem;
   padding: 0 1rem;
+  min-height: 100vh;
 }
 .we-do-cont .header {
   display: flex;
   align-items: center;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 @media screen and (max-width: 800px) {
   .we-do-cont .header {
@@ -25,28 +25,59 @@
   font-weight: 300;
   color: rgb(168, 168, 168);
 }
-.we-do-cont .content-cont {
-  min-height: 100vh;
-  height: fit-content;
-  overflow: visible;
+.we-do-cont .for-who-cont {
+  display: flex;
+  margin-bottom: 3rem;
+  gap: 2rem;
 }
-.we-do-cont .content-cont .content-header {
+.we-do-cont .for-who-cont .for-who-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.we-do-cont .for-who-cont .for-who-item h1 {
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  background-color: rgb(39, 39, 39);
+  width: fit-content;
+  text-align: center;
+  color: gray;
+  font-size: 1.25em;
+}
+.we-do-cont .for-who-cont .for-who-item:first-child h1 {
+  background-color: white;
+  color: black;
+}
+.we-do-cont .content-cont {
+  overflow: visible;
+  position: relative;
+}
+.we-do-cont .content-cont .content-body {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+.we-do-cont .content-cont .content-body:first-child {
+  opacity: 1;
+}
+.we-do-cont .content-cont .content-body .content-header {
   font-weight: 400;
   font-size: 1.25em;
   margin-bottom: 1rem;
 }
-.we-do-cont .content-cont .content-items {
+.we-do-cont .content-cont .content-body .content-items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2rem;
   row-gap: 1rem;
 }
-.we-do-cont .content-cont .content-items .item-cont {
+.we-do-cont .content-cont .content-body .content-items .item-cont {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.we-do-cont .content-cont .content-items .item-cont img {
+.we-do-cont .content-cont .content-body .content-items .item-cont img {
   margin-bottom: 1rem;
   aspect-ratio: 1/1;
   height: 3.7rem;
@@ -54,16 +85,16 @@
   object-fit: cover;
   border-radius: 20px;
 }
-.we-do-cont .content-cont .content-items .item-cont .item-content {
+.we-do-cont .content-cont .content-body .content-items .item-cont .item-content {
   max-width: 18rem;
 }
-.we-do-cont .content-cont .content-items .item-cont .item-content h1 {
+.we-do-cont .content-cont .content-body .content-items .item-cont .item-content h1 {
   text-align: center;
   font-size: 1em;
   font-weight: 400;
   margin-bottom: 0.5rem;
 }
-.we-do-cont .content-cont .content-items .item-cont .item-content p {
+.we-do-cont .content-cont .content-body .content-items .item-cont .item-content p {
   text-align: center;
   font-size: 0.75em;
   font-weight: 300;

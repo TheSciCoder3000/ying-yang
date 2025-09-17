@@ -3,13 +3,13 @@
 .we-do-cont {
   max-width: 70rem;
   margin: auto;
-  margin-bottom: 10rem;
   padding: 0 1rem;
+  min-height: 100vh;
 
   .header {
     display: flex;
     align-items: center;
-    margin-bottom: 7rem;
+    margin-bottom: 4rem;
 
     @include md {
       flex-direction: column;
@@ -29,53 +29,92 @@
     }
   }
 
-  .content-cont {
-    min-height: 100vh;
-    height: fit-content;
-    overflow: visible;
+  .for-who-cont {
+    display: flex;
+    margin-bottom: 3rem;
+    gap: 2rem;
 
-    .content-header {
-      font-weight: 400;
-      font-size: 1.25em;
-      margin-bottom: 1rem;
-    }
+    .for-who-item {
+      flex: 1;
+      display: flex;
+      justify-content: center;
 
-    .content-items {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 2rem;
-      row-gap: 1rem;
+      h1 {
+        padding: 0.4rem 1rem;
+        border-radius: 10px;
+        background-color: rgb(39, 39, 39);
+        width: fit-content;
+        text-align: center;
+        color: gray;
+        font-size: 1.25em;
+      }
 
-      .item-cont {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        img {
-          margin-bottom: 1rem;
-          aspect-ratio: 1/1;
-          height: 3.7rem;
-          width: 3.7rem;
-          object-fit: cover;
-          border-radius: 20px;
+      &:first-child {
+        h1 {
+          background-color: white;
+          color: black;
         }
+      }
+    }
+  }
 
-        .item-content {
-          max-width: 18rem;
+  .content-cont {
+    overflow: visible;
+    position: relative;
 
-          h1 {
-            text-align: center;
-            font-size: 1em;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+    .content-body {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      opacity: 0;
+
+      &:first-child {
+        opacity: 1;
+      }
+
+      .content-header {
+        font-weight: 400;
+        font-size: 1.25em;
+        margin-bottom: 1rem;
+      }
+
+      .content-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 1rem;
+
+        .item-cont {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          img {
+            margin-bottom: 1rem;
+            aspect-ratio: 1/1;
+            height: 3.7rem;
+            width: 3.7rem;
+            object-fit: cover;
+            border-radius: 20px;
           }
 
-          p {
-            text-align: center;
-            font-size: 0.75em;
-            font-weight: 300;
-            color: rgb(224, 224, 224);
-            margin-bottom: 2rem;
+          .item-content {
+            max-width: 18rem;
+
+            h1 {
+              text-align: center;
+              font-size: 1em;
+              font-weight: 400;
+              margin-bottom: 0.5rem;
+            }
+
+            p {
+              text-align: center;
+              font-size: 0.75em;
+              font-weight: 300;
+              color: rgb(224, 224, 224);
+              margin-bottom: 2rem;
+            }
           }
         }
       }
