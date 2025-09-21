@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <>
       <header ref={containerRef}>
-        <Image src={"/yinyang-logo.png"} alt="logo" />
+        <Image src={"/yinyang-logo(white).png"} alt="logo" />
         <button className="menu" onClick={() => setShowMenu(true)}>
           <Image src="/menu-icon.png" alt="menu-icon" />
         </button>

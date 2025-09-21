@@ -54,6 +54,8 @@
   position: relative;
 }
 .absolute-cont .intro-container .intro .image-cont .radial-bkg {
+  max-width: 700px;
+  max-height: 700px;
   position: absolute;
   transform: translateY(30%);
   bottom: 50%;
@@ -96,8 +98,16 @@
 .absolute-cont .intro-container .intro .intro-content p {
   font-size: 0.85em;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 2em;
+  color: rgb(61, 61, 61);
+}
+.absolute-cont .intro-container .intro .intro-content p span {
+  font-weight: 900;
+  color: black;
+}
+.absolute-cont .intro-container .intro .intro-content ul {
+  margin-bottom: 1rem;
 }
 .absolute-cont .intro-container .intro .intro-content button {
   border: 2px solid #009b9f;

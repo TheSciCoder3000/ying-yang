@@ -1,5 +1,4 @@
 .carousel-cont {
-  margin-top: 10rem;
   min-width: 100vw;
   position: relative;
 }
@@ -22,7 +21,7 @@
 }
 .carousel-cont .carousel-main-cont h1 {
   font-size: clamp(1.75em, 10vw, 3em);
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
   margin-left: 6rem;
   line-height: 1.2em;
 }

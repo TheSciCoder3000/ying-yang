@@ -23,41 +23,49 @@ const Intro = () => {
             <h4>Founder | Leadership Coach | Culture Facilitator</h4>
             <div className="introduction">
               <p>
-                My journey into leadership and culture began not in a classroom,
-                but in my very first job. I experienced a merger gone painfully
-                wrong. Brilliant minds came together, but without alignment or
-                processes, everything unraveled. That moment planted a seed: if
-                culture is ignored, even the smartest strategies fail.
+                I didn’t learn leadership in a classroom. I learned it the hard
+                way. In my very first job, I watched a merger implode. Brilliant
+                people, powerful strategies, but without alignment or culture,
+                everything collapsed. That was my wake-up call: if culture is
+                ignored, even genius fails.
               </p>
               <p>
-                This led me to New York, where I earned my Master’s at Columbia
-                University and became an ICF-certified coach. Over the last
-                decade, I have worked across very different worlds: coaching
-                military leaders in the U.S. Army, shaping the culture strategy
-                of the world’s first LGBTQ credit union, working inside Fortune
-                50 companies like Nike and Amazon, and supporting grassroots
-                communities experimenting with new ways of leading.
+                That insight carried me from India to New York, where I earned
+                my Master’s at Columbia and became an ICF-certified coach. Since
+                then, my path has spanned unlikely extremes:
               </p>
               <p>
-                Those experiences revealed one undeniable truth: in every
-                industry, at every scale, culture is not the backdrop; it is the
-                stage on which everything else plays out. It decides whether
-                people grow or burn out, whether strategy takes root or drifts,
-                whether trust is built or broken. After years of witnessing both
-                success and failure up close, I’ve learned that culture is never
-                secondary. It is the difference between organizations that
-                merely perform and those that truly endure.
+                And in every world, one truth roared louder than strategy decks
+                or balance sheets:{" "}
+                <span>culture isn’t the backdrop, it’s the stage.</span>
+                It makes or breaks everything.
+              </p>
+              <ul>
+                <li>Training officers in the Army.</li>
+                <li>
+                  Defining the culture playbook for the world’s first LGBTQ
+                  credit union.
+                </li>
+                <li>Coaching with Fortune 50 giants like Nike and Amazon.</li>
+                <li>
+                  Building capacity in grassroots communities daring to lead in
+                  new ways.
+                </li>
+              </ul>
+              <p>
+                That is why I founded <span>YinYang Leadership.</span> Not just
+                a consultancy, but a movement. We refuse cookie-cutter fixes.
+                Instead, we bring insiders who live the culture and outsiders
+                who can disrupt it into the same room, sparking solutions
+                neither could find alone. It is not theory. It is not workshops
+                that die in binders. It is culture made actionable, measurable,
+                and impossible to ignore.
               </p>
               <p>
-                This insight became the foundation for YinYang Leadership, a
-                consultancy designed as a collaborative movement. We bring
-                together internal leaders who understand their organizations
-                deeply and external experts who bring fresh perspective,
-                creating solutions neither could achieve alone.
-              </p>
-              <p>
-                Our mission is simple: to help organizations make culture their
-                edge, their compass, and their most human advantage.
+                Our mission is radical in its simplicity: to make culture your{" "}
+                <span>edge, compass, and unfair advantage.</span> Because
+                strategy may point the way, but culture decides if you ever
+                arrive.
               </p>
             </div>
             <button>LET’S CONNECT</button>

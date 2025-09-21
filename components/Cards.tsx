@@ -11,45 +11,39 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const cardData = [
   {
-    title: "Diagnose What’s Real · See Beneath the Surface",
+    title: "Culture Immersion · See your culture with fresh eyes",
     description: `
-    We begin by listening deeply. Through conversations, 
-    culture diagnostics, and immersive inquiry, we uncover 
-    what’s really happening in your organization—beyond 
-    the polished reports and numbers. This is about surfacing 
-    truths that are often felt but rarely spoken.
-  `,
+      We start with a deep dive, including our proprietary Culture 
+      Compass survey, to uncover your company’s strengths, growth 
+      areas, and hidden dynamics shaping performance.
+    `,
     color: "#00E7ED",
   },
   {
-    title: "Define What Matters · Clarity Through Alignment",
+    title: "Leadership Alignment · Unite leaders around vision and values",
     description: `
-    From what we learn, we work with you to name the core themes—your 
-    culture’s strengths, struggles, and aspirations. Together, we define 
-    what really matters: the values, behaviors, and patterns that will 
-    unlock growth and wellbeing. This becomes your cultural “north star.”
-  `,
+      Through an interactive leadership workshop, we align your 
+      top team on strategy, clarify values, and build the shared 
+      commitment needed to drive change.
+    `,
     color: "#00C9CE",
   },
   {
-    title: "Design Through Co-Creation · Solutions That Stick",
+    title: "Tailored Interventions · Design solutions that stick",
     description: `
-    We don’t hand you a playbook and walk away. Instead, we co-create with 
-    your leaders and teams—designing workshops, rituals, practices, and 
-    structures that are born from your reality. Because solutions designed 
-    with people—not for them—are the ones that last.
-  `,
+      From leadership coaching to team trainings to systems design, 
+      we deliver a customized plan that addresses your specific 
+      needs and accelerates performance.
+    `,
     color: "#01B1B5",
   },
   {
-    title: "Activate With Integrity · From Insight to Everyday Practice",
+    title: "Culture Roadmap · Build for the long game",
     description: `
-    Activation is where culture shifts from concept to lived experience. 
-    We guide you through facilitated sessions, leadership coaching, and 
-    on-the-ground practices that bring alignment into action. Every step 
-    is built with integrity—anchored in both evidence and empathy—so change 
-    feels authentic, not forced.
-  `,
+      We hand over a 3–5 year roadmap that sets up your people 
+      practices to sustain growth, resilience, and trust long 
+      after the initial intervention
+    `,
     color: "#009B9F",
   },
 ];

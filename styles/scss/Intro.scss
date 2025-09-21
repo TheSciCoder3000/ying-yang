@@ -56,6 +56,8 @@
         position: relative;
 
         .radial-bkg {
+          max-width: 700px;
+          max-height: 700px;
           position: absolute;
           transform: translateY(30%);
           bottom: 50%;
@@ -102,8 +104,18 @@
         p {
           font-size: 0.85em;
           margin-bottom: 1rem;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 2em;
+          color: rgb(61, 61, 61);
+
+          span {
+            font-weight: 900;
+            color: black;
+          }
+        }
+
+        ul {
+          margin-bottom: 1rem;
         }
 
         button {

@@ -119,31 +119,37 @@ const About = () => {
           <h1 className="main-header">About us</h1>
           <div>
             <p>
-              Our founder Tanisha, together with her partners at YinYang, are
-              business psychologists who have spent over a decade working with
-              fast-growing businesses, fortune 500 companies, ambitious leaders,
-              and high-performing teams. Across every success and every
-              struggle, they discovered the same truth:{" "}
               <span>
-                culture is intangible, but its impact is impossible to ignore.
+                What if your people and culture were your greatest growth
+                engine?
               </span>
             </p>
             <p>
-              That insight became the seed of YinYang Leadership. Rooted in the
-              philosophy that opposites must come together to form a whole, we
-              help organizations design the leadership and cultural foundations
-              that unlock faster business performance and long-term success.
+              At YinYang Leadership, we believe the way people lead, decide, and
+              work together is what makes or breaks growth. When people thrive,
+              culture thrives — and when culture thrives, performance
+              accelerates.
+            </p>
+            <p>
+              Our co-founder Tanisha, together with her partners, are business
+              psychologists who’ve spent over a decade helping fast-growing
+              startups and Fortune 500s build leadership and culture systems
+              that scale.
+            </p>
+            <p>
+              We design <span>Leadership & Culture Architectures</span> that
+              codify “how we lead here” and embed it into the everyday — from
+              hiring and onboarding to performance and recognition.
             </p>
             <p>
               Through our proprietary <span>Culture Compass</span>, we bring
-              evidence based tools, powerful facilitation, and an immersive
-              learning experience. Whether we’re co-creating leadership
-              journeys, redesigning ways of working, or guiding you through
-              complex change, our purpose is clear:{" "}
-              <span>
-                to make workplaces more conscious, connected, and alive; so your
-                people and your business thrive together!
-              </span>
+              evidence-based tools, powerful facilitation, and immersive
+              experiences that turn values into daily behaviors.
+            </p>
+            <p>
+              <span>The result?</span> People who feel empowered, cultures that
+              stay authentic, and businesses that grow stronger, smarter, and
+              faster.
             </p>
           </div>
         </div>
