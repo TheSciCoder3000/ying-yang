@@ -1,8 +1,10 @@
 .we-do-cont {
   max-width: 70rem;
+  min-height: calc(60vh + 5rem);
   margin: auto;
   padding: 0 1rem;
-  min-height: 100vh;
+  position: relative;
+  z-index: 50;
 }
 .we-do-cont .header {
   display: flex;
@@ -35,16 +37,20 @@
   display: flex;
   justify-content: center;
 }
-.we-do-cont .for-who-cont .for-who-item h1 {
+.we-do-cont .for-who-cont .for-who-item button {
+  cursor: pointer;
   padding: 0.4rem 1rem;
   border-radius: 10px;
   background-color: rgb(39, 39, 39);
+  color: gray;
+  transition: all 500ms;
+}
+.we-do-cont .for-who-cont .for-who-item h1 {
   width: fit-content;
   text-align: center;
-  color: gray;
   font-size: 1.25em;
 }
-.we-do-cont .for-who-cont .for-who-item:first-child h1 {
+.we-do-cont .for-who-cont .for-who-item.active button {
   background-color: white;
   color: black;
 }
@@ -52,19 +58,8 @@
   overflow: visible;
   position: relative;
 }
-.we-do-cont .content-cont .content-body {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  opacity: 0;
-}
 .we-do-cont .content-cont .content-body:first-child {
   opacity: 1;
-}
-.we-do-cont .content-cont .content-body .content-header {
-  font-weight: 400;
-  font-size: 1.25em;
-  margin-bottom: 1rem;
 }
 .we-do-cont .content-cont .content-body .content-items {
   display: grid;

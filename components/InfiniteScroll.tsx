@@ -30,7 +30,6 @@ const InfiniteScroll = () => {
 
   return (
     <div className="marquee-cont">
-      <h2>TRUSTED BY</h2>
       <div className="infinite-scroll">
         <div className="scroll-text" ref={containerRef}>
           {Array.from(Array(8).keys()).map((indx) => (
