@@ -1,5 +1,5 @@
 import About from "@/components/About";
-import Approach from "@/components/Approach";
+// import Approach from "@/components/Approach";
 import Contact from "@/components/Contact";
 import DetailSection from "@/components/DetailSection";
 import Footer from "@/components/Footer";
@@ -21,7 +21,7 @@ export default function Home() {
       <WhatWeDo />
       <VideoCarousel />
       <Services />
-      <Approach />
+      {/* <Approach /> */}
       <DetailSection />
       {/* <ProjectProposal /> */}
       <Contact />
