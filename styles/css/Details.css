@@ -15,37 +15,14 @@
     padding: 0;
   }
 }
-.details-cont .text-slider .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 0;
-  background-color: black;
-  padding-bottom: 5rem;
-}
-.details-cont .text-slider .header h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-@media screen and (max-width: 800px) {
-  .details-cont .text-slider .header h1 {
-    text-align: left;
-  }
-}
-.details-cont .text-slider .header p {
-  font-weight: 200;
-  font-size: 0.9em;
-  color: white;
-  text-align: center;
-  max-width: 40rem;
-}
 .details-cont .text-slider .container {
   display: flex;
   gap: 1rem;
 }
 @media screen and (max-width: 800px) {
   .details-cont .text-slider .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 2rem;
   }
 }
 .details-cont .text-slider .container .summary-cont {
@@ -76,26 +53,66 @@
   color: black;
   padding: 1rem 2rem;
 }
-.details-cont .text-slider .container .img-cont {
+.details-cont .text-slider .container .right-cont {
   position: sticky;
-  top: 5rem;
+  top: 3rem;
   flex: 1;
+  width: 100%;
+  height: fit-content;
+}
+@media screen and (max-width: 800px) {
+  .details-cont .text-slider .container .right-cont {
+    position: relative;
+    top: 0;
+  }
+}
+.details-cont .text-slider .container .right-cont .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  background-color: black;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 800px) {
+  .details-cont .text-slider .container .right-cont .header {
+    margin-bottom: 0;
+  }
+}
+.details-cont .text-slider .container .right-cont .header h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 800px) {
+  .details-cont .text-slider .container .right-cont .header h1 {
+    text-align: left;
+  }
+}
+.details-cont .text-slider .container .right-cont .header p {
+  font-weight: 200;
+  font-size: 0.9em;
+  color: white;
+  text-align: center;
+  max-width: 40rem;
+}
+.details-cont .text-slider .container .right-cont .img-cont {
+  position: relative;
   width: 100%;
   height: 20rem;
 }
 @media screen and (max-width: 800px) {
-  .details-cont .text-slider .container .img-cont {
-    flex: 20rem;
+  .details-cont .text-slider .container .right-cont .img-cont {
+    display: none;
   }
 }
-.details-cont .text-slider .container .img-cont .absolute-img-cont {
+.details-cont .text-slider .container .right-cont .img-cont .absolute-img-cont {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-.details-cont .text-slider .container .img-cont .absolute-img-cont img {
+.details-cont .text-slider .container .right-cont .img-cont .absolute-img-cont img {
   width: 100%;
   height: 100%;
   border-radius: 30px;

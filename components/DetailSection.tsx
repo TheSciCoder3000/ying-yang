@@ -12,7 +12,7 @@ const detailsData = [
     content: `If you’re growing fast, struggling with retention, 
           feeling the strain of change, or sensing that “something’s off,” 
           you’re ready. You don’t need a crisis to start.`,
-    image: "/questions/1.png",
+    image: "/faq/1.jpg",
   },
   {
     id: 1,
@@ -21,7 +21,7 @@ const detailsData = [
           leaders make decisions, how teams collaborate, and how people 
           feel about showing up every day. A strong culture drives performance, 
           retention, and innovation. A weak one slows everything down.`,
-    image: "/questions/1.png",
+    image: "/faq/2.jpg",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const detailsData = [
     content: `Not at all. HR supports it, but culture is shaped daily by 
           leaders and teams. Every decision, meeting, and conversation either 
           strengthens or weakens it. We help you take charge of that.`,
-    image: "/questions/1.png",
+    image: "/faq/3.jpg",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const detailsData = [
     content: `Yes, you can measure it. We use surveys, behavioural data, 
           and live observations to track shifts in trust, collaboration, 
           and leadership behaviour. `,
-    image: "/questions/1.png",
+    image: "/faq/4.jpg",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const detailsData = [
           firms, and established organisations. What matters most is that 
           you care about your people and are ready to invest in culture 
           as a real advantage.`,
-    image: "/questions/1.png",
+    image: "/faq/5.jpg",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const detailsData = [
           journey where we embed systems, redesign processes, or coach 
           leaders over time. Whatever the format, we stay with you to make 
           sure the change sticks.`,
-    image: "/questions/details.png",
+    image: "/faq/6.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const detailsData = [
     content: `No. The goal is to integrate culture work into your existing 
           rhythms. That means better one on ones, sharper meetings, and 
           clearer systems, not adding another layer of work.`,
-    image: "/questions/1.png",
+    image: "/faq/7.jpg",
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const detailsData = [
     content: `Yes. In fact, that’s where we do some of our best work. 
           Whether it’s team tension, leadership misalignment, or burnout, 
           we create a safe space to untangle it and rebuild trust.`,
-    image: "/questions/details.png",
+    image: "/faq/8.jpg",
   },
   {
     id: 8,
@@ -81,7 +81,7 @@ const detailsData = [
           We bring evidence based tools, real conversations, and a coaching 
           style that’s practical and human. You won’t just get a deck of 
           recommendations. You’ll see change play out in the day to day.`,
-    image: "/questions/1.png",
+    image: "/faq/9.jpg",
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ const detailsData = [
     content: `Simple. Let’s talk about your goals and challenges. 
           From there, we’ll create a plan that fits your context, 
           your people, and your vision.`,
-    image: "/questions/details.png",
+    image: "/faq/10.jpg",
   },
 ];
 
@@ -104,13 +104,6 @@ const DetailSection = () => {
   return (
     <div className="details-cont">
       <div className="text-slider">
-        <div className="header">
-          <h1 className="main-header">FAQ</h1>
-          <p>
-            Curious about what it’s like to work with us? Here are the questions
-            we get asked the most—answered simply
-          </p>
-        </div>
         <div className="container">
           <div className="summary-cont">
             {detailsData.map((data, indx) => (
@@ -125,14 +118,23 @@ const DetailSection = () => {
             ))}
           </div>
 
-          <div className="img-cont">
-            {detailsData.map((item, indx) => (
-              <QuestionImage
-                key={indx}
-                src={item.image}
-                open={item.id === openId}
-              />
-            ))}
+          <div className="right-cont">
+            <div className="header">
+              <h1 className="main-header">FAQ</h1>
+              <p>
+                Curious about what it’s like to work with us? Here are the
+                questions we get asked the most—answered simply
+              </p>
+            </div>
+            <div className="img-cont">
+              {detailsData.map((item, indx) => (
+                <QuestionImage
+                  key={indx}
+                  src={item.image}
+                  open={item.id === openId}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
