@@ -80,37 +80,37 @@ const Card: React.FC<CardProps> = ({ indx, title, description, color }) => {
       rotate: `-${3 + 1.2 * indx}deg`,
     });
 
-    const mm = gsap.matchMedia();
+    // const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 480px)", () => {
-      gsap.to(cardRef.current, {
-        ease: "none",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 34%-=" + 10 * indx,
-          end: "bottom bottom",
-          endTrigger: ".cards-container",
-          scrub: true,
-          pin: cardRef.current,
-          pinSpacing: false,
-        },
-      });
+    gsap.to(cardRef.current, {
+      ease: "none",
+      scrollTrigger: {
+        trigger: cardRef.current,
+        start: "top 34%-=" + 10 * indx,
+        end: "bottom bottom",
+        endTrigger: ".cards-container",
+        scrub: true,
+        pin: cardRef.current,
+        pinSpacing: false,
+      },
     });
+    // mm.add("(min-width: 480px)", () => {
+    // });
 
-    mm.add("(max-width: 479px)", () => {
-      gsap.to(cardRef.current, {
-        ease: "none",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 12%-=" + 10 * indx,
-          end: "bottom bottom",
-          endTrigger: ".cards-container",
-          scrub: true,
-          pin: cardRef.current,
-          pinSpacing: false,
-        },
-      });
-    });
+    // mm.add("(max-width: 479px)", () => {
+    //   gsap.to(cardRef.current, {
+    //     ease: "none",
+    //     scrollTrigger: {
+    //       trigger: cardRef.current,
+    //       start: "top 12%-=" + 10 * indx,
+    //       end: "bottom bottom",
+    //       endTrigger: ".cards-container",
+    //       scrub: true,
+    //       pin: cardRef.current,
+    //       pinSpacing: false,
+    //     },
+    //   });
+    // });
   }, []);
 
   return (

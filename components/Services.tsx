@@ -15,23 +15,23 @@ const Services = () => {
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
+      // const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 480px)", () => {
-        gsap.to(headerRef.current, {
-          ease: "none",
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: "top 7%",
-            end: "bottom bottom",
-            endTrigger: ".cards-container",
-            scrub: true,
-            pin: true,
-            pinSpacing: false,
-            // markers: true,
-          },
-        });
+      gsap.to(headerRef.current, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 7%",
+          end: "bottom bottom",
+          endTrigger: ".cards-container",
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+          // markers: true,
+        },
       });
+      // mm.add("(min-width: 480px)", () => {
+      // });
     },
     { scope: containerRef }
   );
