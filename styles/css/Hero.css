@@ -18,7 +18,7 @@
 }
 .hero-cont .hero-content {
   padding: 2rem 4rem;
-  margin-bottom: 10rem;
+  margin-bottom: 7rem;
 }
 .hero-cont .hero-content h3 {
   text-align: center;
@@ -57,7 +57,7 @@
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   color: black;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 .hero-cont .marquee-cont .infinite-scroll .scroll-text {
   position: relative;

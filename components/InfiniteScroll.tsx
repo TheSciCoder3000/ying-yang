@@ -21,7 +21,7 @@ const InfiniteScroll = () => {
         })
         .to(containerRef.current, {
           xPercent: 0,
-          duration: 20,
+          duration: 80,
         })
         .set(containerRef.current, { x: 0 });
     };
@@ -37,21 +37,33 @@ const InfiniteScroll = () => {
               {/* Because life&apos;s too short for boring designs ~ */}
               <Image
                 className="company-logo"
-                src="/companies/bmw.png"
-                style={{ height: "4rem" }}
-                alt="bmw"
+                src="/companies/1.png"
+                style={{ height: "3rem", opacity: 0.7 }}
+                alt="open-earth-logo"
               />
               <Image
                 className="company-logo"
-                src="/companies/ivm-podcast.png"
-                style={{ height: "5rem", opacity: 0.6 }}
-                alt="bmw"
+                src="/companies/2.png"
+                style={{ height: "3rem", opacity: 0.7 }}
+                alt="eminet-bmw-logo"
               />
               <Image
                 className="company-logo"
-                src="/companies/pratilipi.png"
-                style={{ height: "4rem", opacity: 0.6 }}
-                alt="bmw"
+                src="/companies/3.png"
+                style={{ height: "3rem", opacity: 0.7 }}
+                alt="eminet-hyundai-logo"
+              />
+              <Image
+                className="company-logo"
+                src="/companies/4.png"
+                style={{ height: "3rem", opacity: 0.7 }}
+                alt="podcast-logo"
+              />
+              <Image
+                className="company-logo"
+                src="/companies/5.png"
+                style={{ height: "3rem", opacity: 0.7 }}
+                alt="pratilipi-logo"
               />
             </div>
           ))}
