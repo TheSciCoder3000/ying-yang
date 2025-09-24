@@ -3,8 +3,10 @@
   max-width: 100vw;
   overflow: visible;
   margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 .about-cont h1 {
+  padding: 0 10rem;
   margin-bottom: 1.5rem;
 }
 .about-cont .main {

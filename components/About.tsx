@@ -21,23 +21,47 @@ const imagesData = [
     } as React.CSSProperties,
   },
   {
-    path: "/img/4.JPG",
+    path: "/img/2.jpg",
     rotate: "-8deg", // "-5deg",
     counterRotate: "-10deg",
     customStyles: {
       width: "22rem",
     } as React.CSSProperties,
   },
-  // {
-  //   path: "/img/3.JPG",
-  //   rotate: "5deg", // "5deg",
-  //   counterRotate: "7deg",
-  //   customStyles: {
-  //     width: "32rem",
-  //   } as React.CSSProperties,
-  // },
   {
-    path: "/img/2.JPG",
+    path: "/img/3.JPG",
+    rotate: "5deg", // "-5deg",
+    counterRotate: "7deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
+  },
+  {
+    path: "/img/4.jpg",
+    rotate: "-8deg", // "-5deg",
+    counterRotate: "-10deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
+  },
+  {
+    path: "/img/5.jpeg",
+    rotate: "5deg", // "-5deg",
+    counterRotate: "7deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
+  },
+  {
+    path: "/img/6.jpeg",
+    rotate: "-8deg", // "-5deg",
+    counterRotate: "-10deg",
+    customStyles: {
+      width: "22rem",
+    } as React.CSSProperties,
+  },
+  {
+    path: "/img/7.JPG",
     rotate: "5deg", // "-5deg",
     counterRotate: "7deg",
     customStyles: {
@@ -114,16 +138,12 @@ const About = () => {
 
   return (
     <div id="about" className="about-cont" ref={containerRef}>
+      <h1 className="main-header">
+        What if your people and culture were your greatest growth engine?
+      </h1>
       <div className="main">
         <div className="about-content">
-          <h1 className="main-header">About us</h1>
           <div>
-            <p>
-              <span>
-                What if your people and culture were your greatest growth
-                engine?
-              </span>
-            </p>
             <p>
               At YinYang Leadership, we believe the way people lead, decide, and
               work together is what makes or breaks growth. When people thrive,
