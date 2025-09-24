@@ -8,6 +8,10 @@
   position: relative;
   z-index: 50;
 
+  @include md {
+    margin-bottom: 7rem;
+  }
+
   .header {
     display: flex;
     align-items: center;
@@ -78,21 +82,24 @@
     position: relative;
 
     .content-body {
-      &:first-child {
-        opacity: 1;
+      .item-description {
+        text-align: center;
+        font-size: 1em;
+        font-weight: 300;
+        margin-bottom: 3rem;
       }
 
       .content-items {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
         column-gap: 2rem;
         row-gap: 1rem;
 
         @include md {
-          grid-template-columns: 1fr;
+          flex-direction: column;
         }
 
         .item-cont {
+          flex: 1;
           display: flex;
           align-items: center;
           flex-direction: column;

@@ -5,27 +5,23 @@ import "@/styles/css/WhatWeDo.css";
 import Image from "./Image";
 import { motion, AnimatePresence } from "motion/react";
 
-const headers = ["Fore Individuals", "For Teams", "For Organizations"];
-
 const DataIndiv = [
   {
     id: "indiv-0",
     title: "Executive & Leadership Coaching",
-    description: "Unlock clarity and influence to scale faster accelerate",
+    description: "",
     image: "/icons/bar.svg",
   },
   {
     id: "indiv-1",
     title: "Manager Development",
-    description:
-      "Turn first-time or seasoned people leaders into capable multipliers of high performance.",
+    description: "",
     image: "/icons/leader.svg",
   },
   {
     id: "indiv-2",
     title: "High-Potential Development",
-    description:
-      "Fast-track future leaders for bigger roles and responsibilities.",
+    description: "",
     image: "/icons/growth.svg",
   },
 ];
@@ -34,21 +30,19 @@ const DataTeams = [
     id: "team-0",
     title: "CoreStyles™ Team Diagnostic",
     description:
-      "Transform collaboration, resolve conflict, and build high-performing teams using psychometric tools.",
+      "our proprietary psychometric tool to transform team dynamics.",
     image: "/icons/managers.svg",
   },
   {
     id: "team-1",
-    title: "Leadership Team Visioning",
-    description:
-      "Align your top team on a unified future vision, values and ways of working.",
+    title: "Leadership Team Visioning & Core Values Alignment",
+    description: "",
     image: "/icons/managers.svg",
   },
   {
     id: "team-2",
     title: "Strategic Team Offsite",
-    description:
-      "Design immersive experiences that build alignment, clarity, and momentum.",
+    description: "",
     image: "/icons/growth.svg",
   },
 ];
@@ -57,22 +51,14 @@ const DataOrg = [
     id: "org-0",
     title: "Growth Barriers Diagnostic",
     description:
-      "Uncover what’s holding your team back — from retention and engagement to capability and communication gaps — and unlock targeted solutions to scale faster.",
+      "Identify blockers like retention, engagement, or alignment, and unlock targeted solutions.",
     image: "/icons/founder.svg",
   },
   {
     id: "org-1",
     title: "Build Your Culture Architecture",
-    description:
-      "Codify “how we lead here” into a structured model that drives clarity, consistency, and performance across the company.",
+    description: "",
     image: "/icons/bar.svg",
-  },
-  {
-    id: "org-2",
-    title: "Embed Culture Into People Systems",
-    description:
-      "Hardwire that model into hiring, onboarding, performance management, succession and rewards so culture lives in daily operations",
-    image: "/icons/leader.svg",
   },
 ];
 
@@ -83,11 +69,36 @@ interface ItemSchema {
   image: string;
 }
 
-const dataArr = [DataIndiv, DataTeams, DataOrg];
+interface DataSchema {
+  title: string;
+  description: string;
+  items: ItemSchema[];
+}
+
+const dataArr: DataSchema[] = [
+  {
+    title: "Coaching Leaders",
+    description:
+      "Equip your Leaders to grow the business faster and become multipliers of high performance",
+    items: DataIndiv,
+  },
+  {
+    title: "Training Teams",
+    description:
+      "Resolve trust gaps, align leadership teams and unlock high-performing collaboration.",
+    items: DataTeams,
+  },
+  {
+    title: "Hardwiring Culture",
+    description:
+      "Make your culture measurable, embedded, and a true driver of business outcomes.",
+    items: DataOrg,
+  },
+];
 
 const WhatWeDo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [items, setitems] = useState<ItemSchema[]>(dataArr[0]);
+  const [items, setitems] = useState<DataSchema>(dataArr[0]);
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
@@ -108,13 +119,13 @@ const WhatWeDo = () => {
       </div>
 
       <div className="for-who-cont">
-        {headers.map((item, indx) => (
+        {dataArr.map((item, indx) => (
           <div
             key={indx}
             className={`for-who-item${selected === indx ? " active" : ""}`}
           >
             <button onClick={() => setSelected(indx)}>
-              <h1>{item}</h1>
+              <h1>{item.title}</h1>
             </button>
           </div>
         ))}
@@ -122,9 +133,10 @@ const WhatWeDo = () => {
 
       <div className="content-cont">
         <div className="content-body">
+          <p className="item-description">{items.description}</p>
           <div className="content-items">
             <AnimatePresence mode="popLayout">
-              {items.map(({ title, image, description }, indx) => (
+              {items.items.map(({ title, image, description }, indx) => (
                 <motion.div
                   key={title}
                   initial={{ y: 150, opacity: 0 }}
