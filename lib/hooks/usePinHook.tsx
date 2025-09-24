@@ -15,6 +15,7 @@ const usePinHook = () => {
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
+        end: "bottom+=150 top",
         pin: true,
         pinSpacing: false,
       });

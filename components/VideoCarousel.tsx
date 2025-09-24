@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "@/styles/css/VideoCarousel.css";
 import gsap from "gsap";
-import { Flip, ScrollTrigger } from "gsap/all";
+import { Observer, ScrollTrigger } from "gsap/all";
 import Image from "./Image";
 import { useGSAP } from "@gsap/react";
-import Intro from "./Intro";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import usePinHook from "@/lib/hooks/usePinHook";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP, Flip);
+gsap.registerPlugin(ScrollTrigger, useGSAP, Observer);
 
 const data = [
   {
@@ -41,99 +42,49 @@ const data = [
   },
 ];
 
+function getItemState(index: number, active: number) {
+  if (index === active) return " active";
+  if (index === active - 1 || (active === 0 && index === data.length - 1))
+    return " prev";
+  if (index === active + 1 || (active === data.length - 1 && index === 0))
+    return " next";
+  return "";
+}
+
+function modWithLimits(value: number, min: number): number {
+  const range = data.length - min;
+  return ((((value - min) % range) + range) % range) + min;
+}
+
 const VideoCarousel = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+  const [mouseOverItem, setMouseOverItem] = useState(false);
+  const containerRef = usePinHook();
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const ScaleUpAnime = (card: Element) => {
-    const state = Flip.getState(card);
-    card.classList.add("card-expanded");
-    Flip.from(state, { duration: 0.5, ease: "power1.inOut" });
-  };
+  useEffect(() => {
+    if (mouseOverItem) return;
 
-  const ScaleDownAnime = (card: Element) => {
-    const state = Flip.getState(card);
-    card.classList.remove("card-expanded");
-    Flip.from(state, { duration: 0.5, ease: "power1.inOut" });
-  };
+    const timeout = setTimeout(
+      () => setActive((state) => (state + 1) % data.length),
+      4000
+    );
+    return () => clearTimeout(timeout);
+  }, [active, mouseOverItem]);
+
+  const handleOver = () => setMouseOverItem(true);
+
+  const handleOut = () => setMouseOverItem(false);
 
   useGSAP(
     () => {
-      const mm = gsap.matchMedia();
-
-      mm.add("(min-width: 480px)", () => {
-        if (!carouselRef.current) return;
-
-        const style = window.getComputedStyle(carouselRef.current);
-        const gapValue = style.getPropertyValue("gap");
-        const gapPx = parseFloat(gapValue);
-
-        gsap.set(carouselRef.current, {
-          xPercent: 100,
-        });
-
-        const masterTl = gsap.timeline();
-
-        const horizontalTl = gsap.timeline().to(carouselRef.current, {
-          xPercent: -50,
-          ease: "none",
-        });
-
-        const panningTl = gsap
-          .timeline()
-          .from(".absolute-cont", { yPercent: 100 });
-
-        masterTl.add(horizontalTl).add(panningTl);
-
-        ScrollTrigger.create({
-          animation: masterTl,
-          trigger: containerRef.current,
-          start: "top 0%",
-          end: `0%+=5000`,
-          toggleActions: "play none none none",
-          scrub: true,
-          pin: true,
-          invalidateOnRefresh: true,
-        });
-
-        const cards = carouselRef.current?.querySelectorAll(".carousel-item");
-        cards?.forEach((card) => {
-          ScrollTrigger.create({
-            trigger: card,
-            containerAnimation: horizontalTl,
-            start: "top 60%",
-            end: `100%+=${gapPx} 60%`,
-            invalidateOnRefresh: true,
-            onEnter: () => {
-              ScaleUpAnime(card);
-            },
-            onEnterBack: () => {
-              ScaleUpAnime(card);
-            },
-            onLeaveBack: () => {
-              ScaleDownAnime(card);
-            },
-            onLeave: () => {
-              ScaleDownAnime(card);
-            },
-          });
-        });
-      });
-
-      mm.add("(max-width: 479px)", () => {
-        const itemEls =
-          containerRef.current!.querySelectorAll(".carousel-item");
-
-        itemEls.forEach((item) => {
-          gsap.from(item, {
-            x: 100,
-            opacity: 0,
-            scrollTrigger: {
-              trigger: item,
-              start: "top center",
-            },
-          });
-        });
+      Observer.create({
+        target: carouselRef.current,
+        type: "touch",
+        tolerance: 200,
+        onRight: () => setActive((state) => modWithLimits(state - 1, 0)),
+        onLeft: () => setActive((state) => modWithLimits(state + 1, 0)),
+        // preventDefault: true,
       });
     },
     { scope: containerRef }
@@ -145,24 +96,52 @@ const VideoCarousel = () => {
         <h1 className="main-header">What Our Clients Say</h1>
         <div className="carousel" ref={carouselRef}>
           {data.map((item, indx) => (
-            <div key={indx} className="carousel-item">
-              <div className="content">
-                <div className="header">
-                  <div className="user-info">
-                    <h2>{item.title}</h2>
-                    <h3>{item.subtitle}</h3>
+            <div
+              key={indx}
+              className={`carousel-item${getItemState(indx, active)}`}
+            >
+              <div
+                className="carousel-card"
+                onMouseOver={() => (indx === active ? handleOver() : null)}
+                onMouseOut={() => (indx === active ? handleOut() : null)}
+              >
+                <div className="content">
+                  <div className="header">
+                    <div className="user-info">
+                      <h2>{item.title}</h2>
+                      <h3>{item.subtitle}</h3>
+                    </div>
+                    <Image src={item.image} alt="cover" />
                   </div>
-                  <Image src={item.image} alt="cover" />
-                </div>
-                <div className="quote">
-                  <p>{item.description}</p>
+                  <div className="quote">
+                    <p>{item.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
+          <div className="carousel-btn left">
+            <button>
+              <ChevronLeft
+                size={50}
+                onClick={() =>
+                  setActive((state) => modWithLimits(state - 1, 0))
+                }
+              />
+            </button>
+          </div>
+          <div className="carousel-btn right">
+            <button>
+              <ChevronRight
+                size={50}
+                onClick={() =>
+                  setActive((state) => modWithLimits(state + 1, 0))
+                }
+              />
+            </button>
+          </div>
         </div>
       </div>
-      <Intro />
     </div>
   );
 };

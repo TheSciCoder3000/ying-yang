@@ -10,7 +10,7 @@
 }
 @media screen and (max-width: 800px) {
   .absolute-cont .intro-container {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 0;
     margin: 0;
   }
 }
