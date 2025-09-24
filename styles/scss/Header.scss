@@ -48,7 +48,7 @@ header {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #2f303d;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,12 +62,18 @@ header {
     background-color: transparent;
     border: none;
     font-weight: 700;
-    color: whitesmoke;
+    color: #656565;
     cursor: pointer;
+    transition: all 250ms;
+
+    &:hover {
+      color: #00d3db;
+    }
   }
 
   .nav-container {
-    background: #bc2637;
+    background: black;
+    border: 2px solid white;
     width: 100%;
     height: 100%;
     max-height: 30rem;
@@ -76,14 +82,15 @@ header {
     rotate: -6deg;
 
     .nav-header {
+      border: 2px solid white;
       position: absolute;
       top: 0;
       left: 3rem;
       padding: 0.3rem 3rem;
       transform: translateY(-50%);
       font-size: 1.75em;
-      color: black;
-      background: #68a7f4;
+      color: white;
+      background: black;
       width: fit-content;
       height: fit-content;
     }
@@ -114,7 +121,7 @@ header {
           height: fit-content;
           left: 0;
           bottom: -100%;
-          color: #2f303d;
+          color: #009b9f;
         }
       }
     }
