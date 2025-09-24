@@ -8,6 +8,7 @@
     padding: 1.5rem 8rem;
     position: relative;
     color: black;
+    overflow: hidden;
 
     @include md {
       padding: 1.5rem 2rem;
@@ -46,6 +47,7 @@
       @include md {
         flex-direction: column;
         gap: 1rem;
+        margin: 2rem;
       }
 
       .image-cont {
@@ -65,6 +67,16 @@
           aspect-ratio: 1;
           border-radius: 100%;
           background: linear-gradient(135deg, #009b9f 0%, #00e7ed 100%);
+
+          @include md {
+            width: 65%;
+            bottom: 40%;
+          }
+
+          @include sm {
+            width: 130%;
+            bottom: 40%;
+          }
         }
 
         img {

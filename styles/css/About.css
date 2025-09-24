@@ -9,6 +9,11 @@
   padding: 0 10rem;
   margin-bottom: 1.5rem;
 }
+@media screen and (max-width: 800px) {
+  .about-cont h1 {
+    padding: 0 1rem;
+  }
+}
 .about-cont .main {
   padding: 0 10rem;
   display: flex;

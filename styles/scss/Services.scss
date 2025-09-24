@@ -20,14 +20,19 @@
     flex-direction: column;
     align-items: end;
 
-    @include md {
-      text-align: left;
-      padding: 0 1rem;
-    }
-
     p {
       max-width: 50rem;
       color: rgb(171, 171, 171);
+      text-align: right;
+
+      @include sm {
+        text-align: left;
+      }
+    }
+
+    @include md {
+      text-align: left;
+      padding: 0 1rem;
     }
   }
 }

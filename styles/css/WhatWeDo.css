@@ -32,6 +32,11 @@
   margin-bottom: 3rem;
   gap: 2rem;
 }
+@media screen and (max-width: 480px) {
+  .we-do-cont .for-who-cont {
+    flex-direction: column;
+  }
+}
 .we-do-cont .for-who-cont .for-who-item {
   flex: 1;
   display: flex;
@@ -44,6 +49,11 @@
   background-color: rgb(39, 39, 39);
   color: gray;
   transition: all 500ms;
+}
+@media screen and (max-width: 480px) {
+  .we-do-cont .for-who-cont .for-who-item button {
+    width: 100%;
+  }
 }
 .we-do-cont .for-who-cont .for-who-item h1 {
   width: fit-content;
@@ -66,6 +76,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2rem;
   row-gap: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .we-do-cont .content-cont .content-body .content-items {
+    grid-template-columns: 1fr;
+  }
 }
 .we-do-cont .content-cont .content-body .content-items .item-cont {
   display: flex;

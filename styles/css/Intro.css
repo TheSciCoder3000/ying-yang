@@ -6,6 +6,7 @@
   padding: 1.5rem 8rem;
   position: relative;
   color: black;
+  overflow: hidden;
 }
 @media screen and (max-width: 800px) {
   .absolute-cont .intro-container {
@@ -44,6 +45,7 @@
   .absolute-cont .intro-container .intro {
     flex-direction: column;
     gap: 1rem;
+    margin: 2rem;
   }
 }
 .absolute-cont .intro-container .intro .image-cont {
@@ -63,6 +65,18 @@
   aspect-ratio: 1;
   border-radius: 100%;
   background: linear-gradient(135deg, #009b9f 0%, #00e7ed 100%);
+}
+@media screen and (max-width: 800px) {
+  .absolute-cont .intro-container .intro .image-cont .radial-bkg {
+    width: 65%;
+    bottom: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .absolute-cont .intro-container .intro .image-cont .radial-bkg {
+    width: 130%;
+    bottom: 40%;
+  }
 }
 .absolute-cont .intro-container .intro .image-cont img {
   position: relative;
