@@ -11,6 +11,7 @@ interface ImageProps {
   alt: string;
   className?: string;
   style?: React.CSSProperties;
+  priority?: boolean;
   onClick?: () => void;
 }
 const Image: React.FC<ImageProps> = ({
@@ -18,6 +19,7 @@ const Image: React.FC<ImageProps> = ({
   src,
   alt,
   className,
+  priority,
   onClick,
 }) => {
   const OnImageLoad = () => {
@@ -31,6 +33,7 @@ const Image: React.FC<ImageProps> = ({
       src={src}
       alt={alt}
       width={0}
+      priority={priority}
       height={0}
       className={className}
       sizes="100vw"

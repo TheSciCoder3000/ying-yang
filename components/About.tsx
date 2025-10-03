@@ -197,6 +197,7 @@ const About = () => {
               className="about-image"
               src={img.path}
               alt={img.path}
+              priority
               style={{
                 rotate: img.rotate,
                 zIndex: indx + 1,
