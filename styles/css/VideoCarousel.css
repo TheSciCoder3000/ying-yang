@@ -11,7 +11,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4rem;
 }
 @media screen and (max-width: 800px) {
   .carousel-cont .carousel-main-cont {
@@ -49,9 +49,9 @@
   transform: translateY(-50%);
   z-index: 5;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   .carousel-cont .carousel-main-cont .carousel .carousel-btn {
-    display: none;
+    top: 85%;
   }
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-btn button {
@@ -76,7 +76,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 22rem;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -106,10 +106,15 @@
   }
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item .carousel-card .content .quote p {
-  padding-top: 4rem;
+  padding-top: 2.5rem;
   font-size: 0.8em;
   font-weight: 300;
   color: rgb(194, 194, 194);
+}
+@media screen and (max-width: 800px) {
+  .carousel-cont .carousel-main-cont .carousel .carousel-item .carousel-card .content .quote p {
+    padding-top: 2rem;
+  }
 }
 .carousel-cont .carousel-main-cont .carousel .carousel-item .carousel-card .content .header {
   display: flex;

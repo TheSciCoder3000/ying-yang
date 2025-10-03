@@ -68,13 +68,13 @@
 }
 @media screen and (max-width: 800px) {
   .absolute-cont .intro-container .intro .image-cont .radial-bkg {
-    width: 65%;
+    width: 55%;
     bottom: 40%;
   }
 }
 @media screen and (max-width: 480px) {
   .absolute-cont .intro-container .intro .image-cont .radial-bkg {
-    width: 130%;
+    width: 110%;
     bottom: 40%;
   }
 }

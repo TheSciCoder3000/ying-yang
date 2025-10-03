@@ -139,37 +139,53 @@ const About = () => {
   return (
     <div id="about" className="about-cont" ref={containerRef}>
       <h1 className="main-header">
-        What if your people and culture were your greatest growth engine?
+        At YinYang Leadership, we believe the way people lead, decide, and work
+        together is what makes or breaks growth. When people thrive, culture
+        thrives — and when culture thrives, performance accelerates.
       </h1>
       <div className="main">
         <div className="about-content">
           <div>
-            <p>
+            {/* <p>
               At YinYang Leadership, we believe the way people lead, decide, and
               work together is what makes or breaks growth. When people thrive,
               culture thrives — and when culture thrives, performance
               accelerates.
-            </p>
+            </p> */}
             <p>
-              Our co-founder Tanisha, together with her partners, are business
-              psychologists who’ve spent over a decade helping fast-growing
-              startups and Fortune 500s build leadership and culture systems
-              that scale.
+              Our founder Tanisha and her team of business psychologists have
+              spent over a decade working in{" "}
+              <span>
+                leadership development, executive coaching, and organizational
+                change,
+              </span>{" "}
+              partnering with both fast-scaling startups and Fortune 500
+              companies.{" "}
+              <span>
+                We’ve seen the same truth play out everywhere: growth stalls
+                when leadership and culture don’t keep pace with the business.
+              </span>
             </p>
+
             <p>
-              We design <span>Leadership & Culture Architectures</span> that
-              codify “how we lead here” and embed it into the everyday — from
-              hiring and onboarding to performance and recognition.
+              That’s why we go beyond workshops and decks. We{" "}
+              <span>architect the leadership and cultural foundations</span>{" "}
+              that define “how we lead here”, and we hardwire them into everyday
+              systems. From <span>hiring and onboarding</span> to{" "}
+              <span>performance management and recognition,</span> culture thus
+              becomes lived and not just laminated on a wall.
             </p>
+
             <p>
-              Through our proprietary <span>Culture Compass</span>, we bring
-              evidence-based tools, powerful facilitation, and immersive
-              experiences that turn values into daily behaviors.
-            </p>
-            <p>
-              <span>The result?</span> People who feel empowered, cultures that
-              stay authentic, and businesses that grow stronger, smarter, and
-              faster.
+              With our proprietary <span>Culture Compass diagnostic,</span> we
+              help organizations see where they stand, identify what’s blocking
+              growth, and translate values into everyday behaviors. The approach
+              is never theoretical: it’s powered by{" "}
+              <span>
+                evidence-based tools, immersive experiences, and real
+                conversations
+              </span>{" "}
+              that shift culture and unlock performance.
             </p>
           </div>
         </div>

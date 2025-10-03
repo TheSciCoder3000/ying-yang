@@ -13,7 +13,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
 
     @include md {
       padding: 2rem;
@@ -48,8 +48,8 @@
         transform: translateY(-50%);
         z-index: 5;
 
-        @include sm {
-          display: none;
+        @include md {
+          top: 85%;
         }
 
         button {
@@ -79,7 +79,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 22rem;
         display: flex;
         justify-content: center;
         align-items: stretch;
@@ -108,10 +108,14 @@
               }
 
               p {
-                padding-top: 4rem;
+                padding-top: 2.5rem;
                 font-size: 0.8em;
                 font-weight: 300;
                 color: rgb(194, 194, 194);
+
+                @include md {
+                  padding-top: 2rem;
+                }
               }
             }
 

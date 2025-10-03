@@ -9,19 +9,21 @@ const DataIndiv = [
   {
     id: "indiv-0",
     title: "Executive & Leadership Coaching",
-    description: "",
+    description: "Accelerate clarity, confidence, and impact",
     image: "/icons/bar.svg",
   },
   {
     id: "indiv-1",
     title: "Manager Development",
-    description: "",
+    description:
+      "Turn people leaders into confident multipliers of high performance.",
     image: "/icons/leader.svg",
   },
   {
     id: "indiv-2",
     title: "High-Potential Development",
-    description: "",
+    description:
+      "Fast-track next-gen leaders for bigger roles and responsibilities.",
     image: "/icons/growth.svg",
   },
 ];
@@ -36,13 +38,15 @@ const DataTeams = [
   {
     id: "team-1",
     title: "Leadership Team Visioning & Core Values Alignment",
-    description: "",
+    description:
+      "Aligning leaders on a shared vision and values that drive every business decision.",
     image: "/icons/managers.svg",
   },
   {
     id: "team-2",
     title: "Strategic Team Offsite",
-    description: "",
+    description:
+      "Interventions where strategy meets culture: teams learn how to speak openly, resolve tensions constructively, and align on shared goals.",
     image: "/icons/growth.svg",
   },
 ];
@@ -57,7 +61,15 @@ const DataOrg = [
   {
     id: "org-1",
     title: "Build Your Culture Architecture",
-    description: "",
+    description:
+      "Codify “how we lead here” into a clear model that drives clarity and consistency in performance.",
+    image: "/icons/bar.svg",
+  },
+  {
+    id: "org-2",
+    title: "Embed Culture Into People Systems ",
+    description:
+      "Hardwire culture into hiring, onboarding, performance, and rewards.",
     image: "/icons/bar.svg",
   },
 ];
@@ -100,21 +112,24 @@ const WhatWeDo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [items, setitems] = useState<DataSchema>(dataArr[0]);
   const [selected, setSelected] = useState(0);
+  const [contentBody, setContentBody] = useState(items.description);
 
   useEffect(() => {
     setitems(dataArr[selected]);
+    setContentBody(dataArr[selected].description);
   }, [selected]);
 
   return (
     <div ref={containerRef} className="we-do-cont">
       <div className="header">
-        <h1>what we do</h1>
+        <h1>How We Activate the People Side of Scale</h1>
         <p>
-          We help businesses unlock growth by aligning strategy with culture.
+          {contentBody}
+          {/* We help businesses unlock growth by aligning strategy with culture.
           From refining your brand voice to building systems that scale, we
           bridge the gap between vision and execution. Our approach blends data,
           design, and human insight—turning business challenges into
-          opportunities for sustainable success.
+          opportunities for sustainable success. */}
         </p>
       </div>
 
@@ -133,7 +148,6 @@ const WhatWeDo = () => {
 
       <div className="content-cont">
         <div className="content-body">
-          <p className="item-description">{items.description}</p>
           <div className="content-items">
             <AnimatePresence mode="popLayout">
               {items.items.map(({ title, image, description }, indx) => (

@@ -6,12 +6,14 @@
   margin-top: 5rem;
 }
 .about-cont h1 {
+  font-size: 2em;
   padding: 0 10rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 @media screen and (max-width: 800px) {
   .about-cont h1 {
     padding: 0 1rem;
+    font-size: 1.5em;
   }
 }
 .about-cont .main {

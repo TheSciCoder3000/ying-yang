@@ -69,12 +69,12 @@
           background: linear-gradient(135deg, #009b9f 0%, #00e7ed 100%);
 
           @include md {
-            width: 65%;
+            width: 55%;
             bottom: 40%;
           }
 
           @include sm {
-            width: 130%;
+            width: 110%;
             bottom: 40%;
           }
         }

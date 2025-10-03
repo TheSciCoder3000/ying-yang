@@ -14,7 +14,7 @@
 
   .header {
     display: flex;
-    align-items: center;
+    align-items: start;
     margin-bottom: 4rem;
 
     @include md {
@@ -22,16 +22,21 @@
     }
 
     h1 {
-      font-size: 4em;
+      font-size: 3em;
       font-weight: 500;
       flex: 1;
+
+      @include md {
+        font-size: 2em;
+      }
     }
 
     p {
+      padding-top: 2rem;
       flex: 1;
-      font-size: 0.8em;
+      font-size: 1em;
       font-weight: 300;
-      color: rgb(168, 168, 168);
+      color: #969696;
     }
   }
 
