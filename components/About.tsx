@@ -21,7 +21,7 @@ const imagesData = [
     } as React.CSSProperties,
   },
   {
-    path: "/img/2.jpg",
+    path: "/img/2.JPG",
     rotate: "-8deg", // "-5deg",
     counterRotate: "-10deg",
     customStyles: {
@@ -37,7 +37,7 @@ const imagesData = [
     } as React.CSSProperties,
   },
   {
-    path: "/img/4.jpg",
+    path: "/img/4.JPG",
     rotate: "-8deg", // "-5deg",
     counterRotate: "-10deg",
     customStyles: {
@@ -45,7 +45,7 @@ const imagesData = [
     } as React.CSSProperties,
   },
   {
-    path: "/img/5.jpeg",
+    path: "/img/5.JPG",
     rotate: "5deg", // "-5deg",
     counterRotate: "7deg",
     customStyles: {
@@ -53,7 +53,7 @@ const imagesData = [
     } as React.CSSProperties,
   },
   {
-    path: "/img/6.jpeg",
+    path: "/img/6.JPG",
     rotate: "-8deg", // "-5deg",
     counterRotate: "-10deg",
     customStyles: {
